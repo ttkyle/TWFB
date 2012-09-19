@@ -23,6 +23,7 @@ public class Village {
     static public String villageFileName;
     static public int numberOfFarms = 1;
 
+
     static public int villageHQWoodCost;
     static public int villageHQClayCost;
     static public int villageHQIronCost;
