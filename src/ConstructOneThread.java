@@ -35,7 +35,6 @@ public class ConstructOneThread implements Runnable {
                 while(constructionFlagOne) {
 
                     Village.constructionOneTimer();
-                    //Thread.sleep(10000);
                 }
             }
             catch(NoSuchElementException e) {

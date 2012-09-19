@@ -122,9 +122,19 @@ public class Village {
     static private double totalOneFourth;
     static private double totalOneSixth;
     static private double totalOneSeventh;
-
     static private double totalOneSecond;
     static private double totalOneEighth;
+
+
+    static private String durationTwo;
+    static private double totalTwo = 0;
+    static private double totalTwoOne;
+    static private double totalTwoThird;
+    static private double totalTwoFourth;
+    static private double totalTwoSixth;
+    static private double totalTwoSeventh;
+    static private double totalTwoSecond;
+    static private double totalTwoEighth;
 
 
     //Constructor to set village name so that we know what to name text files
@@ -796,38 +806,27 @@ public class Village {
 
     public static void constructionOneTimer() throws InterruptedException {
 
-        for(int i = 0; i < 500; i++) {
+        for(int i = 0; i < 50000; i++) {
             int hours = (int) (totalOne / (60 * 60 * 1000));
-            int minutes = (int) ((totalOne /(60 * 1000)) % 60);
+            int minutes = (int) ((totalOne / (60 * 1000)) % 60);
             int seconds = (int) ((totalOne / 1000) % 60);
-            String sec = Integer.toString(seconds);
-            String min = Integer.toString(minutes);
-            System.out.println(min);
-            System.out.println(substring(min, 0, 1));
-            System.out.println(substring(min, 0, 2));
 
-
-            //if(Integer.parseInt(durationOne.substring(6,7)) == 0) {
-                //BuildingConstructionPanel.setDurationOne(hours + ":" + minutes + ":" + seconds + 0);
-            //}
-
-            if(substring(sec, 1, 2).equals("")) {
-                BuildingConstructionPanel.setDurationOne(hours + ":" + minutes + ":" + 0 + seconds);
+            if(seconds > 10 && minutes > 10) {
+                BuildingConstructionPanel.setDurationOne(hours + ":" + minutes + ":"  + seconds);
             }
-            if(substring(min, 1, 2).equals("")) {
-                BuildingConstructionPanel.setDurationOne(hours + ":" + 0 + minutes + ":" +  seconds);
+            if(seconds < 10) {
+                BuildingConstructionPanel.setDurationOne(hours + ":" + minutes + ":" + "0" + seconds);
             }
-            if(substring(sec, 1, 2).equals("") && substring(min, 1, 2).equals("")) {
-                BuildingConstructionPanel.setDurationOne(hours + ":" + 0 + minutes + ":" + "0" +  seconds);
+            if(minutes < 10) {
+                BuildingConstructionPanel.setDurationOne(hours + ":" + "0" + minutes + ":" +  seconds);
+            }
+            if(seconds < 10 && minutes < 10) {
+                BuildingConstructionPanel.setDurationOne(hours + ":" + "0" + minutes + ":" + "0" +  seconds);
             }
 
-
-            else {
-                BuildingConstructionPanel.setDurationOne(hours + ":" + minutes + ":" + seconds);
-            }
-
-            if(totalOne < 10000) {
-                BuildingConstructionPanel.setDurationOne("0");
+            if(totalOne <= 10000) {
+                totalOne = 0;
+                BuildingConstructionPanel.setDurationOne("0:00:00");
                 break;
             }
             totalOne = totalOne - 10000;
@@ -893,7 +892,6 @@ public class Village {
             Village.totalOneSeventh = Integer.parseInt(substring(Village.durationOne, 6, 7));
             }
             catch(NumberFormatException e) {
-
             }
             //int eight =  would be last number
     }
@@ -904,16 +902,97 @@ public class Village {
 
         try {
             String buildingName = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[1]")).getText();
-            BuildingConstructionPanel.setAssignmentOne(buildingName);
+            BuildingConstructionPanel.setAssignmentTwo(buildingName);
 
-            String duration = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[2]/span")).getText();
-            BuildingConstructionPanel.setDurationOne(duration);
+            durationTwo = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[2]/span")).getText();
+            BuildingConstructionPanel.setDurationTwo(durationTwo);
 
             String completion = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[3]")).getText();
-            BuildingConstructionPanel.setCompletionOne(completion);
+            BuildingConstructionPanel.setCompletionTwo(completion);
         }
         catch(NoSuchElementException e) {
         }
+    }
+
+    public static void constructionTwoGetTime() {
+        try {
+            if(substring(Village.durationTwo, 1, 2).equals(":")) {
+                if(totalTwoOne == 0) {
+                    totalTwoOne = 0;
+                }
+                else {
+                    totalTwoOne = totalTwoOne * 3600000;
+                }
+
+                if(totalTwoThird == 0) {
+                    totalTwoThird = 0;
+                }
+                else {
+                    totalTwoThird *= 600000;
+                }
+
+                if(totalTwoFourth == 0) {
+                    totalTwoFourth = 0;
+                }
+                else {
+                    totalTwoFourth *= 60000;
+                }
+
+                if(totalTwoSixth == 0) {
+                    totalTwoSixth = 0;
+                }
+                else {
+                    totalTwoSixth *= 10000;
+                }
+
+                if(totalTwoSeventh == 0) {
+                    totalTwoSeventh = 0;
+                }
+                else {
+                    totalTwoSeventh *= 1000;
+                }
+                totalTwo = totalTwoOne +  totalTwoThird + totalTwoFourth + totalTwoSixth + totalTwoSeventh;
+            }
+            else {
+            }
+        }
+        catch(NullPointerException e) {
+        }
+    }
+
+    public static void ConstructionTwoTimer() {
+
+        int hours = (int) (totalTwo / (60 * 60 * 1000));
+        int minutes = (int) ((totalTwo / (60 * 1000)) % 60);
+        int seconds = (int) ((totalTwo / 1000) % 60);
+
+        if(seconds > 10 && minutes > 10) {
+            BuildingConstructionPanel.setDurationTwo(hours + ":" + minutes + ":"  + seconds);
+        }
+        if(seconds < 10) {
+            BuildingConstructionPanel.setDurationTwo(hours + ":" + minutes + ":" + "0" + seconds);
+        }
+        if(minutes < 10) {
+            BuildingConstructionPanel.setDurationTwo(hours + ":" + "0" + minutes + ":" +  seconds);
+        }
+        if(seconds < 10 && minutes < 10) {
+            BuildingConstructionPanel.setDurationTwo(hours + ":" + "0" + minutes + ":" + "0" +  seconds);
+        }
+    }
+
+    public static void constructionTwoGetNumbers() {
+        try {
+            Village.totalTwoOne = Integer.parseInt(substring(Village.durationTwo, 0, 1));
+            // String second =  :
+            Village.totalTwoThird = Integer.parseInt(substring(Village.durationTwo, 2, 3));
+            Village.totalTwoFourth = Integer.parseInt(substring(Village.durationTwo, 3, 4));
+            //int fifth =  :
+            Village.totalTwoSixth = Integer.parseInt(substring(Village.durationTwo, 5, 6));
+            Village.totalTwoSeventh = Integer.parseInt(substring(Village.durationTwo, 6, 7));
+        }
+        catch(NumberFormatException e) {
+        }
+        //int eight =  would be last number
     }
 
 
@@ -1822,6 +1901,78 @@ public class Village {
 
     public static void setTotalOneEighth(double newNumber) {
         totalOneEighth = newNumber;
+    }
+
+    public static String getDurationTwo() {
+        return durationTwo;
+    }
+
+    public static void setDurationTwo(String newString) {
+        durationTwo = newString;
+    }
+
+    public static double getTotalTwo() {
+        return totalTwo;
+    }
+
+    public static void setTotalTwo(double newNumber) {
+        totalTwo = newNumber;
+    }
+
+    public static double getTotalTwoOne() {
+        return totalTwoOne;
+    }
+
+    public static void setTotalTwoOne(double newNumber) {
+        totalTwoOne = newNumber;
+    }
+
+    public static double getTotalTwoThird() {
+        return totalTwoThird;
+    }
+
+    public static void setTotalTwoThird(double newNumber) {
+        totalTwoThird = newNumber;
+    }
+
+    public static double getTotalTwoFourth() {
+        return totalTwoFourth;
+    }
+
+    public static void setTotalTwoFourth(double newNumber) {
+        totalTwoFourth = newNumber;
+    }
+
+    public static double getTotalTwoSixth() {
+        return totalTwoSixth;
+    }
+
+    public static void setTotalTwoSixth(double newNumber) {
+        totalTwoSixth = newNumber;
+    }
+
+    public static double getTotalTwoSeventh() {
+        return totalTwoSeventh;
+    }
+
+    public static void setTotalTwoSeventh(double newNumber) {
+        totalTwoSeventh = newNumber;
+    }
+
+    public static double getTotalTwoSecond() {
+        return totalTwoSecond;
+    }
+
+    public static void setTotalTwoSecond(double newNumber) {
+        totalTwoSecond = newNumber;
+    }
+
+    public static double getTotalTwoEighth() {
+        return totalTwoEighth;
+    }
+
+    public static void setTotalTwoEighth(double newNumber) {
+        totalTwoEighth = newNumber;
     }
 }
 

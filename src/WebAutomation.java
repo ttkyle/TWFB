@@ -71,6 +71,8 @@ public class WebAutomation  {
         Village.constructionTwo();
         Village.constructionOneGetNumbers();
         Village.constructionOneGetTime();
+        Village.constructionTwoGetNumbers();
+        Village.constructionTwoGetTime();
         Thread.sleep(500);
 
         //two new thread to keep updating resources on any page and keeping watch for incoming attacks
