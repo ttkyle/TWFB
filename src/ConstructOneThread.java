@@ -28,7 +28,7 @@ public class ConstructOneThread implements Runnable {
     public void run() {
         while(true) {
             try {
-                if(Village.totalOne == 0) {
+                if(Village.getTotalOne() == 0) {
                     constructionFlagOne = false;
                     Thread.sleep(10000);
                 }

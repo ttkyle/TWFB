@@ -80,7 +80,7 @@ public class WebAutomation  {
         BuildingResourceCostThread buildingCosts = new BuildingResourceCostThread();
         ConstructOneThread constructOneThread = new ConstructOneThread();
 
-        if(Village.totalOne > 0) {
+        if(Village.getTotalOne() > 0) {
             ConstructOneThread.constructionFlagOne = true;
         }
 

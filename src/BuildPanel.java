@@ -562,7 +562,7 @@ public class BuildPanel extends JPanel {
                     Village.constructionOneGetNumbers();
                     Village.constructionOneGetTime();
 
-                    if(Village.totalOne > 0) {
+                    if(Village.getTotalOne() > 0) {
                         ConstructOneThread.constructionFlagOne = true;
                     }
                     Thread.sleep(1500);
