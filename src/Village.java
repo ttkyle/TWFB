@@ -19,7 +19,6 @@ public class Village {
     //global variables
     static public String xLoc;
     static public String yLoc;
-    static public FileOutputStream fout;
     static public String villageFileName;
     static public int numberOfFarms = 1;
 
