@@ -5,7 +5,6 @@ import org.openqa.selenium.StaleElementReferenceException;
 import java.io.*;
 import java.util.Scanner;
 
-import static org.apache.commons.lang.StringUtils.INDEX_NOT_FOUND;
 import static org.apache.commons.lang.StringUtils.substring;
 
 /**
