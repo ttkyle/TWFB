@@ -12,13 +12,14 @@ import static org.apache.commons.lang.StringUtils.substring;
  * and holds most of the methods that manipulate GUI elements
  *
  * The village class will update on the fly when a user selects a
- * village to manipulate.
+ * village to manipulate.  test
  */
 public class Village {
 
     //global variables
     static public String xLoc;
     static public String yLoc;
+    static public FileOutputStream fout;
     static public String villageFileName;
     static public int numberOfFarms = 1;
 
