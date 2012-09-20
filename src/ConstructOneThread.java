@@ -29,7 +29,6 @@ public class ConstructOneThread implements Runnable {
     public void run() {
         while(true) {
             try {
-                System.out.println("we're in the first while");
                 if(Village.getTotalOne() <= 10000) {
                     constructionFlagOne = false;
                     if(Village.getTotalTwo() == 0 && Village.getTotalOne() == 0) {
@@ -76,7 +75,6 @@ public class ConstructOneThread implements Runnable {
                     Thread.sleep(10000);
                 }
                 while(constructionFlagOne) {
-                    System.out.println("we're in the second while");
                     if(Village.getTotalOne() > 10000) {
                         Village.constructionOneTimer();
                         Thread.sleep(10000);
