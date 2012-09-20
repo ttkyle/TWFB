@@ -28,13 +28,21 @@ public class ConstructOneThread implements Runnable {
     public void run() {
         while(true) {
             try {
-                if(Village.getTotalOne() == 0) {
+                if(Village.getTotalOne() <= 10000) {
                     constructionFlagOne = false;
                     Thread.sleep(10000);
                 }
                 while(constructionFlagOne) {
+                    if(Village.getTotalOne() > 10000) {
+                        Village.constructionOneTimer();
+                    }
+                    else {
+                        Village.setTotalOne(0);
+                        Village.setDurationOne("0:00:00");
+                        constructionFlagOne = false;
 
-                    Village.constructionOneTimer();
+                        if()
+                    }
                 }
             }
             catch(NoSuchElementException e) {
