@@ -5,6 +5,7 @@
  * Time: 11:05 PM
  * To change this template use File | Settings | File Templates.
  */
+import org.apache.http.annotation.ThreadSafe;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 
@@ -28,20 +29,61 @@ public class ConstructOneThread implements Runnable {
     public void run() {
         while(true) {
             try {
+                System.out.println("we're in the first while");
                 if(Village.getTotalOne() <= 10000) {
                     constructionFlagOne = false;
+                    if(Village.getTotalTwo() == 0 && Village.getTotalOne() == 0) {
+
+                        BuildingConstructionPanel.setAssignmentOne("No Construction");
+                        BuildingConstructionPanel.setDurationOne("N/A");
+                        BuildingConstructionPanel.setCompletionOne("N/A");
+
+                        BuildingConstructionPanel.setAssignmentTwo("No Construction");
+                        BuildingConstructionPanel.setDurationTwo("N/A");
+                        BuildingConstructionPanel.setCompletionTwo("N/A");
+                    }
+                    if(Village.getTotalTwo() != 0) {
+                        Village.setTotalOne(Village.getTotalTwo());
+                        Village.setTotalOneOne(Village.getTotalTwoOne());
+                        Village.setTotalOneSecond(Village.getTotalTwoSecond());
+                        Village.setTotalOneThird(Village.getTotalTwoThird());
+                        Village.setTotalOneFourth(Village.getTotalTwoFourth());
+                        Village.setTotalOneFifth(Village.getTotalTwoFifth());
+                        Village.setTotalOneSixth(Village.getTotalTwoSixth());
+                        Village.setTotalOneSeventh(Village.getTotalTwoSeventh());
+                        Village.setTotalOneEighth(Village.getTotalTwoEighth());
+
+                        BuildingConstructionPanel.setAssignmentOne(BuildingConstructionPanel.getAssignmentTwo().getText());
+                        BuildingConstructionPanel.setDurationOne(BuildingConstructionPanel.getDurationTwo().getText());
+                        BuildingConstructionPanel.setCompletionOne(BuildingConstructionPanel.getCompletionTwo().getText());
+
+                        BuildingConstructionPanel.setAssignmentTwo("No Construction");
+                        BuildingConstructionPanel.setDurationTwo("N/A");
+                        BuildingConstructionPanel.setCompletionTwo("N/A");
+
+                        Village.setTotalTwo(0);
+                        Village.setTotalTwoOne(0);
+                        Village.setTotalTwoSecond(0);
+                        Village.setTotalTwoThird(0);
+                        Village.setTotalTwoFourth(0);
+                        Village.setTotalTwoFifth(0);
+                        Village.setTotalTwoSixth(0);
+                        Village.setTotalTwoSeventh(0);
+                        Village.setTotalTwoEighth(0);
+
+                        constructionFlagOne = true;
+                    }
                     Thread.sleep(10000);
                 }
                 while(constructionFlagOne) {
+                    System.out.println("we're in the second while");
                     if(Village.getTotalOne() > 10000) {
                         Village.constructionOneTimer();
+                        Thread.sleep(10000);
                     }
                     else {
                         Village.setTotalOne(0);
-                        Village.setDurationOne("0:00:00");
                         constructionFlagOne = false;
-
-                        if(a)
                     }
                 }
             }

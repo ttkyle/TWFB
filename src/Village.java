@@ -124,6 +124,7 @@ public class Village {
     static private double totalOneSeventh;
     static private double totalOneSecond;
     static private double totalOneEighth;
+    static private double totalOneFifth;
 
 
     static private String durationTwo;
@@ -135,6 +136,13 @@ public class Village {
     static private double totalTwoSeventh;
     static private double totalTwoSecond;
     static private double totalTwoEighth;
+    static private double totalTwoFifth;
+
+    static private String buildingNameOne;
+    static private String completionOne;
+    static private String buildingNameTwo;
+    static private String completionTwo;
+
 
 
     //Constructor to set village name so that we know what to name text files
@@ -791,21 +799,20 @@ public class Village {
     public static void constructionOne() {
 
             try {
-                String buildingName = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[2]/td[1]")).getText();
-                BuildingConstructionPanel.setAssignmentOne(buildingName);
+                buildingNameOne = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[2]/td[1]")).getText();
+                BuildingConstructionPanel.setAssignmentOne(buildingNameOne);
 
                 durationOne = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[2]/td[2]/span")).getText();
                 BuildingConstructionPanel.setDurationOne(durationOne);
 
-                String completion = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[2]/td[3]")).getText();
-                BuildingConstructionPanel.setCompletionOne(completion);
+                completionOne = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[2]/td[3]")).getText();
+                BuildingConstructionPanel.setCompletionOne(completionOne);
             }
             catch(NoSuchElementException e) {
             }
         }
 
     public static void constructionOneTimer() throws InterruptedException {
-
 
             int hours = (int) (totalOne / (60 * 60 * 1000));
             int minutes = (int) ((totalOne / (60 * 1000)) % 60);
@@ -825,8 +832,6 @@ public class Village {
             }
 
             totalOne = totalOne - 10000;
-            Thread.sleep(10000);
-
     }
 
     public static void constructionOneGetTime() {
@@ -896,14 +901,14 @@ public class Village {
     public static void constructionTwo() {
 
         try {
-            String buildingName = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[1]")).getText();
-            BuildingConstructionPanel.setAssignmentTwo(buildingName);
+            buildingNameTwo = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[1]")).getText();
+            BuildingConstructionPanel.setAssignmentTwo(buildingNameTwo);
 
             durationTwo = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[2]/span")).getText();
             BuildingConstructionPanel.setDurationTwo(durationTwo);
 
-            String completion = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[3]")).getText();
-            BuildingConstructionPanel.setCompletionTwo(completion);
+            completionTwo = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[3]")).getText();
+            BuildingConstructionPanel.setCompletionTwo(completionTwo);
         }
         catch(NoSuchElementException e) {
         }
@@ -1968,6 +1973,54 @@ public class Village {
 
     public static void setTotalTwoEighth(double newNumber) {
         totalTwoEighth = newNumber;
+    }
+
+    public static double getTotalTwoFifth() {
+        return totalTwoFifth;
+    }
+
+    public static void setTotalTwoFifth(double newNumber) {
+        totalTwoFifth = newNumber;
+    }
+
+    public static double getTotalOneFifth() {
+        return totalOneFifth;
+    }
+
+    public static void setTotalOneFifth(double newNumber) {
+        totalOneFifth = newNumber;
+    }
+
+    public static String getBuildingNameOne() {
+        return buildingNameOne;
+    }
+
+    public static void setBuildingNameOne(String newString) {
+        buildingNameOne = newString;
+    }
+
+    public static String getCompletionOne() {
+        return completionOne;
+    }
+
+    public static void setCompletionOne(String newString) {
+        completionOne = newString;
+    }
+
+    public static String getBuildingNameTwo() {
+        return buildingNameTwo;
+    }
+
+    public static void setBuildingNameTwo(String newString) {
+        buildingNameTwo = newString;
+    }
+
+    public static String getCompletionTwo() {
+        return completionTwo;
+    }
+
+    public static void setCompletionTwo(String newString) {
+        completionTwo = newString;
     }
 }
 
