@@ -806,7 +806,7 @@ public class Village {
 
     public static void constructionOneTimer() throws InterruptedException {
 
-        for(int i = 0; i < 50000; i++) {
+
             int hours = (int) (totalOne / (60 * 60 * 1000));
             int minutes = (int) ((totalOne / (60 * 1000)) % 60);
             int seconds = (int) ((totalOne / 1000) % 60);
@@ -824,14 +824,9 @@ public class Village {
                 BuildingConstructionPanel.setDurationOne(hours + ":" + "0" + minutes + ":" + "0" +  seconds);
             }
 
-            if(totalOne <= 10000) {
-                totalOne = 0;
-                BuildingConstructionPanel.setDurationOne("0:00:00");
-                break;
-            }
             totalOne = totalOne - 10000;
             Thread.sleep(10000);
-        }
+
     }
 
     public static void constructionOneGetTime() {
