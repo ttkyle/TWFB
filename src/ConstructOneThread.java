@@ -41,7 +41,7 @@ public class ConstructOneThread implements Runnable {
                         Village.setDurationOne("0:00:00");
                         constructionFlagOne = false;
 
-                        if()
+                        if(a)
                     }
                 }
             }
