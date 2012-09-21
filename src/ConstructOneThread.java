@@ -5,13 +5,13 @@
  * Time: 11:05 PM
  * To change this template use File | Settings | File Templates.
  */
-import org.apache.http.annotation.ThreadSafe;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 
 /**
  *This thread runs every 10 seconds and determines if the
- * current user village is under attack.
+ * current user is building anything and displays the current time
+ * left if they are
  */
 public class ConstructOneThread implements Runnable {
    public static boolean constructionFlagOne = false;
@@ -27,10 +27,14 @@ public class ConstructOneThread implements Runnable {
     }
 
     public void run() {
+        //always need the thread running
         while(true) {
             try {
+                //if total time is less than 10 seconds break out the 2nd while
                 if(Village.getTotalOne() <= 10000) {
                     constructionFlagOne = false;
+
+                    //if neither total has time then nothing is buildin g
                     if(Village.getTotalTwo() == 0 && Village.getTotalOne() == 0) {
 
                         BuildingConstructionPanel.setAssignmentOne("No Construction");
@@ -41,6 +45,9 @@ public class ConstructOneThread implements Runnable {
                         BuildingConstructionPanel.setDurationTwo("N/A");
                         BuildingConstructionPanel.setCompletionTwo("N/A");
                     }
+
+                    //if the second total has a value then we need to transfer values over
+                    //and get back in the 2nd while
                     if(Village.getTotalTwo() != 0) {
                         Village.setTotalOne(Village.getTotalTwo());
                         Village.setTotalOneOne(Village.getTotalTwoOne());
@@ -74,6 +81,8 @@ public class ConstructOneThread implements Runnable {
                     }
                     Thread.sleep(10000);
                 }
+
+                //runs the timber  until it's less than 10 seconds
                 while(constructionFlagOne) {
                     if(Village.getTotalOne() > 10000) {
                         Village.constructionOneTimer();
