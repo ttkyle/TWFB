@@ -21,7 +21,6 @@ public class ConstructOneThread implements Runnable {
         //create the new thread
         Thread constructOne = new Thread(this);
 
-
         //start the thread
         constructOne.start();
     }
@@ -34,7 +33,11 @@ public class ConstructOneThread implements Runnable {
                 if(Village.getTotalOne() <= 10000) {
                     constructionFlagOne = false;
 
-                    //if neither total has time then nothing is buildin g
+                    if(Village.getTotalOne() == 0) {
+                        Thread.sleep(10000);
+                    }
+
+                    //if neither total has time then nothing is building
                     if(Village.getTotalTwo() == 0 && Village.getTotalOne() == 0) {
 
                         BuildingConstructionPanel.setAssignmentOne("No Construction");
@@ -79,7 +82,6 @@ public class ConstructOneThread implements Runnable {
 
                         constructionFlagOne = true;
                     }
-                    Thread.sleep(10000);
                 }
 
                 //runs the timber  until it's less than 10 seconds

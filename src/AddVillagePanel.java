@@ -33,10 +33,10 @@ public class AddVillagePanel extends JPanel {
 
 
         //labels to describe what to put in textfields
-        JLabel villageIDLabel = new JLabel("ID");
-        JLabel villageXCoord = new JLabel("X");
-        JLabel villageYCoord = new JLabel("Y");
-        JLabel villageNameLabel = new JLabel("Name");
+        final JLabel villageIDLabel = new JLabel("ID");
+        final JLabel villageXCoord = new JLabel("X");
+        final JLabel villageYCoord = new JLabel("Y");
+        final JLabel villageNameLabel = new JLabel("Name");
 
 
         //JTextFields for various village elements that will add info
@@ -52,6 +52,10 @@ public class AddVillagePanel extends JPanel {
         JButton addVillageButton = new JButton("     Add Village        ");
         addVillageButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                String villageID = villageIDTextField.getText();
+                String villageX = villageXCoordTextField.getText();
+                String villageY = villageYCoordTextField.getText();
+                String villageName = villageNameTextField.getText();
 
             }
         });
