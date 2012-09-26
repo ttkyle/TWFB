@@ -1,5 +1,6 @@
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 import java.io.File;
 
 
@@ -85,6 +86,11 @@ public class WebAutomation  {
         if(Village.getTotalOne() > 0) {
             ConstructOneThread.constructionFlagOne = true;
         }
+        AttackTable.table.setValueAt("hello", 1, 2);
+        AttackTable.table.setValueAt("hello", 2, 2);
+
+
+
 
         //takes user back to the main page
         //driver.get("http://en63.tribalwars.net/game.php?village=119799&screen=overview");

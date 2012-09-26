@@ -424,6 +424,29 @@ public class Village {
         }
     }
 
+    //Sends the number of Rams to the GUI
+    public static void setRam() {
+
+        //loop through all the show unit lines
+        //if the unit name is found then display it on the GUI
+        for(int i = 1; i < 15; i++) {
+            try {
+                String ramLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"show_units\"]/div/table/tbody/tr[" + i + "]")).getText();
+                if(substring(ramLabel, 3, 6).equals("Ram") || substring(ramLabel, 4, 7).equals("Catapult") || substring(ramLabel, 5, 8).equals("Ram")
+                        || substring(ramLabel, 6, 9).equals("Ram") || substring(ramLabel, 7, 10).equals("Ram") || substring(ramLabel, 8, 11).equals("Ram")) {
+                    TroopsDetailPanel.setRamLabel(WebAutomation.driver.findElement(By.xpath("//*[@id='show_units']/div/table/tbody/tr[" + i + "]/td/strong")).getText());
+                    break;
+                }
+                //the troop was not found
+                else {
+                    TroopsDetailPanel.setRamLabel("0");
+                }
+            }
+            catch(NoSuchElementException e) {
+            }
+        }
+    }
+
     //Sends the level of villageHQ to the GUI
     public static void setVillageHQ() {
 
@@ -1101,6 +1124,7 @@ public class Village {
         setLightCal();
         setPaladin();
         setCatapult();
+        setRam();
     }
 
     //gets the village HQ cost

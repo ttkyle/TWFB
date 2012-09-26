@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.*;
 
 /**
  * The GUI element that will eventually allow the user to add
@@ -56,6 +57,16 @@ public class AddVillagePanel extends JPanel {
                 String villageX = villageXCoordTextField.getText();
                 String villageY = villageYCoordTextField.getText();
                 String villageName = villageNameTextField.getText();
+
+                BufferedReader reader = null;
+                try {
+                    reader = new BufferedReader(new FileReader("VillageList.txt"));
+                }
+                catch (FileNotFoundException e1) {
+                    //
+                }
+                writeToVillageList(createFile("VillageList.txt"), villageID);
+                writeToVillage(createFile(villageID + ".txt"), villageX, villageY);
 
             }
         });
@@ -117,5 +128,40 @@ public class AddVillagePanel extends JPanel {
         gc.gridx = 1;
         gc.gridy = 4;
         add(addVillageButton, gc);
+    }
+
+    static public File createFile(String name) {
+        File file = new File(name);
+        return file;
+    }
+
+    static public void writeToVillageList(File village, String ID) {
+        try {
+            FileWriter writer = new FileWriter(village, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(writer);
+            bufferedWriter.write(ID);
+            bufferedWriter.newLine();
+            bufferedWriter.close();
+        }
+        catch (IOException e) {
+        }
+    }
+
+    static public void writeToVillage(File village, String xCoord, String yCoord) {
+        try {
+            FileWriter writer = new FileWriter(village, true);
+            BufferedWriter bufferedWriter = new BufferedWriter(writer);
+            bufferedWriter.write(xCoord);
+            bufferedWriter.write(" ");
+            bufferedWriter.write(yCoord);
+            bufferedWriter.newLine();
+            bufferedWriter.close();
+        }
+        catch (IOException e) {
+        }
+    }
+
+    static public void readLines(BufferedReader br) {
+        String line;
     }
 }

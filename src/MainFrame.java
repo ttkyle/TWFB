@@ -6,7 +6,7 @@ import java.awt.*;
  */
 public class MainFrame extends JFrame {
 
-
+    public static AttackTable attackTable2;
     public TroopsDetailPanel troopsDetailPanel;
     //
 
@@ -23,6 +23,7 @@ public class MainFrame extends JFrame {
         AddVillagePanel addVillagePanel = new AddVillagePanel();
         BuildingConstructionPanel buildingConstructionPanel = new BuildingConstructionPanel();
         ServerTimePanel serverTimePanel = new ServerTimePanel();
+        attackTable2 = new AttackTable();
 
         //Disables frames on GUI creation
         disableButtons();
@@ -66,9 +67,9 @@ public class MainFrame extends JFrame {
         gc.weighty = .5;
         gc.fill = GridBagConstraints.VERTICAL;
         gc.fill = GridBagConstraints.HORIZONTAL;
-        gc.insets = new Insets(-126, 0, 0, 595);
+        gc.insets = new Insets(-96, 0, 0, 595);
         gc.gridx = 0;
-        gc.gridy = 2;
+        gc.gridy = 3;
         add(currentVillagePanel, gc);
 
         gc.anchor = GridBagConstraints.NORTH;
@@ -78,7 +79,7 @@ public class MainFrame extends JFrame {
         gc.fill = GridBagConstraints.HORIZONTAL;
         gc.insets = new Insets(-152, 0, -50, 595);
         gc.gridx = 0;
-        gc.gridy = 3;
+        gc.gridy = 4;
         add(addVillagePanel, gc);
 
         gc.anchor = GridBagConstraints.NORTH;
@@ -88,7 +89,7 @@ public class MainFrame extends JFrame {
         gc.fill = GridBagConstraints.HORIZONTAL;
         gc.insets = new Insets(0, 2, 0, 597);
         gc.gridx = 0;
-        gc.gridy = 4;
+        gc.gridy = 5;
         add(serverTimePanel, gc);
 
 
@@ -108,10 +109,20 @@ public class MainFrame extends JFrame {
         gc.weighty = .0;
         gc.fill = GridBagConstraints.VERTICAL;
         gc.fill = GridBagConstraints.HORIZONTAL;
-        gc.insets = new Insets(-460, -595 , 0, -1);
+        gc.insets = new Insets(-432, -595 , 0, -1);
         gc.gridx = 1;
         gc.gridy = 1;
         add(buildingConstructionPanel, gc);
+
+        gc.anchor = GridBagConstraints.WEST;
+        gc.weightx = .0;
+        gc.weighty = .0;
+        gc.fill = GridBagConstraints.VERTICAL;
+        gc.fill = GridBagConstraints.HORIZONTAL;
+        gc.insets = new Insets(-338, 3 , 0, -1);
+        gc.gridx = 0;
+        gc.gridy = 2;
+        add(attackTable2, gc);
 
 
     }
