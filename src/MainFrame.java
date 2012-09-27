@@ -1,5 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 /**
  * The main frame that you see for the GUI

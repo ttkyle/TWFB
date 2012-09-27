@@ -3,6 +3,8 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.util.*;
+import java.util.List;
 
 /**
  * The GUI element that will eventually allow the user to add
@@ -161,7 +163,138 @@ public class AddVillagePanel extends JPanel {
         }
     }
 
-    static public void readLines(BufferedReader br) {
-        String line;
+    public static String[] readLines(String filename) throws IOException {
+        FileReader fileReader = new FileReader(filename);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        List<String> lines = new ArrayList<String>();
+        String line = null;
+        while ((line = bufferedReader.readLine()) != null) {
+            lines.add(line);
+
+            for(int i = 0; i < lines.size() ; i++) {
+                AttackTable.table.setValueAt(lines.get(i), 0, i);
+            }
+        }
+        bufferedReader.close();
+        return lines.toArray(new String[lines.size()]);
+    }
+
+    public static void find() throws IOException, NullPointerException {
+
+
+        FileReader fr = new FileReader("17000.txt");
+        LineNumberReader ln = new LineNumberReader(fr);
+        String s;
+        //while(ln.getLineNumber() == 0) {
+        for(int t = 0; t < 1 ; t++) {
+            s = ln.readLine();
+            System.out.println(s);
+            //s = ln.readLine();
+            //String[] values = s.split(",");
+
+            String[] values = new String[50];
+            for (int i = 0; i < values.length; i++) {
+                values = s.split(",");
+                System.out.println(values[i]);
+                System.out.println(i);
+
+
+                if( i < 15)     {
+                    AttackTable.table.setValueAt(values[i], 0, i);
+                }
+                if(i >= 15 && i < 30) {
+                    AttackTable.table.setValueAt(values[i], 1, i-15);
+                }
+
+                if(i >= 30 && i < 45) {
+                    AttackTable.table.setValueAt(values[i], 2, i-30);
+                }
+
+                if(i >= 45 && i < 60) {
+                    AttackTable.table.setValueAt(values[i], 3, i-45);
+                }
+
+                if(i >= 60 && i < 75) {
+                    AttackTable.table.setValueAt(values[i], 4, i-60);
+                }
+
+                if(i >= 75 && i < 90) {
+                    AttackTable.table.setValueAt(values[i], 5, i-75);
+                }
+
+                if(i >= 90 && i < 105) {
+                    AttackTable.table.setValueAt(values[i], 6, i-90);
+                }
+
+                if(i >= 105 && i < 120) {
+                    AttackTable.table.setValueAt(values[i], 7, i-105);
+                }
+
+                if(i >= 120 && i < 135) {
+                    AttackTable.table.setValueAt(values[i], 8, i-120);
+                }
+
+                if(i >= 225 && i < 240) {
+                    AttackTable.table.setValueAt(values[i], 9, i-195);
+                }
+
+                if(i >= 255 && i < 270) {
+                    AttackTable.table.setValueAt(values[i], 10, i-225);
+                }
+
+                if(i >= 285 && i < 300) {
+                    AttackTable.table.setValueAt(values[i], 11, i-225);
+                }
+            }
+        }
+    }
+
+
+    static public void readFile() {
+
+        BufferedReader br = null;
+
+        try {
+
+            br = new BufferedReader(new FileReader("17000.txt"));
+            String line = null;
+
+            int t = 0;
+            while((line = br.readLine()) != null && t < line.length()) {
+            t++;
+                String[] values = line.split(",");
+
+                for(int i = 0; i < values.length ; i++) {
+                    AttackTable.table.setValueAt(values[i], 0, i);
+
+                    AttackTable.table.setValueAt(values[i], 1, i);
+
+                }
+                line = br.readLine();
+
+                //Do necessary work with the values, here we just print them out
+
+
+
+                System.out.println();
+
+
+            }
+        }
+        catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+        finally {
+            try {
+                if (br != null)
+                    br.close();
+            }
+            catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
     }
 }
