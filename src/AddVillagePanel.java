@@ -179,68 +179,39 @@ public class AddVillagePanel extends JPanel {
         return lines.toArray(new String[lines.size()]);
     }
 
-    public static void find() throws IOException, NullPointerException {
+    public static void find(String fileName) throws IOException {
 
-
-        FileReader fr = new FileReader("17000.txt");
+        FileReader fr = new FileReader(fileName);
         LineNumberReader ln = new LineNumberReader(fr);
         String s;
         s = ln.readLine();
 
+
+        int number = 0;
+        int number2 = 0;
+        int count = 0;
         String[] values = new String[1];
         for (int i = 0; i < values.length; i++) {
-           // for(int i = 0; i <)
+
             values = s.split(",");
-            System.out.println(values[i]);
-            //System.out.println(i);
-            if( i < 15)     {
-                AttackTable.table.setValueAt(values[i], 0, i);
+
+            if( i >= 0 && i < 15) {
+                AttackTable.table.setValueAt(values[i], 0  , i);
             }
-            if(i >= 15 && i < 30) {
-                AttackTable.table.setValueAt(values[i], 1, i-15);
+            if(i >= number && i < number2 ) {
+                AttackTable.table.setValueAt(values[i], count   , i-(15*count));
             }
 
-            if(i >= 30 && i < 45) {
-                AttackTable.table.setValueAt(values[i], 2, i-30);
+            if(i > 0 && i % 15 == 14) {
+                number = number + 15;
+                number2 = number + 15;
+                count++;
             }
-
-            if(i >= 45 && i < 60) {
-                AttackTable.table.setValueAt(values[i], 3, i-45);
-            }
-
-            if(i >= 60 && i < 75) {
-                AttackTable.table.setValueAt(values[i], 4, i-60);
-            }
-
-            if(i >= 75 && i < 90) {
-                AttackTable.table.setValueAt(values[i], 5, i-75);
-            }
-
-            if(i >= 90 && i < 105) {
-                AttackTable.table.setValueAt(values[i], 6, i-90);
-            }
-
-            if(i >= 105 && i < 120) {
-                AttackTable.table.setValueAt(values[i], 7, i-105);
-            }
-
-            if(i >= 120 && i < 135) {
-                AttackTable.table.setValueAt(values[i], 8, i-120);
-            }
-
-            if(i >= 135 && i < 150) {
-                AttackTable.table.setValueAt(values[i], 9, i-135);
-            }
-
-            if(i >= 150 && i < 165) {
-                AttackTable.table.setValueAt(values[i], 10, i-150);
-            }
-
-            if(i >= 165 && i < 180) {
-                AttackTable.table.setValueAt(values[i], 11, i-165);
-            }
+            System.out.println("i is " + i);
+            System.out.println("number " + number);
         }
     }
+
 
 
     static public void readFile() {
