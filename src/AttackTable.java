@@ -1,6 +1,3 @@
-/*
- * TableDemo.java requires no other files.
- */
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -8,15 +5,13 @@ import javax.swing.table.*;
 import java.awt.*;
 import java.io.IOException;
 
-/**
- * TableDemo is just like SimpleTableDemo, except that it
- * uses a custom TableModel.
- */
+
 
 
 public class AttackTable extends JPanel {
 
     public static JTable table;
+    public static MyTableModel model;
 
     public AttackTable() {
 
@@ -29,10 +24,11 @@ public class AttackTable extends JPanel {
         setMaximumSize(size);
         setMinimumSize(size);
 
-        table = new JTable(new MyTableModel());
+        model = new MyTableModel();
+        table = new JTable(model);
+
         table.setPreferredScrollableViewportSize(new Dimension(400, 400));
         table.setFillsViewportHeight(true);
-
 
         TableCellRenderer renderer = new JComponentTableCellRenderer();
 
@@ -56,6 +52,7 @@ public class AttackTable extends JPanel {
         table.getColumnModel().getColumn(2).setPreferredWidth(25);
         table.getColumnModel().getColumn(3).setPreferredWidth(25);
         table.getColumnModel().getColumn(15).setPreferredWidth(70);
+
 
         JLabel label0 = new JLabel(MyTableModel.columnNames[4], TroopsDetailPanel.getSpearIcon(), JLabel.CENTER);
         label0.setBorder(headerBorder);
@@ -136,8 +133,9 @@ public class AttackTable extends JPanel {
         column10.setHeaderValue(label10);
 
         try {
-            AddVillagePanel.find();
-        } catch (IOException e) {
+            AddVillagePanel.find("15000.txt");
+        }
+        catch (IOException e) {
         }
     }
 
@@ -291,24 +289,14 @@ public class AttackTable extends JPanel {
             return data[row][col];
         }
 
-        /*
-         * JTable uses this method to determine the default renderer/
-         * editor for each cell.  If we didn't implement this method,
-         * then the last column would contain text ("true"/"false"),
-         * rather than a check box.
-         */
         public Class getColumnClass(int c) {
             return getValueAt(0, c).getClass();
         }
 
-
-        /*
-         * Don't need to implement this method unless your table's
-         * data can change.
-         */
         public void setValueAt(Object value, int row, int col) {
             data[row][col] = value;
             fireTableCellUpdated(row, col);
+            fireTableDataChanged();
         }
     }
 }

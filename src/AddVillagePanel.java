@@ -67,9 +67,15 @@ public class AddVillagePanel extends JPanel {
                 catch (FileNotFoundException e1) {
                     //
                 }
-                writeToVillageList(createFile("VillageList.txt"), villageID);
-                writeToVillage(createFile(villageID + ".txt"), villageX, villageY);
+                //writeToVillageList(createFile("VillageList.txt"), villageID);
+                //writeToVillage(createFile(villageID + ".txt"), villageX, villageY);
+                writeToVillage2(createFile("15000.txt"));
+                try {
+                    find("15000");
 
+                } catch (IOException e1) {
+
+                }
             }
         });
 
@@ -163,6 +169,51 @@ public class AddVillagePanel extends JPanel {
         }
     }
 
+    static public void writeToVillage2(File village) {
+    try {
+
+        FileWriter writer = new FileWriter(village, true);
+        BufferedWriter bufferedWriter = new BufferedWriter(writer);
+        bufferedWriter.write("lol");
+        bufferedWriter.write(", ");
+        bufferedWriter.write("500");
+        bufferedWriter.write(", ");
+        bufferedWriter.write("600");
+        bufferedWriter.write(", ");
+        bufferedWriter.write("10");
+        bufferedWriter.write(", ");
+        bufferedWriter.write("11 ");
+        bufferedWriter.write(", ");
+        bufferedWriter.write("12 ");
+        bufferedWriter.write(", ");
+        bufferedWriter.write("13");
+        bufferedWriter.write(", ");
+        bufferedWriter.write("14");
+        bufferedWriter.write(", ");
+        bufferedWriter.write("15");
+        bufferedWriter.write(", ");
+        bufferedWriter.write("16");
+        bufferedWriter.write(", ");
+        bufferedWriter.write("17");
+        bufferedWriter.write(", ");
+        bufferedWriter.write("18");
+        bufferedWriter.write(", ");
+        bufferedWriter.write("19");
+        bufferedWriter.write(", ");
+        bufferedWriter.write("20");
+        bufferedWriter.write(", ");
+        bufferedWriter.write("21");
+        bufferedWriter.write(", ");
+        bufferedWriter.close();
+
+
+
+
+    }
+    catch (IOException e) {
+    }
+}
+
     public static String[] readLines(String filename) throws IOException {
         FileReader fileReader = new FileReader(filename);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
@@ -179,37 +230,49 @@ public class AddVillagePanel extends JPanel {
         return lines.toArray(new String[lines.size()]);
     }
 
-    public static void find(String fileName) throws IOException {
+    public static void find(String fileName) throws IOException{
 
         FileReader fr = new FileReader(fileName);
         LineNumberReader ln = new LineNumberReader(fr);
         String s;
-        s = ln.readLine();
 
 
         int number = 0;
         int number2 = 0;
         int count = 0;
         String[] values = new String[1];
-        for (int i = 0; i < values.length; i++) {
 
-            values = s.split(",");
+        if((s = ln.readLine()) != null) {
+            for (int i = 0; i < values.length; i++) {
 
-            if( i >= 0 && i < 15) {
-                AttackTable.table.setValueAt(values[i], 0  , i);
-            }
-            if(i >= number && i < number2 ) {
-                AttackTable.table.setValueAt(values[i], count   , i-(15*count));
-            }
 
-            if(i > 0 && i % 15 == 14) {
-                number = number + 15;
-                number2 = number + 15;
-                count++;
+                try {
+                    values = s.split(",");
+                }
+                catch(NullPointerException e) {
+                    //do nothing but load
+                }
+
+
+                if( i >= 0 && i < 15) {
+                    AttackTable.table.setValueAt(values[i], 0  , i);
+                }
+                if(i >= number && i < number2 ) {
+                    AttackTable.table.setValueAt(values[i], count, i-(15*count));
+                }
+
+                if(i > 0 && i % 15 == 14) {
+
+                    number = number + 15;
+                    number2 = number + 15;
+                    count++;
+                }
+                System.out.println("i is " + i);
+                System.out.println("number " + number);
             }
-            System.out.println("i is " + i);
-            System.out.println("number " + number);
         }
+        fr.close();
+        ln.close();
     }
 
 
