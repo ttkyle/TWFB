@@ -59,19 +59,19 @@ public class TroopsDetailPanel extends JPanel {
         setBackground(bgColor);
 
         //various troop icons
-         spearIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\spear.png");
-         axeIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\axe.png");
-         lightCalIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\lightcal.png");
-         scoutIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\scout.png");
-         swordIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\sword.png");
-         paladinIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\paladin.png");
-         catapultIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\catapult.png");
-         populationCountIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\farmFace.png");
-         nobleIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\snob.png");
-         ramIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\unit_ram.png");
-         mountedArcherIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\unit_marcher.png");
-         heavyCalIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\unit_heavy.png");
-         archerIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\unit_archer.png");
+         spearIcon = new ImageIcon("unitpic\\spear.png");
+         axeIcon = new ImageIcon("unitpic\\axe.png");
+         lightCalIcon = new ImageIcon("unitpic\\lightcal.png");
+         scoutIcon = new ImageIcon("unitpic\\scout.png");
+         swordIcon = new ImageIcon("unitpic\\sword.png");
+         paladinIcon = new ImageIcon("unitpic\\paladin.png");
+         catapultIcon = new ImageIcon("unitpic\\catapult.png");
+         populationCountIcon = new ImageIcon("unitpic\\farmFace.png");
+         nobleIcon = new ImageIcon("unitpic\\snob.png");
+         ramIcon = new ImageIcon("unitpic\\unit_ram.png");
+         mountedArcherIcon = new ImageIcon("unitpic\\unit_marcher.png");
+         heavyCalIcon = new ImageIcon("unitpic\\unit_heavy.png");
+         archerIcon = new ImageIcon("unitpic\\unit_archer.png");
 
         //sets the layout manager of the panel
         setLayout(new GridBagLayout());

@@ -1,6 +1,8 @@
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 
+import java.awt.*;
+
 /**
  * This thread runs every 5 seconds. The purpose of this thread
  * is to use information gathered when the user logs in or

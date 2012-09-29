@@ -71,7 +71,7 @@ public class AddVillagePanel extends JPanel {
                 //writeToVillage(createFile(villageID + ".txt"), villageX, villageY);
                 writeToVillage2(createFile("15000.txt"));
                 try {
-                    find("15000");
+                    find("15000.txt");
 
                 } catch (IOException e1) {
 
@@ -205,10 +205,6 @@ public class AddVillagePanel extends JPanel {
         bufferedWriter.write("21");
         bufferedWriter.write(", ");
         bufferedWriter.close();
-
-
-
-
     }
     catch (IOException e) {
     }
@@ -244,8 +240,6 @@ public class AddVillagePanel extends JPanel {
 
         if((s = ln.readLine()) != null) {
             for (int i = 0; i < values.length; i++) {
-
-
                 try {
                     values = s.split(",");
                 }
@@ -253,12 +247,11 @@ public class AddVillagePanel extends JPanel {
                     //do nothing but load
                 }
 
-
                 if( i >= 0 && i < 15) {
-                    AttackTable.table.setValueAt(values[i], 0  , i);
+                    AttackTable.table.setValueAt(values[i], 0, i);
                 }
                 if(i >= number && i < number2 ) {
-                    AttackTable.table.setValueAt(values[i], count, i-(15*count));
+                    AttackTable.table.setValueAt(values[i], count, i - (15 * count));
                 }
 
                 if(i > 0 && i % 15 == 14) {
@@ -273,55 +266,5 @@ public class AddVillagePanel extends JPanel {
         }
         fr.close();
         ln.close();
-    }
-
-
-
-    static public void readFile() {
-
-        BufferedReader br = null;
-
-        try {
-
-            br = new BufferedReader(new FileReader("17000.txt"));
-            String line = null;
-
-            int t = 0;
-            while((line = br.readLine()) != null && t < line.length()) {
-            t++;
-                String[] values = line.split(",");
-
-                for(int i = 0; i < values.length ; i++) {
-                    AttackTable.table.setValueAt(values[i], 0, i);
-
-                    AttackTable.table.setValueAt(values[i], 1, i);
-
-                }
-                line = br.readLine();
-
-                //Do necessary work with the values, here we just print them out
-
-
-
-                System.out.println();
-
-
-            }
-        }
-        catch (FileNotFoundException ex) {
-            ex.printStackTrace();
-        }
-        catch (IOException ex) {
-            ex.printStackTrace();
-        }
-        finally {
-            try {
-                if (br != null)
-                    br.close();
-            }
-            catch (IOException ex) {
-                ex.printStackTrace();
-            }
-        }
     }
 }

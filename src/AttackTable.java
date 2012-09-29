@@ -1,8 +1,12 @@
 
+
 import javax.swing.*;
 import javax.swing.border.Border;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 
@@ -26,6 +30,7 @@ public class AttackTable extends JPanel {
 
         model = new MyTableModel();
         table = new JTable(model);
+
 
         table.setPreferredScrollableViewportSize(new Dimension(400, 400));
         table.setFillsViewportHeight(true);
@@ -54,7 +59,7 @@ public class AttackTable extends JPanel {
         table.getColumnModel().getColumn(15).setPreferredWidth(70);
 
 
-        JLabel label0 = new JLabel(MyTableModel.columnNames[4], TroopsDetailPanel.getSpearIcon(), JLabel.CENTER);
+        JLabel label0 = new JLabel(model.columnNames[4], TroopsDetailPanel.getSpearIcon(), JLabel.CENTER);
         label0.setBorder(headerBorder);
         TableColumnModel columnModel = AttackTable.table.getColumnModel();
         TableColumn column0 = columnModel.getColumn(4);
@@ -62,70 +67,70 @@ public class AttackTable extends JPanel {
         column0.setHeaderRenderer(renderer);
         column0.setHeaderValue(label0);
 
-        JLabel label1 = new JLabel(MyTableModel.columnNames[5], TroopsDetailPanel.getSwordIcon(), JLabel.CENTER);
+        JLabel label1 = new JLabel(model.columnNames[5], TroopsDetailPanel.getSwordIcon(), JLabel.CENTER);
         label1.setBorder(headerBorder);
         TableColumn column1 = columnModel.getColumn(5);
         table.getColumnModel().getColumn(5).setPreferredWidth(30);
         column1.setHeaderRenderer(renderer);
         column1.setHeaderValue(label1);
 
-        JLabel label2 = new JLabel(MyTableModel.columnNames[6], TroopsDetailPanel.getArcherIcon(), JLabel.CENTER);
+        JLabel label2 = new JLabel(model.columnNames[6], TroopsDetailPanel.getArcherIcon(), JLabel.CENTER);
         label2.setBorder(headerBorder);
         TableColumn column2 = columnModel.getColumn(6);
         table.getColumnModel().getColumn(6).setPreferredWidth(30);
         column2.setHeaderRenderer(renderer);
         column2.setHeaderValue(label2);
 
-        JLabel label3 = new JLabel(MyTableModel.columnNames[7], TroopsDetailPanel.getAxeIcon(), JLabel.CENTER);
+        JLabel label3 = new JLabel(model.columnNames[7], TroopsDetailPanel.getAxeIcon(), JLabel.CENTER);
         label3.setBorder(headerBorder);
         TableColumn column3 = columnModel.getColumn(7);
         table.getColumnModel().getColumn(7).setPreferredWidth(30);
         column3.setHeaderRenderer(renderer);
         column3.setHeaderValue(label3);
 
-        JLabel label4 = new JLabel(MyTableModel.columnNames[8], TroopsDetailPanel.getMountedArcherIcon(), JLabel.CENTER);
+        JLabel label4 = new JLabel(model.columnNames[8], TroopsDetailPanel.getMountedArcherIcon(), JLabel.CENTER);
         label4.setBorder(headerBorder);
         TableColumn column4 = columnModel.getColumn(8);
         table.getColumnModel().getColumn(8).setPreferredWidth(30);
         column4.setHeaderRenderer(renderer);
         column4.setHeaderValue(label4);
 
-        JLabel label5 = new JLabel(MyTableModel.columnNames[9], TroopsDetailPanel.getScoutIcon(), JLabel.CENTER);
+        JLabel label5 = new JLabel(model.columnNames[9], TroopsDetailPanel.getScoutIcon(), JLabel.CENTER);
         label5.setBorder(headerBorder);
         TableColumn column5 = columnModel.getColumn(9);
         table.getColumnModel().getColumn(9).setPreferredWidth(30);
         column5.setHeaderRenderer(renderer);
         column5.setHeaderValue(label5);
 
-        JLabel label6 = new JLabel(MyTableModel.columnNames[10], TroopsDetailPanel.getLightCalIcon(), JLabel.CENTER);
+        JLabel label6 = new JLabel(model.columnNames[10], TroopsDetailPanel.getLightCalIcon(), JLabel.CENTER);
         label6.setBorder(headerBorder);
         TableColumn column6 = columnModel.getColumn(10);
         table.getColumnModel().getColumn(10).setPreferredWidth(30);
         column6.setHeaderRenderer(renderer);
         column6.setHeaderValue(label6);
 
-        JLabel label7 = new JLabel(MyTableModel.columnNames[11], TroopsDetailPanel.getHeavyCalIcon(), JLabel.CENTER);
+        JLabel label7 = new JLabel(model.columnNames[11], TroopsDetailPanel.getHeavyCalIcon(), JLabel.CENTER);
         label7.setBorder(headerBorder);
         TableColumn column7 = columnModel.getColumn(11);
         table.getColumnModel().getColumn(11).setPreferredWidth(30);
         column7.setHeaderRenderer(renderer);
         column7.setHeaderValue(label7);
 
-        JLabel label8 = new JLabel(MyTableModel.columnNames[12], TroopsDetailPanel.getCatapultIcon(), JLabel.CENTER);
+        JLabel label8 = new JLabel(model.columnNames[12], TroopsDetailPanel.getCatapultIcon(), JLabel.CENTER);
         label8.setBorder(headerBorder);
         TableColumn column8 = columnModel.getColumn(12);
         table.getColumnModel().getColumn(12).setPreferredWidth(30);
         column8.setHeaderRenderer(renderer);
         column8.setHeaderValue(label8);
 
-        JLabel label9 = new JLabel(MyTableModel.columnNames[13], TroopsDetailPanel.getRamIcon(), JLabel.CENTER);
+        JLabel label9 = new JLabel(model.columnNames[13], TroopsDetailPanel.getRamIcon(), JLabel.CENTER);
         label9.setBorder(headerBorder);
         TableColumn column9 = columnModel.getColumn(13);
         table.getColumnModel().getColumn(13).setPreferredWidth(30);
         column9.setHeaderRenderer(renderer);
         column9.setHeaderValue(label9);
 
-        JLabel label10 = new JLabel(MyTableModel.columnNames[14], TroopsDetailPanel.getNobleIcon(), JLabel.CENTER);
+        JLabel label10 = new JLabel(model.columnNames[14], TroopsDetailPanel.getNobleIcon(), JLabel.CENTER);
         label10.setBorder(headerBorder);
         TableColumn column10 = columnModel.getColumn(14);
         table.getColumnModel().getColumn(14).setPreferredWidth(30);
@@ -146,8 +151,10 @@ public class AttackTable extends JPanel {
         }
     }
 
-    static class MyTableModel extends AbstractTableModel {
-        public static  String[] columnNames = {"Target ID",
+     class MyTableModel extends AbstractTableModel {
+
+
+        public   String[] columnNames = {"Target ID",
                 "Village",
                 "X",
                 "Y",
@@ -296,7 +303,6 @@ public class AttackTable extends JPanel {
         public void setValueAt(Object value, int row, int col) {
             data[row][col] = value;
             fireTableCellUpdated(row, col);
-            fireTableDataChanged();
         }
     }
 }
