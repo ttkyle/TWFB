@@ -6,7 +6,7 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
+import java.awt.event.*;
 import java.io.IOException;
 
 
@@ -16,6 +16,7 @@ public class AttackTable extends JPanel {
 
     public static JTable table;
     public static MyTableModel model;
+    public static JPopupMenu popupMenu;
 
     public AttackTable() {
 
@@ -30,6 +31,22 @@ public class AttackTable extends JPanel {
 
         model = new MyTableModel();
         table = new JTable(model);
+        popupMenu = new JPopupMenu();
+
+
+        MouseListener popupListener = new PopupListener();
+        table.addMouseListener(popupListener);
+        table.getTableHeader().addMouseListener(popupListener);
+        JMenuItem menuItem = new JMenuItem("Add Targets to Farm");
+        menuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                MainFrame.addFarmsDialog.setVisible(true);
+            }
+        });
+
+        popupMenu.add(menuItem);
+
 
 
         table.setPreferredScrollableViewportSize(new Dimension(400, 400));
@@ -303,6 +320,22 @@ public class AttackTable extends JPanel {
         public void setValueAt(Object value, int row, int col) {
             data[row][col] = value;
             fireTableCellUpdated(row, col);
+        }
+    }
+
+    class PopupListener extends MouseAdapter {
+        public void mousePressed(MouseEvent e) {
+            showPopup(e);
+        }
+
+        public void mouseReleased(MouseEvent e) {
+            showPopup(e);
+        }
+
+        private void showPopup(MouseEvent e) {
+            if (e.isPopupTrigger()) {
+                popupMenu.show(e.getComponent(), e.getX(), e.getY());
+            }
         }
     }
 }

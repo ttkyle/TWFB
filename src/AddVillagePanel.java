@@ -171,7 +171,6 @@ public class AddVillagePanel extends JPanel {
 
     static public void writeToVillage2(File village) {
     try {
-
         FileWriter writer = new FileWriter(village, true);
         BufferedWriter bufferedWriter = new BufferedWriter(writer);
         bufferedWriter.write("lol");
@@ -227,11 +226,9 @@ public class AddVillagePanel extends JPanel {
     }
 
     public static void find(String fileName) throws IOException{
-
         FileReader fr = new FileReader(fileName);
         LineNumberReader ln = new LineNumberReader(fr);
         String s;
-
 
         int number = 0;
         int number2 = 0;
@@ -255,7 +252,6 @@ public class AddVillagePanel extends JPanel {
                 }
 
                 if(i > 0 && i % 15 == 14) {
-
                     number = number + 15;
                     number2 = number + 15;
                     count++;

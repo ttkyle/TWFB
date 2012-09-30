@@ -9,11 +9,11 @@ public class MainFrame extends JFrame {
 
     public static AttackTable attackTable2;
     public TroopsDetailPanel troopsDetailPanel;
+    public static AddFarmsDialog addFarmsDialog;
     //
 
     public MainFrame(String title) {
         super(title);
-
 
 
         //Create Swing components
@@ -25,6 +25,7 @@ public class MainFrame extends JFrame {
         BuildingConstructionPanel buildingConstructionPanel = new BuildingConstructionPanel();
         ServerTimePanel serverTimePanel = new ServerTimePanel();
         attackTable2 = new AttackTable();
+        addFarmsDialog = new AddFarmsDialog();
 
         //Disables frames on GUI creation
         disableButtons();
