@@ -146,6 +146,19 @@ public class AddFarmsTroops extends JPanel {
         nobleIconFarmAdder.setOpaque(true);
         nobleIconFarmAdder.setBorder(null);
 
+        setSpearTextFieldFarmAdder("0");
+        setArcherTextFieldFarmAdder("0");
+        setAxeTextFieldFarmAdder("0");
+        setCatapultTextFieldFarmAdder("0");
+        setHeavyCalTextFieldFarmAdder("0");
+        setLightCalTextFieldFarmAdder("0");
+        setMountedArcherTextFieldFarmAdder("0");
+        setNobleTextFieldFarmAdder("0");
+        setPaladinTextFieldFarmAdder("0");
+        setRamTextFieldFarmAdder("0");
+        setScoutTextFieldFarmAdder("0");
+        setSwordTextFieldFarmAdder("0");
+
         ///////First Column///////
         gc.anchor = GridBagConstraints.LINE_START;
         gc.fill = GridBagConstraints.VERTICAL;
@@ -316,5 +329,53 @@ public class AddFarmsTroops extends JPanel {
 
     public static String getNobleTextFieldFarmAdder() {
         return nobleTextFieldFarmAdder.getText();
+    }
+
+    public static void setSpearTextFieldFarmAdder(String text) {
+        AddFarmsTroops.spearTextFieldFarmAdder.setText(text);
+    }
+
+    public static void setSwordTextFieldFarmAdder(String text) {
+        AddFarmsTroops.swordTextFieldFarmAdder.setText(text);
+    }
+
+    public static void setAxeTextFieldFarmAdder(String text) {
+        AddFarmsTroops.axeTextFieldFarmAdder.setText(text);
+    }
+
+    public static void setScoutTextFieldFarmAdder(String text) {
+        AddFarmsTroops.scoutTextFieldFarmAdder.setText(text);
+    }
+
+    public static void setLightCalTextFieldFarmAdder(String text) {
+        AddFarmsTroops.lightCalTextFieldFarmAdder.setText(text);
+    }
+
+    public static void setPaladinTextFieldFarmAdder(String text) {
+        AddFarmsTroops.paladinTextFieldFarmAdder.setText(text);
+    }
+
+    public static void setCatapultTextFieldFarmAdder(String text) {
+        AddFarmsTroops.catapultTextFieldFarmAdder.setText(text);
+    }
+
+    public static void setRamTextFieldFarmAdder(String text) {
+        AddFarmsTroops.ramTextFieldFarmAdder.setText(text);
+    }
+
+    public static void setHeavyCalTextFieldFarmAdder(String text) {
+        AddFarmsTroops.heavyCalTextFieldFarmAdder.setText(text);
+    }
+
+    public static void setMountedArcherTextFieldFarmAdder(String text) {
+        AddFarmsTroops.mountedArcherTextFieldFarmAdder.setText(text);
+    }
+
+    public static void setArcherTextFieldFarmAdder(String text) {
+        AddFarmsTroops.archerTextFieldFarmAdder.setText(text);
+    }
+
+    public static void setNobleTextFieldFarmAdder(String text) {
+        AddFarmsTroops.nobleTextFieldFarmAdder.setText(text);
     }
 }

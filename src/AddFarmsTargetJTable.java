@@ -54,6 +54,43 @@ public class AddFarmsTargetJTable extends JPanel {
                 if(!e.getValueIsAdjusting()) {
                     System.out.println(MyTableModel.getValueforCell());
                     MyTableModel.writeToVillage2(MyTableModel.createFile("15000.txt"));
+
+                    if(AddFarmsTroops.getSpearTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setSpearTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getArcherTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setArcherTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getAxeTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setAxeTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setCatapultTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setHeavyCalTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setLightCalTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setMountedArcherTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getNobleTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setNobleTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getPaladinTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setPaladinTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getRamTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setRamTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getScoutTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setScoutTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getSwordTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setSwordTextFieldFarmAdder("0");
+                    }
                 }
             }
         });
@@ -331,116 +368,146 @@ public class AddFarmsTargetJTable extends JPanel {
                 bufferedWriter.write(columnThree);
                 bufferedWriter.write(", ");
 
-                if(AddFarmsTroops.getSpearTextFieldFarmAdder().equals(""))
-                {
-                    bufferedWriter.write("0");
+                if((AddFarmsTroops.getSpearTextFieldFarmAdder().equals("0")     &&
+                AddFarmsTroops.getSwordTextFieldFarmAdder().equals("0")         &&
+                AddFarmsTroops.getArcherTextFieldFarmAdder().equals("0")        &&
+                AddFarmsTroops.getAxeTextFieldFarmAdder().equals("0")           &&
+                AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("0") &&
+                AddFarmsTroops.getScoutTextFieldFarmAdder().equals("0")         &&
+                AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("0")      &&
+                AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("0")      &&
+                AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("0")      &&
+                AddFarmsTroops.getRamTextFieldFarmAdder().equals("0") )          &&
+                AddFarmsTroops.getNobleTextFieldFarmAdder().equals("0")) {
+                    //do nothing
                 }
+
+                /*
+                AddFarmsTroops.getSwordTextFieldFarmAdder().equals("")          ||
+                        AddFarmsTroops.getSpearTextFieldFarmAdder().equals("")          ||
+                        AddFarmsTroops.getArcherTextFieldFarmAdder().equals("")         ||
+                        AddFarmsTroops.getAxeTextFieldFarmAdder().equals("")            ||
+                        AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("")  ||
+                        AddFarmsTroops.getScoutTextFieldFarmAdder().equals("")          ||
+                        AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("")       ||
+                        AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("")       ||
+                        AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("")       ||
+                        AddFarmsTroops.getRamTextFieldFarmAdder().equals("")            ||
+                        AddFarmsTroops.getNobleTextFieldFarmAdder().equals("")
+                */
+
                 else {
-                    bufferedWriter.write(AddFarmsTroops.getSpearTextFieldFarmAdder());
+                    if(AddFarmsTroops.getSpearTextFieldFarmAdder().equals(""))
+                    {
+                        bufferedWriter.write("0");
+                    }
+                    else {
+                        bufferedWriter.write(AddFarmsTroops.getSpearTextFieldFarmAdder());
+                    }
+
+                    bufferedWriter.write(", ");
+
+                    if(AddFarmsTroops.getSwordTextFieldFarmAdder().equals("")) {
+                        bufferedWriter.write("0");
+                    }
+                    else {
+                        bufferedWriter.write(AddFarmsTroops.getSwordTextFieldFarmAdder());
+
+                    }
+
+                    bufferedWriter.write(", ");
+
+                    if(AddFarmsTroops.getArcherTextFieldFarmAdder().equals("")) {
+                        bufferedWriter.write("0");
+                    }
+                    else {
+                        bufferedWriter.write(AddFarmsTroops.getArcherTextFieldFarmAdder());
+
+                    }
+
+                    bufferedWriter.write(", ");
+
+                    if(AddFarmsTroops.getAxeTextFieldFarmAdder().equals("")) {
+                        bufferedWriter.write("0");
+                    }
+                    else {
+                        bufferedWriter.write(AddFarmsTroops.getAxeTextFieldFarmAdder());
+
+                    }
+                    bufferedWriter.write(", ");
+
+                    if(AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("")) {
+                        bufferedWriter.write("0");
+
+                    }
+                    else {
+                        bufferedWriter.write(AddFarmsTroops.getMountedArcherTextFieldFarmAdder());
+
+                    }
+                    bufferedWriter.write(", ");
+
+                    if(AddFarmsTroops.getScoutTextFieldFarmAdder().equals("")) {
+                        bufferedWriter.write("0");
+
+                    }
+                    else {
+                        bufferedWriter.write(AddFarmsTroops.getScoutTextFieldFarmAdder());
+
+                    }
+                    bufferedWriter.write(", ");
+
+                    if(AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("")) {
+                        bufferedWriter.write("0");
+
+                    }
+                    else {
+                        bufferedWriter.write(AddFarmsTroops.getLightCalTextFieldFarmAdder());
+
+                    }
+                    bufferedWriter.write(", ");
+
+                    if(AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("")) {
+                        bufferedWriter.write("0");
+
+                    }
+                    else {
+                        bufferedWriter.write(AddFarmsTroops.getHeavyCalTextFieldFarmAdder());
+
+                    }
+                    bufferedWriter.write(", ");
+
+                    if(AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("")) {
+                        bufferedWriter.write("0");
+
+                    }
+                    else {
+                        bufferedWriter.write(AddFarmsTroops.getCatapultTextFieldFarmAdder());
+
+                    }
+                    bufferedWriter.write(", ");
+
+                    if(AddFarmsTroops.getRamTextFieldFarmAdder().equals("")) {
+                        bufferedWriter.write("0");
+
+                    }
+                    else {
+                        bufferedWriter.write(AddFarmsTroops.getRamTextFieldFarmAdder());
+
+                    }
+                    bufferedWriter.write(", ");
+
+                    if(AddFarmsTroops.getNobleTextFieldFarmAdder().equals("")) {
+                        bufferedWriter.write("0");
+
+                    }
+                    else {
+                        bufferedWriter.write(AddFarmsTroops.getNobleTextFieldFarmAdder());
+
+                    }
+                    bufferedWriter.write(", ");
+                    bufferedWriter.newLine();
+                    bufferedWriter.close();
                 }
-
-                bufferedWriter.write(", ");
-
-                if(AddFarmsTroops.getSwordTextFieldFarmAdder().equals("")) {
-                    bufferedWriter.write("0");
-                }
-                else {
-                    bufferedWriter.write(AddFarmsTroops.getSwordTextFieldFarmAdder());
-
-                }
-
-                bufferedWriter.write(", ");
-
-                if(AddFarmsTroops.getArcherTextFieldFarmAdder().equals("")) {
-                    bufferedWriter.write("0");
-                }
-                else {
-                    bufferedWriter.write(AddFarmsTroops.getArcherTextFieldFarmAdder());
-
-                }
-
-                bufferedWriter.write(", ");
-
-                if(AddFarmsTroops.getAxeTextFieldFarmAdder().equals("")) {
-                    bufferedWriter.write("0");
-                }
-                else {
-                    bufferedWriter.write(AddFarmsTroops.getAxeTextFieldFarmAdder());
-
-                }
-                bufferedWriter.write(", ");
-
-                if(AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("")) {
-                    bufferedWriter.write("0");
-
-                }
-                else {
-                    bufferedWriter.write(AddFarmsTroops.getMountedArcherTextFieldFarmAdder());
-
-                }
-                bufferedWriter.write(", ");
-
-                if(AddFarmsTroops.getScoutTextFieldFarmAdder().equals("")) {
-                    bufferedWriter.write("0");
-
-                }
-                else {
-                    bufferedWriter.write(AddFarmsTroops.getScoutTextFieldFarmAdder());
-
-                }
-                bufferedWriter.write(", ");
-
-                if(AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("")) {
-                    bufferedWriter.write("0");
-
-                }
-                else {
-                    bufferedWriter.write(AddFarmsTroops.getLightCalTextFieldFarmAdder());
-
-                }
-                bufferedWriter.write(", ");
-
-                if(AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("")) {
-                    bufferedWriter.write("0");
-
-                }
-                else {
-                    bufferedWriter.write(AddFarmsTroops.getHeavyCalTextFieldFarmAdder());
-
-                }
-                bufferedWriter.write(", ");
-
-                if(AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("")) {
-                    bufferedWriter.write("0");
-
-                }
-                else {
-                    bufferedWriter.write(AddFarmsTroops.getCatapultTextFieldFarmAdder());
-
-                }
-                bufferedWriter.write(", ");
-
-                if(AddFarmsTroops.getRamTextFieldFarmAdder().equals("")) {
-                    bufferedWriter.write("0");
-
-                }
-                else {
-                    bufferedWriter.write(AddFarmsTroops.getRamTextFieldFarmAdder());
-
-                }
-                bufferedWriter.write(", ");
-
-                if(AddFarmsTroops.getNobleTextFieldFarmAdder().equals("")) {
-                    bufferedWriter.write("0");
-
-                }
-                else {
-                    bufferedWriter.write(AddFarmsTroops.getNobleTextFieldFarmAdder());
-
-                }
-                bufferedWriter.write(", ");
-                bufferedWriter.newLine();
-                bufferedWriter.close();
             }
             catch (IOException e) {
             }

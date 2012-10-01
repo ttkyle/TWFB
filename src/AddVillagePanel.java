@@ -317,25 +317,32 @@ public class AddVillagePanel extends JPanel {
                     //do nothing but load
                 }
 
-                if(i >= 0  && i < 1 ) {
-                    AttackTable.table.setValueAt(values[0], count, 0);
-                    AttackTable.table.setValueAt(values[1], count, 1);
-                    AttackTable.table.setValueAt(values[2], count, 2);
-                    AttackTable.table.setValueAt(values[3], count, 3);
-                    AttackTable.table.setValueAt(values[4], count, 4);
-                    AttackTable.table.setValueAt(values[5], count, 5);
-                    AttackTable.table.setValueAt(values[6], count, 6);
-                    AttackTable.table.setValueAt(values[7], count, 7);
-                    AttackTable.table.setValueAt(values[8], count, 8);
-                    AttackTable.table.setValueAt(values[9], count, 9);
-                    AttackTable.table.setValueAt(values[10], count, 10);
-                    AttackTable.table.setValueAt(values[11], count, 11);
-                    AttackTable.table.setValueAt(values[12], count, 12);
-                    AttackTable.table.setValueAt(values[13], count, 13);
-                    AttackTable.table.setValueAt(values[14], count, 14);
-                    AttackTable.table.setValueAt(values[15], count, 15);
-                    count++;
-                    System.out.println(count);
+                try {
+                    if(i >= 0  && i < 1 ) {
+                        AttackTable.table.setValueAt(values[0], count, 0);
+                        AttackTable.table.setValueAt(values[1], count, 1);
+                        AttackTable.table.setValueAt(values[2], count, 2);
+                        AttackTable.table.setValueAt(values[3], count, 3);
+                        AttackTable.table.setValueAt(values[4], count, 4);
+                        AttackTable.table.setValueAt(values[5], count, 5);
+                        AttackTable.table.setValueAt(values[6], count, 6);
+                        AttackTable.table.setValueAt(values[7], count, 7);
+                        AttackTable.table.setValueAt(values[8], count, 8);
+                        AttackTable.table.setValueAt(values[9], count, 9);
+                        AttackTable.table.setValueAt(values[10], count, 10);
+                        AttackTable.table.setValueAt(values[11], count, 11);
+                        AttackTable.table.setValueAt(values[12], count, 12);
+                        AttackTable.table.setValueAt(values[13], count, 13);
+                        AttackTable.table.setValueAt(values[14], count, 14);
+                        AttackTable.table.setValueAt(values[15], count, 15);
+                        count++;
+                        System.out.println(count);
+
+                }
+
+                }
+                catch(ArrayIndexOutOfBoundsException e) {
+                    //
                 }
             }
         }
