@@ -14,7 +14,7 @@ public class AddFarmsDialog extends JDialog {
     public AddFarmsDialog() {
         setModal(true);
 
-
+        setLocation(400, 0);
         Dimension size = getPreferredSize();
         size.width = 800;
         size.height = 400;
@@ -35,6 +35,7 @@ public class AddFarmsDialog extends JDialog {
 
         //Create Swing components
         AddFarmsTroops addFarmsTroops = new AddFarmsTroops();
+        AddFarmsTargetJTable addFarmsTargetJTable = new AddFarmsTargetJTable();
 
         setVisible(false);
 
@@ -44,9 +45,19 @@ public class AddFarmsDialog extends JDialog {
         gc.weighty = .0;
         gc.fill = GridBagConstraints.VERTICAL;
         gc.fill = GridBagConstraints.HORIZONTAL;
-        gc.insets = new Insets(0, 0, 215, 595);
+        gc.insets = new Insets(0, 0, 190, 0);
         gc.gridx =  0;
         gc.gridy = 0;
         add(addFarmsTroops, gc);
+
+        gc.anchor = GridBagConstraints.WEST;
+        gc.weightx = .0;
+        gc.weighty = .0;
+        gc.fill = GridBagConstraints.VERTICAL;
+        gc.fill = GridBagConstraints.HORIZONTAL;
+        gc.insets = new Insets(-560, 0, 0, 400);
+        gc.gridx =  1;
+        gc.gridy = 1;
+        add(addFarmsTargetJTable, gc);
     }
 }

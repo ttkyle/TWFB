@@ -5,6 +5,9 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.*;
 import java.util.List;
+import java.awt.geom.Point2D;
+
+import static java.awt.geom.Point2D.distance;
 
 /**
  * The GUI element that will eventually allow the user to add
@@ -244,7 +247,7 @@ public class AddVillagePanel extends JPanel {
                     //do nothing but load
                 }
 
-                if( i >= 0 && i < 15) {
+                if(i >= 0 && i < 15) {
                     AttackTable.table.setValueAt(values[i], 0, i);
                 }
                 if(i >= number && i < number2 ) {
@@ -256,11 +259,51 @@ public class AddVillagePanel extends JPanel {
                     number2 = number + 15;
                     count++;
                 }
-                System.out.println("i is " + i);
-                System.out.println("number " + number);
+                //System.out.println("i is " + i);
+                //System.out.println("number " + number);
             }
         }
         fr.close();
         ln.close();
+    }
+
+    public static void find2(String fileName) throws IOException{
+        FileReader fr = new FileReader(fileName);
+        BufferedReader br = new BufferedReader(fr);
+        String s;
+        int count = 0;
+        String[] values = new String[1];
+
+        while((s = br.readLine()) != null) {
+            for (int i = 0; i < values.length; i++) {
+                try {
+                    values = s.split(",");
+                }
+                catch(NullPointerException e) {
+                    //do nothing but load
+                }
+
+                if(i >= 0  && i < 1 ) {
+                    if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 10) {
+                       // searchKey = true;
+                        Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0);
+                        AddFarmsTargetJTable.addFarmsTable.setValueAt(values[0], count, 0);
+                        AddFarmsTargetJTable.addFarmsTable.setValueAt(values[1], count, 1);
+                        AddFarmsTargetJTable.addFarmsTable.setValueAt(values[2], count, 2);
+                        AddFarmsTargetJTable.addFarmsTable.setValueAt(values[3], count, 3);
+                        AddFarmsTargetJTable.addFarmsTable.setValueAt(newValue.toString(), count, 4);
+                        count++;
+                        System.out.println(count);
+                    }
+                }
+            }
+        }
+        fr.close();
+        br.close();
+    }
+
+    public static Double distanceMethod(Double x2, Double x1, Double y2, Double y1) {
+        Double distance = Math.round(((distance(x1, y1, x2, y2)) * 100.0)) / 100.0;
+        return distance;
     }
 }

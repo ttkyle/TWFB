@@ -14,8 +14,8 @@ public class AddFarmsTroops extends JPanel {
 
         //create size of the panel
         Dimension size = getPreferredSize();
-        size.width = 290;
-        size.height = 150;
+        size.width = 190;
+        size.height = 180;
 
         //set size of panel
         setMinimumSize(size);
@@ -28,7 +28,7 @@ public class AddFarmsTroops extends JPanel {
         setBackground(bgColor);
 
         //sets the border color and title of the JPanel
-        setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(outLineColor), "Add New Village"));
+        setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(outLineColor), "Number of Troops"));
 
         //Set the layout manager of the panel
         setLayout(new GridBagLayout());
@@ -37,54 +37,102 @@ public class AddFarmsTroops extends JPanel {
 
 
         //swing components
-        JTextField spearLabelAddFarm = new JTextField(5);
-        JTextField swordLabelAddFarm = new JTextField(5);
-        JTextField axeLabelAddFarm = new JTextField(5);
-        JTextField scoutLabelAddFarm = new JTextField(5);
-        JTextField lightCalAddFarm = new JTextField(5);
-        JTextField paladinAddFarm = new JTextField(5);
+        JTextField spearTextFieldFarmAdder = new JTextField(5);
+        JTextField swordTextFieldFarmAdder = new JTextField(5);
+        JTextField axeTextFieldFarmAdder = new JTextField(5);
+        JTextField scoutTextFieldFarmAdder = new JTextField(5);
+        JTextField lightCalTextFieldFarmAdder = new JTextField(5);
+        JTextField paladinTextFieldFarmAdder = new JTextField(5);
+        JTextField catapultTextFieldFarmAdder = new JTextField(5);
+        JTextField ramTextFieldFarmAdder = new JTextField(5);
+        JTextField heavyCalTextFieldFarmAdder = new JTextField(5);
+        JTextField mArcherTextFieldFarmAdder = new JTextField(5);
+        JTextField archerTextFieldFarmAdder = new JTextField(5);
+        JTextField nobleTextFieldFarmAdder = new JTextField(5);
 
-        JLabel spearIconAddFarm = new JLabel ("", TroopsDetailPanel.getSpearIcon(), JLabel.CENTER);
-        spearIconAddFarm.setVerticalTextPosition(JLabel.TOP);
-        spearIconAddFarm.setHorizontalTextPosition(JLabel.RIGHT);
-        spearIconAddFarm.setBackground(bgColor);
-        spearIconAddFarm.setOpaque(true);
-        spearIconAddFarm.setBorder(null);
+        JLabel spearIconFarmAdder = new JLabel ("", TroopsDetailPanel.getSpearIcon(), JLabel.CENTER);
+        spearIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
+        spearIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);
+        spearIconFarmAdder.setBackground(bgColor);
+        spearIconFarmAdder.setOpaque(true);
+        spearIconFarmAdder.setBorder(null);
 
-        JLabel swordIconAddFarm = new JLabel ("",TroopsDetailPanel.getSwordIcon(), JLabel.CENTER);
-        swordIconAddFarm.setVerticalTextPosition(JLabel.TOP);
-        swordIconAddFarm.setHorizontalTextPosition(JLabel.RIGHT);
-        swordIconAddFarm.setBackground(bgColor);
-        swordIconAddFarm.setOpaque(true);
-        swordIconAddFarm.setBorder(null);
+        JLabel swordIconFarmAdder = new JLabel ("",TroopsDetailPanel.getSwordIcon(), JLabel.CENTER);
+        swordIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
+        swordIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);
+        swordIconFarmAdder.setBackground(bgColor);
+        swordIconFarmAdder.setOpaque(true);
+        swordIconFarmAdder.setBorder(null);
 
-        JLabel axeIconAddFarm = new JLabel ("", TroopsDetailPanel.getAxeIcon(), JLabel.CENTER);
-        axeIconAddFarm.setVerticalTextPosition(JLabel.TOP);
-        axeIconAddFarm.setHorizontalTextPosition(JLabel.RIGHT);
-        axeIconAddFarm.setBackground(bgColor);
-        axeIconAddFarm.setOpaque(true);
-        axeIconAddFarm.setBorder(null);
+        JLabel axeIconFarmAdder = new JLabel ("", TroopsDetailPanel.getAxeIcon(), JLabel.CENTER);
+        axeIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
+        axeIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);
+        axeIconFarmAdder.setBackground(bgColor);
+        axeIconFarmAdder.setOpaque(true);
+        axeIconFarmAdder.setBorder(null);
 
-        JLabel scoutIconAddFarm = new JLabel ("", TroopsDetailPanel.getScoutIcon(), JLabel.CENTER);
-        scoutIconAddFarm.setVerticalTextPosition(JLabel.TOP);
-        scoutIconAddFarm.setHorizontalTextPosition(JLabel.RIGHT);
-        scoutIconAddFarm.setBackground(bgColor);
-        scoutIconAddFarm.setOpaque(true);
-        scoutIconAddFarm.setBorder(null);
+        JLabel scoutIconFarmAdder = new JLabel ("", TroopsDetailPanel.getScoutIcon(), JLabel.CENTER);
+        scoutIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
+        scoutIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);
+        scoutIconFarmAdder.setBackground(bgColor);
+        scoutIconFarmAdder.setOpaque(true);
+        scoutIconFarmAdder.setBorder(null);
 
-        JLabel lightCalIconAddFarm = new JLabel ("", TroopsDetailPanel.getLightCalIcon(), JLabel.CENTER);
-        lightCalIconAddFarm.setVerticalTextPosition(JLabel.TOP);
-        lightCalIconAddFarm.setHorizontalTextPosition(JLabel.RIGHT);
-        lightCalIconAddFarm.setBackground(bgColor);
-        lightCalIconAddFarm.setOpaque(true);
-        lightCalIconAddFarm.setBorder(null);
+        JLabel lightCalIconFarmAdder = new JLabel ("", TroopsDetailPanel.getLightCalIcon(), JLabel.CENTER);
+        lightCalIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
+        lightCalIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);
+        lightCalIconFarmAdder.setBackground(bgColor);
+        lightCalIconFarmAdder.setOpaque(true);
+        lightCalIconFarmAdder.setBorder(null);
 
-        JLabel paladinIconAddFarm = new JLabel ("", TroopsDetailPanel.getPaladinIcon(), JLabel.CENTER);
-        paladinIconAddFarm.setVerticalTextPosition(JLabel.TOP);
-        paladinIconAddFarm.setHorizontalTextPosition(JLabel.RIGHT);
-        paladinIconAddFarm.setBackground(bgColor);
-        paladinIconAddFarm.setOpaque(true);
-        paladinIconAddFarm.setBorder(null);
+        JLabel paladinIconFarmAdder = new JLabel ("", TroopsDetailPanel.getPaladinIcon(), JLabel.CENTER);
+        paladinIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
+        paladinIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);
+        paladinIconFarmAdder.setBackground(bgColor);
+        paladinIconFarmAdder.setOpaque(true);
+        paladinIconFarmAdder.setBorder(null);
+
+        JLabel catapultIconFarmAdder = new JLabel ("", TroopsDetailPanel.getCatapultIcon(), JLabel.CENTER);
+        catapultIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
+        catapultIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);
+        catapultIconFarmAdder.setBackground(bgColor);
+        catapultIconFarmAdder.setOpaque(true);
+        catapultIconFarmAdder.setBorder(null);
+
+        JLabel ramIconFarmAdder = new JLabel ("",TroopsDetailPanel.getRamIcon(), JLabel.CENTER);
+        ramIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
+        ramIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);
+        ramIconFarmAdder.setBackground(bgColor);
+        ramIconFarmAdder.setOpaque(true);
+        ramIconFarmAdder.setBorder(null);
+
+        JLabel heavyCalIconFarmAdder = new JLabel ("", TroopsDetailPanel.getHeavyCalIcon(), JLabel.CENTER);
+        heavyCalIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
+        heavyCalIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);
+        heavyCalIconFarmAdder.setBackground(bgColor);
+        heavyCalIconFarmAdder.setOpaque(true);
+        heavyCalIconFarmAdder.setBorder(null);
+
+        JLabel mArcherIconFarmAdder = new JLabel ("", TroopsDetailPanel.getMountedArcherIcon(), JLabel.CENTER);
+        mArcherIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
+        mArcherIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);
+        mArcherIconFarmAdder.setBackground(bgColor);
+        mArcherIconFarmAdder.setOpaque(true);
+        mArcherIconFarmAdder.setBorder(null);
+
+        JLabel archerIconFarmAdder = new JLabel ("", TroopsDetailPanel.getArcherIcon(), JLabel.CENTER);
+        archerIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
+        archerIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);
+        archerIconFarmAdder.setBackground(bgColor);
+        archerIconFarmAdder.setOpaque(true);
+        archerIconFarmAdder.setBorder(null);
+
+        JLabel nobleIconFarmAdder = new JLabel ("", TroopsDetailPanel.getNobleIcon(), JLabel.CENTER);
+        nobleIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
+        nobleIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);
+        nobleIconFarmAdder.setBackground(bgColor);
+        nobleIconFarmAdder.setOpaque(true);
+        nobleIconFarmAdder.setBorder(null);
 
         ///////First Column///////
         gc.anchor = GridBagConstraints.LINE_START;
@@ -94,15 +142,27 @@ public class AddFarmsTroops extends JPanel {
 
         gc.gridx = 0;
         gc.gridy = 0;
-        add(spearIconAddFarm, gc);
+        add(spearIconFarmAdder, gc);
 
         gc.gridx = 0;
         gc.gridy = 1;
-        add(swordIconAddFarm, gc);
+        add(swordIconFarmAdder, gc);
 
         gc.gridx = 0;
         gc.gridy = 2;
-        add(axeIconAddFarm, gc);
+        add(axeIconFarmAdder, gc);
+
+        gc.gridx = 0;
+        gc.gridy = 3;
+        add(scoutIconFarmAdder, gc);
+
+        gc.gridx = 0;
+        gc.gridy = 4;
+        add(lightCalIconFarmAdder, gc);
+
+        gc.gridx = 0;
+        gc.gridy = 5;
+        add(paladinIconFarmAdder, gc);
 
 
 
@@ -110,31 +170,92 @@ public class AddFarmsTroops extends JPanel {
         gc.anchor = GridBagConstraints.LINE_START;
         gc.fill = GridBagConstraints.VERTICAL;
         gc.weightx = 0;
-        gc.weighty = 0;
+        gc.weighty = 1;
 
         gc.gridx = 1;
         gc.gridy = 0;
-        add(spearLabelAddFarm, gc);
+        add(spearTextFieldFarmAdder, gc);
 
         gc.gridx= 1;
         gc.gridy=1;
-        add(swordLabelAddFarm, gc);
+        add(swordTextFieldFarmAdder, gc);
 
         gc.gridx = 1;
         gc.gridy = 2;
-        add(axeLabelAddFarm, gc);
+        add(axeTextFieldFarmAdder, gc);
 
         gc.gridx= 1;
         gc.gridy=3;
-        add(scoutLabelAddFarm, gc);
+        add(scoutTextFieldFarmAdder, gc);
 
         gc.gridx = 1;
         gc.gridy = 4;
-        add(lightCalAddFarm, gc);
+        add(lightCalTextFieldFarmAdder, gc);
 
         gc.gridx= 1;
         gc.gridy=5;
-        add(paladinAddFarm, gc);
+        add(paladinTextFieldFarmAdder, gc);
+
+        ///////Third Column////////
+        gc.anchor = GridBagConstraints.LINE_START;
+        gc.fill = GridBagConstraints.VERTICAL;
+        gc.weightx = 0;
+        gc.weighty = 0;
+
+        gc.gridx = 2;
+        gc.gridy = 0;
+        add(catapultIconFarmAdder, gc);
+
+        gc.gridx = 2;
+        gc.gridy = 1;
+        add(ramIconFarmAdder, gc);
+
+        gc.gridx = 2;
+        gc.gridy = 2;
+        add(heavyCalIconFarmAdder, gc);
+
+        gc.gridx = 2;
+        gc.gridy = 3;
+        add(mArcherIconFarmAdder, gc);
+
+        gc.gridx = 2;
+        gc.gridy = 4;
+        add(archerIconFarmAdder, gc);
+
+        gc.gridx = 2;
+        gc.gridy = 5;
+        add(nobleIconFarmAdder, gc);
+
+
+        ///////Fourth Column///////
+        gc.anchor = GridBagConstraints.LINE_START;
+        gc.fill = GridBagConstraints.VERTICAL;
+        gc.weightx = 0;
+        gc.weighty = 0;
+
+        gc.gridx = 3;
+        gc.gridy = 0;
+        add(catapultTextFieldFarmAdder, gc);
+
+        gc.gridx = 3;
+        gc.gridy = 1;
+        add(ramTextFieldFarmAdder, gc);
+
+        gc.gridx = 3;
+        gc.gridy = 2;
+        add(heavyCalTextFieldFarmAdder, gc);
+
+        gc.gridx = 3;
+        gc.gridy = 3;
+        add(mArcherTextFieldFarmAdder, gc);
+
+        gc.gridx = 3;
+        gc.gridy = 4;
+        add(archerTextFieldFarmAdder, gc);
+
+        gc.gridx = 3;
+        gc.gridy = 5;
+        add(nobleTextFieldFarmAdder, gc);
     }
 
 }

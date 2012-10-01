@@ -16,6 +16,7 @@ public class MainFrame extends JFrame {
         super(title);
 
 
+        setLocation(400, 0);
         //Create Swing components
         DetailsPanel detailsPanel = new DetailsPanel();
         troopsDetailPanel = new TroopsDetailPanel();
