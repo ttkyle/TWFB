@@ -155,7 +155,7 @@ public class AttackTable extends JPanel {
         column10.setHeaderValue(label10);
 
         try {
-            AddVillagePanel.find("15000.txt");
+            AddVillagePanel.displayFarmVillages("15000.txt");
         }
         catch (IOException e) {
         }
@@ -189,11 +189,7 @@ public class AttackTable extends JPanel {
                 "Currently"};
         public  Object[][] data = {
 
-                {"000000", "Village Village Village",
-                        "000", "000", "00000", "000","000", "000", "000", "000", "000", "000", "000", "000",
-                        "000", "Travel from"},
-
-
+                {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
                 {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
                 {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
                 {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},

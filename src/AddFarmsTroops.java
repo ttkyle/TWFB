@@ -10,6 +10,18 @@ import java.awt.*;
  */
 public class AddFarmsTroops extends JPanel {
 
+    private static JTextField spearTextFieldFarmAdder;
+    private static JTextField swordTextFieldFarmAdder;
+    private static JTextField axeTextFieldFarmAdder;
+    private static JTextField scoutTextFieldFarmAdder;
+    private static JTextField lightCalTextFieldFarmAdder;
+    private static JTextField paladinTextFieldFarmAdder;
+    private static JTextField catapultTextFieldFarmAdder;
+    private static JTextField ramTextFieldFarmAdder;
+    private static JTextField heavyCalTextFieldFarmAdder;
+    private static JTextField mountedArcherTextFieldFarmAdder;
+    private static JTextField archerTextFieldFarmAdder;
+    private static JTextField nobleTextFieldFarmAdder;
     public AddFarmsTroops() {
 
         //create size of the panel
@@ -37,18 +49,18 @@ public class AddFarmsTroops extends JPanel {
 
 
         //swing components
-        JTextField spearTextFieldFarmAdder = new JTextField(5);
-        JTextField swordTextFieldFarmAdder = new JTextField(5);
-        JTextField axeTextFieldFarmAdder = new JTextField(5);
-        JTextField scoutTextFieldFarmAdder = new JTextField(5);
-        JTextField lightCalTextFieldFarmAdder = new JTextField(5);
-        JTextField paladinTextFieldFarmAdder = new JTextField(5);
-        JTextField catapultTextFieldFarmAdder = new JTextField(5);
-        JTextField ramTextFieldFarmAdder = new JTextField(5);
-        JTextField heavyCalTextFieldFarmAdder = new JTextField(5);
-        JTextField mArcherTextFieldFarmAdder = new JTextField(5);
-        JTextField archerTextFieldFarmAdder = new JTextField(5);
-        JTextField nobleTextFieldFarmAdder = new JTextField(5);
+        spearTextFieldFarmAdder = new JTextField(5);
+        swordTextFieldFarmAdder = new JTextField(5);
+        axeTextFieldFarmAdder = new JTextField(5);
+        scoutTextFieldFarmAdder = new JTextField(5);
+        lightCalTextFieldFarmAdder = new JTextField(5);
+        paladinTextFieldFarmAdder = new JTextField(5);
+        catapultTextFieldFarmAdder = new JTextField(5);
+        ramTextFieldFarmAdder = new JTextField(5);
+        heavyCalTextFieldFarmAdder = new JTextField(5);
+        mountedArcherTextFieldFarmAdder = new JTextField(5);
+        archerTextFieldFarmAdder = new JTextField(5);
+        nobleTextFieldFarmAdder = new JTextField(5);
 
         JLabel spearIconFarmAdder = new JLabel ("", TroopsDetailPanel.getSpearIcon(), JLabel.CENTER);
         spearIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
@@ -113,12 +125,12 @@ public class AddFarmsTroops extends JPanel {
         heavyCalIconFarmAdder.setOpaque(true);
         heavyCalIconFarmAdder.setBorder(null);
 
-        JLabel mArcherIconFarmAdder = new JLabel ("", TroopsDetailPanel.getMountedArcherIcon(), JLabel.CENTER);
-        mArcherIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
-        mArcherIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);
-        mArcherIconFarmAdder.setBackground(bgColor);
-        mArcherIconFarmAdder.setOpaque(true);
-        mArcherIconFarmAdder.setBorder(null);
+        JLabel mountedArcherIconFarmAdder = new JLabel ("", TroopsDetailPanel.getMountedArcherIcon(), JLabel.CENTER);
+        mountedArcherIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
+        mountedArcherIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);
+        mountedArcherIconFarmAdder.setBackground(bgColor);
+        mountedArcherIconFarmAdder.setOpaque(true);
+        mountedArcherIconFarmAdder.setBorder(null);
 
         JLabel archerIconFarmAdder = new JLabel ("", TroopsDetailPanel.getArcherIcon(), JLabel.CENTER);
         archerIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
@@ -150,15 +162,15 @@ public class AddFarmsTroops extends JPanel {
 
         gc.gridx = 0;
         gc.gridy = 2;
-        add(axeIconFarmAdder, gc);
+        add(archerIconFarmAdder, gc);
 
         gc.gridx = 0;
         gc.gridy = 3;
-        add(scoutIconFarmAdder, gc);
+        add(axeIconFarmAdder, gc);
 
         gc.gridx = 0;
         gc.gridy = 4;
-        add(lightCalIconFarmAdder, gc);
+        add(mountedArcherIconFarmAdder, gc);
 
         gc.gridx = 0;
         gc.gridy = 5;
@@ -182,15 +194,15 @@ public class AddFarmsTroops extends JPanel {
 
         gc.gridx = 1;
         gc.gridy = 2;
-        add(axeTextFieldFarmAdder, gc);
+        add(archerTextFieldFarmAdder, gc);
 
         gc.gridx= 1;
         gc.gridy=3;
-        add(scoutTextFieldFarmAdder, gc);
+        add(axeTextFieldFarmAdder, gc);
 
         gc.gridx = 1;
         gc.gridy = 4;
-        add(lightCalTextFieldFarmAdder, gc);
+        add(mountedArcherTextFieldFarmAdder, gc);
 
         gc.gridx= 1;
         gc.gridy=5;
@@ -204,11 +216,11 @@ public class AddFarmsTroops extends JPanel {
 
         gc.gridx = 2;
         gc.gridy = 0;
-        add(catapultIconFarmAdder, gc);
+        add(scoutIconFarmAdder, gc);
 
         gc.gridx = 2;
         gc.gridy = 1;
-        add(ramIconFarmAdder, gc);
+        add(lightCalIconFarmAdder, gc);
 
         gc.gridx = 2;
         gc.gridy = 2;
@@ -216,11 +228,11 @@ public class AddFarmsTroops extends JPanel {
 
         gc.gridx = 2;
         gc.gridy = 3;
-        add(mArcherIconFarmAdder, gc);
+        add(catapultIconFarmAdder, gc);
 
         gc.gridx = 2;
         gc.gridy = 4;
-        add(archerIconFarmAdder, gc);
+        add(ramIconFarmAdder, gc);
 
         gc.gridx = 2;
         gc.gridy = 5;
@@ -235,11 +247,11 @@ public class AddFarmsTroops extends JPanel {
 
         gc.gridx = 3;
         gc.gridy = 0;
-        add(catapultTextFieldFarmAdder, gc);
+        add(scoutTextFieldFarmAdder, gc);
 
         gc.gridx = 3;
         gc.gridy = 1;
-        add(ramTextFieldFarmAdder, gc);
+        add(lightCalTextFieldFarmAdder, gc);
 
         gc.gridx = 3;
         gc.gridy = 2;
@@ -247,15 +259,62 @@ public class AddFarmsTroops extends JPanel {
 
         gc.gridx = 3;
         gc.gridy = 3;
-        add(mArcherTextFieldFarmAdder, gc);
+        add(catapultTextFieldFarmAdder, gc);
 
         gc.gridx = 3;
         gc.gridy = 4;
-        add(archerTextFieldFarmAdder, gc);
+        add(ramTextFieldFarmAdder, gc);
 
         gc.gridx = 3;
         gc.gridy = 5;
         add(nobleTextFieldFarmAdder, gc);
     }
 
+    public static String getSpearTextFieldFarmAdder() {
+        return spearTextFieldFarmAdder.getText();
+    }
+
+    public static String getSwordTextFieldFarmAdder() {
+        return swordTextFieldFarmAdder.getText();
+    }
+
+    public static String getAxeTextFieldFarmAdder() {
+        return axeTextFieldFarmAdder.getText();
+    }
+
+    public static String getScoutTextFieldFarmAdder() {
+        return scoutTextFieldFarmAdder.getText();
+    }
+
+    public static String getLightCalTextFieldFarmAdder() {
+        return lightCalTextFieldFarmAdder.getText();
+    }
+
+    public static String getPaladinTextFieldFarmAdder() {
+        return paladinTextFieldFarmAdder.getText();
+    }
+
+    public static String getCatapultTextFieldFarmAdder() {
+        return catapultTextFieldFarmAdder.getText();
+    }
+
+    public static String getRamTextFieldFarmAdder() {
+        return ramTextFieldFarmAdder.getText();
+    }
+
+    public static String getHeavyCalTextFieldFarmAdder() {
+        return heavyCalTextFieldFarmAdder.getText();
+    }
+
+    public static String getMountedArcherTextFieldFarmAdder() {
+        return mountedArcherTextFieldFarmAdder.getText();
+    }
+
+    public static String getArcherTextFieldFarmAdder() {
+        return archerTextFieldFarmAdder.getText();
+    }
+
+    public static String getNobleTextFieldFarmAdder() {
+        return nobleTextFieldFarmAdder.getText();
+    }
 }

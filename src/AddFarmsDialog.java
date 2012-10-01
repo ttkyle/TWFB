@@ -1,5 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
 
 
 /**
@@ -37,6 +40,18 @@ public class AddFarmsDialog extends JDialog {
         AddFarmsTroops addFarmsTroops = new AddFarmsTroops();
         AddFarmsTargetJTable addFarmsTargetJTable = new AddFarmsTargetJTable();
 
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                try {
+                    AddVillagePanel.displayFarmVillages("15000.txt");
+                }
+                catch (IOException e1) {
+                    //
+                }
+            }
+        });
+
         setVisible(false);
 
         ////////////First Column/////////////////////
@@ -55,7 +70,7 @@ public class AddFarmsDialog extends JDialog {
         gc.weighty = .0;
         gc.fill = GridBagConstraints.VERTICAL;
         gc.fill = GridBagConstraints.HORIZONTAL;
-        gc.insets = new Insets(-560, 0, 0, 400);
+        gc.insets = new Insets(-560, 0, 0, 200);
         gc.gridx =  1;
         gc.gridy = 1;
         add(addFarmsTargetJTable, gc);

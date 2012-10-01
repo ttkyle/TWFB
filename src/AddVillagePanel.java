@@ -62,15 +62,9 @@ public class AddVillagePanel extends JPanel {
                 String villageY = villageYCoordTextField.getText();
                 String villageName = villageNameTextField.getText();
 
-                BufferedReader reader = null;
-                try {
-                    reader = new BufferedReader(new FileReader("VillageList.txt"));
-                }
-                catch (FileNotFoundException e1) {
-                    //
-                }
-                //writeToVillageList(createFile("VillageList.txt"), villageID);
-                //writeToVillage(createFile(villageID + ".txt"), villageX, villageY);
+                writeToVillage(createFile(villageID + ".txt"), villageID, villageName, villageX, villageY);
+
+                /*(
                 writeToVillage2(createFile("15000.txt"));
                 try {
                     displayFarmVillages("15000.txt");
@@ -78,6 +72,7 @@ public class AddVillagePanel extends JPanel {
                 } catch (IOException e1) {
 
                 }
+                */
             }
         });
 
@@ -157,13 +152,18 @@ public class AddVillagePanel extends JPanel {
         }
     }
 
-    static public void writeToVillage(File village, String xCoord, String yCoord) {
+    static public void writeToVillage(File village,String villageID, String name,  String xCoord, String yCoord) {
         try {
             FileWriter writer = new FileWriter(village, true);
             BufferedWriter bufferedWriter = new BufferedWriter(writer);
+            bufferedWriter.write(villageID);
+            bufferedWriter.write(", ");
+            bufferedWriter.write(name);
+            bufferedWriter.write(", ");
             bufferedWriter.write(xCoord);
-            bufferedWriter.write(" ");
+            bufferedWriter.write(", ");
             bufferedWriter.write(yCoord);
+            bufferedWriter.write(", ");
             bufferedWriter.newLine();
             bufferedWriter.close();
         }
@@ -270,22 +270,22 @@ public class AddVillagePanel extends JPanel {
     public static void findFarms(String fileName) throws IOException{
         FileReader fr = new FileReader(fileName);
         BufferedReader br = new BufferedReader(fr);
-        String s;
+        String farms;
         int count = 0;
         String[] values = new String[1];
 
-        while((s = br.readLine()) != null) {
+        while((farms = br.readLine()) != null) {
             for (int i = 0; i < values.length; i++) {
                 try {
-                    values = s.split(",");
+                    values = farms.split(",");
                 }
                 catch(NullPointerException e) {
                     //do nothing but load
                 }
 
                 if(i >= 0  && i < 1 ) {
-                    if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 10) {
-                       // searchKey = true;
+                    if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 10 &&
+                    distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) != 0.0) {
                         Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0);
                         AddFarmsTargetJTable.addFarmsTable.setValueAt(values[0], count, 0);
                         AddFarmsTargetJTable.addFarmsTable.setValueAt(values[1], count, 1);
