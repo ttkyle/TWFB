@@ -2,15 +2,9 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
-import javax.swing.event.TableModelEvent;
-import javax.swing.event.TableModelListener;
 import javax.swing.table.*;
 import java.awt.*;
-import java.awt.event.*;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Vector;
 
 
 public class AddFarmsTargetJTable extends JPanel {
@@ -60,7 +54,7 @@ public class AddFarmsTargetJTable extends JPanel {
 
 
         try {
-            AddVillagePanel.find2("Village.txt");
+            AddVillagePanel.findFarms("Village.txt");
         }
         catch (IOException e) {
         }

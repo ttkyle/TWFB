@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import java.io.*;
 import java.util.*;
 import java.util.List;
-import java.awt.geom.Point2D;
 
 import static java.awt.geom.Point2D.distance;
 
@@ -74,7 +73,7 @@ public class AddVillagePanel extends JPanel {
                 //writeToVillage(createFile(villageID + ".txt"), villageX, villageY);
                 writeToVillage2(createFile("15000.txt"));
                 try {
-                    find("15000.txt");
+                    displayFarmVillages("15000.txt");
 
                 } catch (IOException e1) {
 
@@ -206,6 +205,7 @@ public class AddVillagePanel extends JPanel {
         bufferedWriter.write(", ");
         bufferedWriter.write("21");
         bufferedWriter.write(", ");
+        bufferedWriter.newLine();
         bufferedWriter.close();
     }
     catch (IOException e) {
@@ -267,7 +267,7 @@ public class AddVillagePanel extends JPanel {
         ln.close();
     }
 
-    public static void find2(String fileName) throws IOException{
+    public static void findFarms(String fileName) throws IOException{
         FileReader fr = new FileReader(fileName);
         BufferedReader br = new BufferedReader(fr);
         String s;
@@ -293,8 +293,49 @@ public class AddVillagePanel extends JPanel {
                         AddFarmsTargetJTable.addFarmsTable.setValueAt(values[3], count, 3);
                         AddFarmsTargetJTable.addFarmsTable.setValueAt(newValue.toString(), count, 4);
                         count++;
-                        System.out.println(count);
                     }
+                }
+            }
+        }
+        fr.close();
+        br.close();
+    }
+
+    public static void displayFarmVillages(String fileName) throws IOException{
+        FileReader fr = new FileReader(fileName);
+        BufferedReader br = new BufferedReader(fr);
+        String s;
+        int count = 0;
+        String[] values = new String[1];
+
+        while((s = br.readLine()) != null) {
+            for (int i = 0; i < values.length; i++) {
+                try {
+                    values = s.split(",");
+                }
+                catch(NullPointerException e) {
+                    //do nothing but load
+                }
+
+                if(i >= 0  && i < 1 ) {
+                    AttackTable.table.setValueAt(values[0], count, 0);
+                    AttackTable.table.setValueAt(values[1], count, 1);
+                    AttackTable.table.setValueAt(values[2], count, 2);
+                    AttackTable.table.setValueAt(values[3], count, 3);
+                    AttackTable.table.setValueAt(values[4], count, 4);
+                    AttackTable.table.setValueAt(values[5], count, 5);
+                    AttackTable.table.setValueAt(values[6], count, 6);
+                    AttackTable.table.setValueAt(values[7], count, 7);
+                    AttackTable.table.setValueAt(values[8], count, 8);
+                    AttackTable.table.setValueAt(values[9], count, 9);
+                    AttackTable.table.setValueAt(values[10], count, 10);
+                    AttackTable.table.setValueAt(values[11], count, 11);
+                    AttackTable.table.setValueAt(values[12], count, 12);
+                    AttackTable.table.setValueAt(values[13], count, 13);
+                    AttackTable.table.setValueAt(values[14], count, 14);
+                    AttackTable.table.setValueAt(values[15], count, 15);
+                    count++;
+                    System.out.println(count);
                 }
             }
         }
