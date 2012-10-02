@@ -47,8 +47,6 @@ public class AttackTable extends JPanel {
 
         popupMenu.add(menuItem);
 
-
-
         table.setPreferredScrollableViewportSize(new Dimension(400, 400));
         table.setFillsViewportHeight(true);
 

@@ -1,12 +1,12 @@
+import org.eclipse.swt.events.MouseTrackListener;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -21,6 +21,7 @@ public class AddFarmsTargetJTable extends JPanel {
     public static String columnOne;
     public static String columnTwo;
     public static String columnThree;
+    public static JPopupMenu farmMenu;
 
     public AddFarmsTargetJTable() {
         super(new GridLayout(1, 0));
@@ -31,12 +32,15 @@ public class AddFarmsTargetJTable extends JPanel {
         setMaximumSize(size);
         setMinimumSize(size);
 
+
+
         addFarmsModel = new MyTableModel();
         addFarmsTable = new JTable(addFarmsModel);
         addFarmsTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         addFarmsTable.setPreferredScrollableViewportSize(new Dimension(400, 400));
         addFarmsTable.setFillsViewportHeight(true);
+
 
         TableCellRenderer renderer = new JComponentTableCellRenderer();
 
@@ -46,54 +50,61 @@ public class AddFarmsTargetJTable extends JPanel {
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         addFarmsTable.setDefaultRenderer(String.class, centerRenderer);
 
-        addFarmsTable.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-                //System.out.println("selected");
-                //works
-                if(!e.getValueIsAdjusting()) {
-                    System.out.println(MyTableModel.getValueforCell());
-                    MyTableModel.writeToVillage2(MyTableModel.createFile("15000.txt"));
 
-                    if(AddFarmsTroops.getSpearTextFieldFarmAdder().equals("")) {
-                        AddFarmsTroops.setSpearTextFieldFarmAdder("0");
-                    }
-                    if(AddFarmsTroops.getArcherTextFieldFarmAdder().equals("")) {
-                        AddFarmsTroops.setArcherTextFieldFarmAdder("0");
-                    }
-                    if(AddFarmsTroops.getAxeTextFieldFarmAdder().equals("")) {
-                        AddFarmsTroops.setAxeTextFieldFarmAdder("0");
-                    }
-                    if(AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("")) {
-                        AddFarmsTroops.setCatapultTextFieldFarmAdder("0");
-                    }
-                    if(AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("")) {
-                        AddFarmsTroops.setHeavyCalTextFieldFarmAdder("0");
-                    }
-                    if(AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("")) {
-                        AddFarmsTroops.setLightCalTextFieldFarmAdder("0");
-                    }
-                    if(AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("")) {
-                        AddFarmsTroops.setMountedArcherTextFieldFarmAdder("0");
-                    }
-                    if(AddFarmsTroops.getNobleTextFieldFarmAdder().equals("")) {
-                        AddFarmsTroops.setNobleTextFieldFarmAdder("0");
-                    }
-                    if(AddFarmsTroops.getPaladinTextFieldFarmAdder().equals("")) {
-                        AddFarmsTroops.setPaladinTextFieldFarmAdder("0");
-                    }
-                    if(AddFarmsTroops.getRamTextFieldFarmAdder().equals("")) {
-                        AddFarmsTroops.setRamTextFieldFarmAdder("0");
-                    }
-                    if(AddFarmsTroops.getScoutTextFieldFarmAdder().equals("")) {
-                        AddFarmsTroops.setScoutTextFieldFarmAdder("0");
-                    }
-                    if(AddFarmsTroops.getSwordTextFieldFarmAdder().equals("")) {
-                        AddFarmsTroops.setSwordTextFieldFarmAdder("0");
-                    }
+
+        farmMenu = new JPopupMenu();
+        JPopupMenu popupMenu = new JPopupMenu();
+        MouseListener popupListener = new PopupListener();
+        addFarmsTable.addMouseListener(popupListener);
+        addFarmsTable.getTableHeader().addMouseListener(popupListener);
+        JMenuItem menuItem = new JMenuItem("Add Target to Farm List");
+        menuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println(MyTableModel.getValueforCell());
+                MyTableModel.writeToVillage2(MyTableModel.createFile("15000.txt"));
+
+                if(AddFarmsTroops.getSpearTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setSpearTextFieldFarmAdder("0");
                 }
+                if(AddFarmsTroops.getArcherTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setArcherTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getAxeTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setAxeTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setCatapultTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setHeavyCalTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setLightCalTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setMountedArcherTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getNobleTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setNobleTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getPaladinTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setPaladinTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getRamTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setRamTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getScoutTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setScoutTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getSwordTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setSwordTextFieldFarmAdder("0");
+                }
+
             }
         });
+        farmMenu.add(menuItem);
+
 
         //Create the scroll pane and add the table to it.
         JScrollPane scrollPane = new JScrollPane(addFarmsTable);
@@ -516,6 +527,22 @@ public class AddFarmsTargetJTable extends JPanel {
          public static File createFile(String name) {
             File file = new File(name);
             return file;
+        }
+    }
+
+    class PopupListener extends MouseAdapter {
+        public void mousePressed(MouseEvent e) {
+            showPopup(e);
+        }
+
+        public void mouseReleased(MouseEvent e) {
+            showPopup(e);
+        }
+
+        private void showPopup(MouseEvent e) {
+            if (e.isPopupTrigger()) {
+                farmMenu.show(e.getComponent(), e.getX(), e.getY());
+            }
         }
     }
 }
