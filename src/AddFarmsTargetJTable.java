@@ -53,7 +53,6 @@ public class AddFarmsTargetJTable extends JPanel {
 
 
         farmMenu = new JPopupMenu();
-        JPopupMenu popupMenu = new JPopupMenu();
         MouseListener popupListener = new PopupListener();
         addFarmsTable.addMouseListener(popupListener);
         addFarmsTable.getTableHeader().addMouseListener(popupListener);
@@ -63,6 +62,45 @@ public class AddFarmsTargetJTable extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 System.out.println(MyTableModel.getValueforCell());
                 MyTableModel.writeToVillage2(MyTableModel.createFile("15000.txt"));
+
+                if(AddFarmsTroops.getSpearTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setSpearTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getArcherTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setArcherTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getAxeTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setAxeTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setCatapultTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setHeavyCalTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setLightCalTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setMountedArcherTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getNobleTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setNobleTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getPaladinTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setPaladinTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getRamTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setRamTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getScoutTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setScoutTextFieldFarmAdder("0");
+                }
+                if(AddFarmsTroops.getSwordTextFieldFarmAdder().equals("")) {
+                    AddFarmsTroops.setSwordTextFieldFarmAdder("0");
+                }
+
+                MyTableModel.writeToVillage2(MyTableModel.createFile("currentFarmList.txt"));
 
                 if(AddFarmsTroops.getSpearTextFieldFarmAdder().equals("")) {
                     AddFarmsTroops.setSpearTextFieldFarmAdder("0");

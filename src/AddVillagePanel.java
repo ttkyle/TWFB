@@ -304,14 +304,16 @@ public class AddVillagePanel extends JPanel {
     public static void displayFarmVillages(String fileName) throws IOException{
         FileReader fr = new FileReader(fileName);
         BufferedReader br = new BufferedReader(fr);
-        String s;
-        int count = 0;
-        String[] values = new String[1];
+        String eventualFarms;
+        String currentFarms;
+        int countEventualFarms = 0;
+        String[] eventualFarmArray = new String[1];
+        String[] currentFarmArray = new String[1];
 
-        while((s = br.readLine()) != null) {
-            for (int i = 0; i < values.length; i++) {
+        while((eventualFarms = br.readLine()) != null) {
+            for (int i = 0; i < eventualFarmArray.length; i++) {
                 try {
-                    values = s.split(",");
+                    eventualFarmArray = eventualFarms.split(",");
                 }
                 catch(NullPointerException e) {
                     //do nothing but load
@@ -319,24 +321,24 @@ public class AddVillagePanel extends JPanel {
 
                 try {
                     if(i >= 0  && i < 1 ) {
-                        AttackTable.table.setValueAt(values[0], count, 0);
-                        AttackTable.table.setValueAt(values[1], count, 1);
-                        AttackTable.table.setValueAt(values[2], count, 2);
-                        AttackTable.table.setValueAt(values[3], count, 3);
-                        AttackTable.table.setValueAt(values[4], count, 4);
-                        AttackTable.table.setValueAt(values[5], count, 5);
-                        AttackTable.table.setValueAt(values[6], count, 6);
-                        AttackTable.table.setValueAt(values[7], count, 7);
-                        AttackTable.table.setValueAt(values[8], count, 8);
-                        AttackTable.table.setValueAt(values[9], count, 9);
-                        AttackTable.table.setValueAt(values[10], count, 10);
-                        AttackTable.table.setValueAt(values[11], count, 11);
-                        AttackTable.table.setValueAt(values[12], count, 12);
-                        AttackTable.table.setValueAt(values[13], count, 13);
-                        AttackTable.table.setValueAt(values[14], count, 14);
-                        AttackTable.table.setValueAt(values[15], count, 15);
-                        count++;
-                        System.out.println(count);
+                        AttackTable.table.setValueAt(eventualFarmArray[0], countEventualFarms, 0);
+                        AttackTable.table.setValueAt(eventualFarmArray[1], countEventualFarms, 1);
+                        AttackTable.table.setValueAt(eventualFarmArray[2], countEventualFarms, 2);
+                        AttackTable.table.setValueAt(eventualFarmArray[3], countEventualFarms, 3);
+                        AttackTable.table.setValueAt(eventualFarmArray[4], countEventualFarms, 4);
+                        AttackTable.table.setValueAt(eventualFarmArray[5], countEventualFarms, 5);
+                        AttackTable.table.setValueAt(eventualFarmArray[6], countEventualFarms, 6);
+                        AttackTable.table.setValueAt(eventualFarmArray[7], countEventualFarms, 7);
+                        AttackTable.table.setValueAt(eventualFarmArray[8], countEventualFarms, 8);
+                        AttackTable.table.setValueAt(eventualFarmArray[9], countEventualFarms, 9);
+                        AttackTable.table.setValueAt(eventualFarmArray[10], countEventualFarms, 10);
+                        AttackTable.table.setValueAt(eventualFarmArray[11], countEventualFarms, 11);
+                        AttackTable.table.setValueAt(eventualFarmArray[12], countEventualFarms, 12);
+                        AttackTable.table.setValueAt(eventualFarmArray[13], countEventualFarms, 13);
+                        AttackTable.table.setValueAt(eventualFarmArray[14], countEventualFarms, 14);
+                        AttackTable.table.setValueAt(eventualFarmArray[15], countEventualFarms, 15);
+                        countEventualFarms++;
+                        System.out.println(countEventualFarms);
 
                 }
 
