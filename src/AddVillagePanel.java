@@ -264,8 +264,8 @@ public class AddVillagePanel extends JPanel {
                     number = number + 15;
                     number2 = number + 15;
                     count++;
-        }
-    }
+                }
+            }
         }
         fr.close();
         ln.close();
@@ -277,16 +277,17 @@ public class AddVillagePanel extends JPanel {
         BufferedReader br = new LineNumberReader(fr);
         String s;
 
+
+
         int number = 0;
         int number2 = 0;
         int count = 0;
-         currentFarms = new String[1000];
+         currentFarms = new String[1];
 
         if((s = br.readLine()) != null) {
             for (int i = 0; i < currentFarms.length; i++) {
                 try {
                     currentFarms = s.split(",");
-                    System.out.println("i " + i);
                 }
                 catch(NullPointerException e) {
                     //do nothing but load
@@ -334,7 +335,7 @@ public class AddVillagePanel extends JPanel {
                 }
 
                 if(i >= 0  && i < 1 ) {
-                    if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 10 &&
+                    if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 15 &&
                             distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) != 0.0 ) {   //&&
                         //Integer.parseInt(farmList[0]) != Integer.parseInt(values[0]) && Integer.parseInt(farmList[1]) != Integer.parseInt(values[0])
                                 //&& Integer.parseInt(farmList[2]) != Integer.parseInt(values[0]) && Integer.parseInt(farmList[3]) != Integer.parseInt(values[0]
@@ -354,17 +355,53 @@ public class AddVillagePanel extends JPanel {
             br.close();
     }
 
+    public static void filterFarmsBlackList() {
+        //currentFarms = new String[1];
+
+        try {
+            populateArray("currentFarmList.txt");
+        }
+        catch (IOException e) {
+        }
+
+        System.out.println("in filter");
+
+
+        System.out.println("in try");
+
+
+        for(String s : currentFarms) {
+            System.out.println("in for:each");
+            System.out.println("s + "+  s);
+            String key = s;
+
+            for(int i = 0; i < NewTable.table.getRowCount(); i++) {
+                String value = NewTable.table.getValueAt(i,0).toString();
+                //System.out.println("i " + i);
+
+                try {
+                    if(s.equals(value)) {
+                        NewTable.model.removeRow(i);
+                    }
+                }
+                catch(NullPointerException e) {
+
+                }
+
+            }
+        }
+    }
 
 
 
 
-    public static void findFarms(String fileName, String currentList) throws IOException{
+
+
+    public static void findFarms(String fileName) throws IOException{
         FileReader fr = new FileReader(fileName);
         BufferedReader br = new BufferedReader(fr);
 
-
-        RandomAccessFile raf = new RandomAccessFile(currentList, "rw");
-
+        //RandomAccessFile raf = new RandomAccessFile(currentList, "rw");
 
         String farms;
         String currentFarmList;
@@ -373,9 +410,7 @@ public class AddVillagePanel extends JPanel {
         String[] values = new String[1];
         //String[] currentFarms = new String[1];
 
-
         while((farms = br.readLine()) != null) {
-
             for (int i = 0; i <  1; i++) {
                 try {
                     values = farms.split(",");
@@ -383,24 +418,22 @@ public class AddVillagePanel extends JPanel {
                 catch(NullPointerException e) {
                     //do nothing but load
                 }
-                if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 5 &&
+                if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 15 &&
                         distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) != 0.0
                         ) {
 
-                    populateArray("currentFarmList.txt");
-                        if(Integer.parseInt(currentFarms[0]) != Integer.parseInt(values[0])) {
-                            Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0);
-                            AddFarmsTargetJTable.addFarmsTable.setValueAt(values[0], count, 0);
-                            AddFarmsTargetJTable.addFarmsTable.setValueAt(values[1], count, 1);
-                            AddFarmsTargetJTable.addFarmsTable.setValueAt(values[2], count, 2);
-                            AddFarmsTargetJTable.addFarmsTable.setValueAt(values[3], count, 3);
-                            AddFarmsTargetJTable.addFarmsTable.setValueAt(newValue.toString(), count, 4);
-                            count++;
-                            break;
-                    }
+                    Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0);
+                    NewTable.table.setValueAt(values[0], count, 0);
+                    NewTable.table.setValueAt(values[1], count, 1);
+                    NewTable.table.setValueAt(values[2], count, 2);
+                    NewTable.table.setValueAt(values[3], count, 3);
+                    NewTable.table.setValueAt(newValue, count, 4);
+                    count++;
+                    //break
                 }
             }
         }
+        //filterFarmsBlackList();
     }
 
 
@@ -442,6 +475,7 @@ public class AddVillagePanel extends JPanel {
                         AttackTable.table.setValueAt(currentFarmArray[14], countCurrentFarms, 14);
                         AttackTable.table.setValueAt(currentFarmArray[15], countCurrentFarms, 15);
                         countCurrentFarms++;
+                        filterFarmsBlackList();
                     }
                 }
                 catch(ArrayIndexOutOfBoundsException e) {

@@ -151,12 +151,6 @@ public class AttackTable extends JPanel {
         table.getColumnModel().getColumn(14).setPreferredWidth(30);
         column10.setHeaderRenderer(renderer);
         column10.setHeaderValue(label10);
-
-        try {
-            AddVillagePanel.displayFarmVillages("15000.txt");
-        }
-        catch (IOException e) {
-        }
     }
 
     public class JComponentTableCellRenderer implements TableCellRenderer {
