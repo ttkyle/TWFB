@@ -60,83 +60,88 @@ public class AddFarmsTargetJTable extends JPanel {
         menuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println(MyTableModel.getValueforCell());
-                MyTableModel.writeToVillage2(MyTableModel.createFile("15000.txt"));
+                try {
+                    System.out.println(MyTableModel.getValueforCell());
+                    MyTableModel.writeToVillage2(MyTableModel.createFile("15000.txt"));
 
-                if(AddFarmsTroops.getSpearTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setSpearTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getArcherTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setArcherTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getAxeTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setAxeTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setCatapultTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setHeavyCalTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setLightCalTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setMountedArcherTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getNobleTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setNobleTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getPaladinTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setPaladinTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getRamTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setRamTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getScoutTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setScoutTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getSwordTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setSwordTextFieldFarmAdder("0");
-                }
+                    if(AddFarmsTroops.getSpearTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setSpearTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getArcherTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setArcherTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getAxeTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setAxeTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setCatapultTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setHeavyCalTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setLightCalTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setMountedArcherTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getNobleTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setNobleTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getPaladinTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setPaladinTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getRamTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setRamTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getScoutTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setScoutTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getSwordTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setSwordTextFieldFarmAdder("0");
+                    }
 
-                MyTableModel.writeToVillage2(MyTableModel.createFile("currentFarmList.txt"));
+                    MyTableModel.writeFarms(MyTableModel.createFile("currentFarmList.txt"));
 
-                if(AddFarmsTroops.getSpearTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setSpearTextFieldFarmAdder("0");
+                    if(AddFarmsTroops.getSpearTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setSpearTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getArcherTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setArcherTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getAxeTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setAxeTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setCatapultTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setHeavyCalTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setLightCalTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setMountedArcherTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getNobleTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setNobleTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getPaladinTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setPaladinTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getRamTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setRamTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getScoutTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setScoutTextFieldFarmAdder("0");
+                    }
+                    if(AddFarmsTroops.getSwordTextFieldFarmAdder().equals("")) {
+                        AddFarmsTroops.setSwordTextFieldFarmAdder("0");
+                    }
                 }
-                if(AddFarmsTroops.getArcherTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setArcherTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getAxeTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setAxeTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setCatapultTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setHeavyCalTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setLightCalTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setMountedArcherTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getNobleTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setNobleTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getPaladinTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setPaladinTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getRamTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setRamTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getScoutTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setScoutTextFieldFarmAdder("0");
-                }
-                if(AddFarmsTroops.getSwordTextFieldFarmAdder().equals("")) {
-                    AddFarmsTroops.setSwordTextFieldFarmAdder("0");
+                catch(ArrayIndexOutOfBoundsException e1) {
+                    //do nothing
                 }
 
             }
@@ -159,7 +164,10 @@ public class AddFarmsTargetJTable extends JPanel {
         addFarmsTable.getColumnModel().getColumn(4).setPreferredWidth(15);
 
         try {
-            AddVillagePanel.findFarms("Village.txt");
+            AddVillagePanel.findFarms("village.txt", "currentFarmList.txt");
+            //AddVillagePanel.populateArray("currentFarmList.txt");
+           // AddVillagePanel.findFarms("village.txt", "currentFarmList.txt");
+
         }
         catch (IOException e) {
         }
@@ -185,6 +193,550 @@ public class AddFarmsTargetJTable extends JPanel {
         public  Object[][] data = {
 
 
+
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
+                {"", "", "", "", ""},
                 {"", "", "", "", ""},
                 {"", "", "", "", ""},
                 {"", "", "", "", ""},
@@ -402,7 +954,32 @@ public class AddFarmsTargetJTable extends JPanel {
             return columnZero + " " + columnOne + " " +columnTwo + " " + columnThree;
         }
 
+        public static void writeFarms(File village) {
+            try {
+                FileWriter writer = new FileWriter(village, true);
+                BufferedWriter bufferedWriter = new BufferedWriter(writer);
+                bufferedWriter.write(columnZero);
+                bufferedWriter.write(", ");
 
+                if((AddFarmsTroops.getSpearTextFieldFarmAdder().equals("0")     &&
+                        AddFarmsTroops.getSwordTextFieldFarmAdder().equals("0")         &&
+                        AddFarmsTroops.getArcherTextFieldFarmAdder().equals("0")        &&
+                        AddFarmsTroops.getAxeTextFieldFarmAdder().equals("0")           &&
+                        AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("0") &&
+                        AddFarmsTroops.getScoutTextFieldFarmAdder().equals("0")         &&
+                        AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("0")      &&
+                        AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("0")      &&
+                        AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("0")      &&
+                        AddFarmsTroops.getRamTextFieldFarmAdder().equals("0") )          &&
+                        AddFarmsTroops.getNobleTextFieldFarmAdder().equals("0")) {
+                    //do nothing
+                }
+
+                    bufferedWriter.close();
+                }
+            catch (IOException e) {
+            }
+        }
 
          public static void writeToVillage2(File village) {
             try {
@@ -481,7 +1058,6 @@ public class AddFarmsTargetJTable extends JPanel {
                     }
                     else {
                         bufferedWriter.write(AddFarmsTroops.getAxeTextFieldFarmAdder());
-
                     }
                     bufferedWriter.write(", ");
 

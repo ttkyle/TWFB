@@ -12,7 +12,7 @@ public class MainFrame extends JFrame {
     public static AddFarmsDialog addFarmsDialog;
     //
 
-    public MainFrame(String title) {
+    public MainFrame(String title) throws IOException {
         super(title);
 
 
@@ -30,6 +30,7 @@ public class MainFrame extends JFrame {
 
         //Disables frames on GUI creation
         disableButtons();
+        AddVillagePanel.displayFarmVillages("15000.txt");
 
 
         //Details panel listener

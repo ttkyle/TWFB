@@ -14,7 +14,11 @@ public class AppGui {
             public void run() {
 
                 JFrame frame = null;
-                frame = new MainFrame("TWFB - Tribal Wars Farm Bot");
+                try {
+                    frame = new MainFrame("TWFB - Tribal Wars Farm Bot");
+                } catch (IOException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
                 frame.setSize(800, 825);
                 frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
                 frame.setVisible(true);
