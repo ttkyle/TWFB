@@ -65,7 +65,7 @@ public class AttackTable extends JPanel {
         add(scrollPane);
 
         table.setRowSelectionAllowed(true);
-        table.setColumnSelectionAllowed(true);
+        table.setColumnSelectionAllowed(false);
         table.getTableHeader().setReorderingAllowed(false);
         table.getTableHeader().setResizingAllowed(false);
         table.getColumnModel().getColumn(0).setPreferredWidth(50);
@@ -179,8 +179,8 @@ public class AttackTable extends JPanel {
                 "",
                 "",
                 "Currently"};
-        public  Object[][] data = {
 
+        public  Object[][] data = {
                 {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
                 {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
                 {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},

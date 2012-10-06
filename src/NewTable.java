@@ -9,8 +9,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Comparator;
-import java.util.Vector;
+
 
 public class NewTable extends JPanel {
     public static JTable table;
@@ -458,8 +457,7 @@ public class NewTable extends JPanel {
                         AddFarmsTroops.setSwordTextFieldFarmAdder("0");
                     }
 
-                    DataManipulation.writeFarms(DataManipulation.createFile("currentFarmList.txt"));
-                    AddVillagePanel.filterFarmsBlackList();
+
                 }
                 catch(ArrayIndexOutOfBoundsException e1) {
                     //do nothing
@@ -552,20 +550,6 @@ public class NewTable extends JPanel {
                         AddFarmsTroops.getNobleTextFieldFarmAdder().equals("0")) {
                     //do nothing
                 }
-
-                /*
-                AddFarmsTroops.getSwordTextFieldFarmAdder().equals("")          ||
-                        AddFarmsTroops.getSpearTextFieldFarmAdder().equals("")          ||
-                        AddFarmsTroops.getArcherTextFieldFarmAdder().equals("")         ||
-                        AddFarmsTroops.getAxeTextFieldFarmAdder().equals("")            ||
-                        AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("")  ||
-                        AddFarmsTroops.getScoutTextFieldFarmAdder().equals("")          ||
-                        AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("")       ||
-                        AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("")       ||
-                        AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("")       ||
-                        AddFarmsTroops.getRamTextFieldFarmAdder().equals("")            ||
-                        AddFarmsTroops.getNobleTextFieldFarmAdder().equals("")
-                */
 
                 else {
                     if(AddFarmsTroops.getSpearTextFieldFarmAdder().equals(""))
@@ -672,14 +656,18 @@ public class NewTable extends JPanel {
                     }
                     else {
                         bufferedWriter.write(AddFarmsTroops.getNobleTextFieldFarmAdder());
-
                     }
                     bufferedWriter.write(", ");
                     bufferedWriter.newLine();
                     bufferedWriter.close();
+
+                    DataManipulation.writeFarms(DataManipulation.createFile("currentFarmList.txt"));
+                    AddVillagePanel.filterFarmsBlackList();
                 }
             }
             catch (IOException e) {
+            }
+            finally {
             }
         }
 
