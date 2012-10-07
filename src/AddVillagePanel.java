@@ -322,11 +322,7 @@ public class AddVillagePanel extends JPanel {
     }
 
     public static void removeLineFromFile(String file, int rowNumber) throws IOException {
-
-
         try {
-
-
             File inFile = new File(file);
 
             if (!inFile.isFile()) {
@@ -352,12 +348,16 @@ public class AddVillagePanel extends JPanel {
                     NewAttackTable.table.getValueAt(rowNumber, 12) + "," + NewAttackTable.table.getValueAt(rowNumber, 13) + "," +
                     NewAttackTable.table.getValueAt(rowNumber, 14) + ",";
 
+            deleteStringFromFile("currentFarmList.txt", NewAttackTable.table.getValueAt(rowNumber, 0) + ",");
             //Read from the original file and write to the new
             //unless content matches data to be removed.
+            int count = 0;
             while ((line = br.readLine()) != null) {
-
+                System.out.println(count + "count before If");
+                NewAttackTable.model.removeRow(count);
                 if (!line.trim().equals(lineToRemove)) {
-
+                    count++;
+                    System.out.println(count + "count in if");
                     pw.println(line);
                     pw.flush();
                 }
@@ -384,7 +384,6 @@ public class AddVillagePanel extends JPanel {
             ex.printStackTrace();
         }
 
-        deleteStringFromFile("currentFarmList.txt", NewAttackTable.table.getValueAt(rowNumber, 0) + ",");
     }
 
 

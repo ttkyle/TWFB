@@ -314,21 +314,25 @@ public class NewAttackTable extends JPanel {
         deleteItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 try {
-                    try {
-                        AddVillagePanel.removeLineFromFile("15000.txt", 0);
-                    } catch (IOException e1) {
-                    }
-                    try {
-                        AddVillagePanel.displayFarmVillages("15000.txt");
-                        AddVillagePanel.filterCurrentFarms();
-                    }
-                    catch (IOException e1) {
-                    }
+                    AddVillagePanel.removeLineFromFile("15000.txt", 0);
                 }
-                catch(ArrayIndexOutOfBoundsException e1) {
-                    //do nothing
+                catch (IOException e1) {
                 }
+                try {
+                    AddVillagePanel.displayFarmVillages("15000.txt");
+                }
+                catch (IOException e1) {
+                }
+                try {
+                    AddVillagePanel.findFarms("village.txt");
+                }
+                catch (IOException e1) {
+
+                }
+                AddVillagePanel.filterCurrentFarms();
+
             }
         });
         popupMenu.add(menuItem);
