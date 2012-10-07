@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.io.IOException;
 
 
 /**
@@ -38,8 +37,7 @@ public class AddFarmsDialog extends JDialog {
 
         //Create Swing components
         AddFarmsTroops addFarmsTroops = new AddFarmsTroops();
-        AddFarmsTargetJTable addFarmsTargetJTable = new AddFarmsTargetJTable();
-        NewTable newTable = new NewTable();
+        AddFarmsTable addFarmsTable = new AddFarmsTable();
 
         this.addWindowListener(new WindowAdapter() {
             @Override
@@ -80,6 +78,6 @@ public class AddFarmsDialog extends JDialog {
         gc.insets = new Insets(-560, 0, 0, 200);
         gc.gridx =  1;
         gc.gridy = 1;
-        add(newTable, gc);
+        add(addFarmsTable, gc);
     }
 }

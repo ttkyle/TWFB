@@ -12,7 +12,7 @@ import java.util.Comparator;
 import java.util.Vector;
 
 
-public class NewTable extends JPanel {
+public class AddFarmsTable extends JPanel {
     public static JTable table;
     public static DefaultTableModel model;
     public static JPopupMenu farmMenu;
@@ -21,7 +21,7 @@ public class NewTable extends JPanel {
     public static String columnTwo;
     public static String columnThree;
 
-    public NewTable() {
+    public AddFarmsTable() {
         super(new GridLayout(1, 0));
         Dimension size = getPreferredSize();
         size.width = 400;
@@ -583,6 +583,7 @@ public class NewTable extends JPanel {
         table.addMouseListener(popupListener);
         table.getTableHeader().addMouseListener(popupListener);
         JMenuItem menuItem = new JMenuItem("Add Target to Farm List");
+
         menuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -594,7 +595,6 @@ public class NewTable extends JPanel {
                         AddVillagePanel.filterCurrentFarms();
                     }
                     catch (IOException e1) {
-
                     }
                 }
                 catch(ArrayIndexOutOfBoundsException e1) {
@@ -606,7 +606,7 @@ public class NewTable extends JPanel {
 
        try {
             AddVillagePanel.findFarms("village.txt");
-            AddVillagePanel.filterCurrentFarms();
+            //AddVillagePanel.filterCurrentFarms();
         }
         catch (IOException e) {
             //
