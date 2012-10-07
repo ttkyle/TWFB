@@ -30,7 +30,10 @@ public class MainFrame extends JFrame {
 
         //Disables frames on GUI creation
         disableButtons();
+
         AddVillagePanel.displayFarmVillages("15000.txt");
+        AddVillagePanel.filterCurrentFarms();
+
 
 
         //Details panel listener

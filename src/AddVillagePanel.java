@@ -277,8 +277,6 @@ public class AddVillagePanel extends JPanel {
         BufferedReader br = new LineNumberReader(fr);
         String s;
 
-
-
         int number = 0;
         int number2 = 0;
         int count = 0;
@@ -335,17 +333,19 @@ public class AddVillagePanel extends JPanel {
                 }
 
                 if(i >= 0  && i < 1 ) {
-                    if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 15 &&
-                            distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) != 0.0 ) {   //&&
-                        //Integer.parseInt(farmList[0]) != Integer.parseInt(values[0]) && Integer.parseInt(farmList[1]) != Integer.parseInt(values[0])
-                                //&& Integer.parseInt(farmList[2]) != Integer.parseInt(values[0]) && Integer.parseInt(farmList[3]) != Integer.parseInt(values[0]
-                        //if currentFarms - 1 > 0
-                        Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0);
+                    if(distanceMethod(Double.parseDouble(values[2]), 346.0,
+                            Double.parseDouble(values[3]), 243.0) <= 15 &&
+                    distanceMethod(Double.parseDouble(values[2]), 346.0,
+                            Double.parseDouble(values[3]), 243.0) != 0.0 ) {
+
+                        Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0,
+                                Double.parseDouble(values[3]), 243.0);
+
                         AddFarmsTargetJTable.addFarmsTable.setValueAt(values[0], count, 0);
                         AddFarmsTargetJTable.addFarmsTable.setValueAt(values[1], count, 1);
                         AddFarmsTargetJTable.addFarmsTable.setValueAt(values[2], count, 2);
                         AddFarmsTargetJTable.addFarmsTable.setValueAt(values[3], count, 3);
-                        AddFarmsTargetJTable.addFarmsTable.setValueAt(newValue.toString(), count, 4);
+                        AddFarmsTargetJTable.addFarmsTable.setValueAt(newValue, count, 4);
                         count++;
                    }
                 }
@@ -355,42 +355,48 @@ public class AddVillagePanel extends JPanel {
             br.close();
     }
 
-    public static void filterFarmsBlackList() {
-        //currentFarms = new String[1];
-
+    public static void filterCurrentFarms() {
         try {
             populateArray("currentFarmList.txt");
         }
         catch (IOException e) {
         }
+        try {
+            for(String s : currentFarms) {
+                String key = s;
 
-        System.out.println("in filter");
+                for(int i = 0; i < NewTable.table.getRowCount(); i++) {
+                    String value = NewTable.table.getValueAt(i,0).toString();
 
-
-        System.out.println("in try");
-
-
-        for(String s : currentFarms) {
-            System.out.println("in for:each");
-            System.out.println("s + "+  s);
-            String key = s;
-
-            for(int i = 0; i < NewTable.table.getRowCount(); i++) {
-                String value = NewTable.table.getValueAt(i,0).toString();
-                //System.out.println("i " + i);
-
-                try {
                     if(s.equals(value)) {
                         NewTable.model.removeRow(i);
                     }
                 }
-                catch(NullPointerException e) {
+            }
+        }
+        catch(NullPointerException e) {
+        }
+    }
 
+
+    public static void filterByPoints(int pointValue) {
+            try {
+            for(int i = 0; i < NewTable.table.getRowCount(); i++) {
+                String value = NewTable.table.getValueAt(i,4).toString();
+                int newValue = Integer.parseInt(value);
+
+                if(newValue > pointValue ) {
+                    System.out.println(newValue);
+                    System.out.println("row removed" + i);
+                    NewTable.model.removeRow(i);
                 }
+            }
+
+            }
+            catch (NumberFormatException e) {
 
             }
         }
-    }
 
 
 
@@ -427,68 +433,133 @@ public class AddVillagePanel extends JPanel {
                     NewTable.table.setValueAt(values[1], count, 1);
                     NewTable.table.setValueAt(values[2], count, 2);
                     NewTable.table.setValueAt(values[3], count, 3);
-                    NewTable.table.setValueAt(newValue, count, 4);
+                    NewTable.table.setValueAt(values[5], count, 4);
+                    NewTable.table.setValueAt(newValue, count, 5);
                     count++;
                     //break
                 }
             }
         }
-        //filterFarmsBlackList();
     }
 
 
 
 
-    public static void displayFarmVillages(String fileName) throws IOException{
-        FileReader fr = new FileReader(fileName);
-        BufferedReader br = new BufferedReader(fr);
+    public static void displayFarmVillages(String fileName) throws IOException {
+        FileReader fr = null;
+        BufferedReader br = null;
+
+        try {
+            fr = new FileReader(fileName);
+            br = new BufferedReader(fr);
+        }
+        catch(FileNotFoundException e) {
+            createFile(fileName);
+        }
+
         String currentFarms;
         countCurrentFarms = 0;
 
         String[] currentFarmArray = new String[1];
+        try {
+            while((currentFarms = br.readLine()) != null) {
 
-        while((currentFarms = br.readLine()) != null) {
-
-            for (int i = 0; i < currentFarmArray.length; i++) {
-                try {
-                    currentFarmArray = currentFarms.split(",");
-                }
-                catch(NullPointerException e) {
-                    //do nothing but load
-                }
-                try {
-                    if(i >= 0  && i < 1 ) {
-                        AttackTable.table.setValueAt(currentFarmArray[0], countCurrentFarms, 0);
-                        AttackTable.table.setValueAt(currentFarmArray[1], countCurrentFarms, 1);
-                        AttackTable.table.setValueAt(currentFarmArray[2], countCurrentFarms, 2);
-                        AttackTable.table.setValueAt(currentFarmArray[3], countCurrentFarms, 3);
-                        AttackTable.table.setValueAt(currentFarmArray[4], countCurrentFarms, 4);
-                        AttackTable.table.setValueAt(currentFarmArray[5], countCurrentFarms, 5);
-                        AttackTable.table.setValueAt(currentFarmArray[6], countCurrentFarms, 6);
-                        AttackTable.table.setValueAt(currentFarmArray[7], countCurrentFarms, 7);
-                        AttackTable.table.setValueAt(currentFarmArray[8], countCurrentFarms, 8);
-                        AttackTable.table.setValueAt(currentFarmArray[9], countCurrentFarms, 9);
-                        AttackTable.table.setValueAt(currentFarmArray[10], countCurrentFarms, 10);
-                        AttackTable.table.setValueAt(currentFarmArray[11], countCurrentFarms, 11);
-                        AttackTable.table.setValueAt(currentFarmArray[12], countCurrentFarms, 12);
-                        AttackTable.table.setValueAt(currentFarmArray[13], countCurrentFarms, 13);
-                        AttackTable.table.setValueAt(currentFarmArray[14], countCurrentFarms, 14);
-                        AttackTable.table.setValueAt(currentFarmArray[15], countCurrentFarms, 15);
-                        countCurrentFarms++;
-                        filterFarmsBlackList();
+                for (int i = 0; i < currentFarmArray.length; i++) {
+                    try {
+                        currentFarmArray = currentFarms.split(",");
+                    }
+                    catch(NullPointerException e) {
+                        //do nothing but load
+                    }
+                    try {
+                        if(i >= 0  && i < 1 ) {
+                            AttackTable.table.setValueAt(currentFarmArray[0], countCurrentFarms, 0);
+                            AttackTable.table.setValueAt(currentFarmArray[1], countCurrentFarms, 1);
+                            AttackTable.table.setValueAt(currentFarmArray[2], countCurrentFarms, 2);
+                            AttackTable.table.setValueAt(currentFarmArray[3], countCurrentFarms, 3);
+                            AttackTable.table.setValueAt(currentFarmArray[4], countCurrentFarms, 4);
+                            AttackTable.table.setValueAt(currentFarmArray[5], countCurrentFarms, 5);
+                            AttackTable.table.setValueAt(currentFarmArray[6], countCurrentFarms, 6);
+                            AttackTable.table.setValueAt(currentFarmArray[7], countCurrentFarms, 7);
+                            AttackTable.table.setValueAt(currentFarmArray[8], countCurrentFarms, 8);
+                            AttackTable.table.setValueAt(currentFarmArray[9], countCurrentFarms, 9);
+                            AttackTable.table.setValueAt(currentFarmArray[10], countCurrentFarms, 10);
+                            AttackTable.table.setValueAt(currentFarmArray[11], countCurrentFarms, 11);
+                            AttackTable.table.setValueAt(currentFarmArray[12], countCurrentFarms, 12);
+                            AttackTable.table.setValueAt(currentFarmArray[13], countCurrentFarms, 13);
+                            AttackTable.table.setValueAt(currentFarmArray[14], countCurrentFarms, 14);
+                            AttackTable.table.setValueAt(currentFarmArray[15], countCurrentFarms, 15);
+                            countCurrentFarms++;
+                            //filterCurrentFarms();
+                        }
+                    }
+                    catch(ArrayIndexOutOfBoundsException e) {
+                        //
                     }
                 }
-                catch(ArrayIndexOutOfBoundsException e) {
-                    //
-                }
             }
+            fr.close();
+            br.close();
         }
-        fr.close();
-        br.close();
+        catch(NullPointerException e) {
+        }
     }
 
     public static Double distanceMethod(Double x2, Double x1, Double y2, Double y1) {
         Double distance = Math.round(((distance(x1, y1, x2, y2)) * 100.0)) / 100.0;
         return distance;
     }
+
+
+    public static void removeLineFromFile(String file, String lineToRemove) {
+
+        try {
+
+            File inFile = new File(file);
+
+            if (!inFile.isFile()) {
+                System.out.println("Parameter is not an existing file");
+                return;
+            }
+
+            //Construct the new file that will later be renamed to the original filename.
+            File tempFile = new File(inFile.getAbsolutePath() + ".tmp");
+
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
+
+            String line = null;
+
+            //Read from the original file and write to the new
+            //unless content matches data to be removed.
+            while ((line = br.readLine()) != null) {
+             System.out.println(line);
+                if (!line.trim().equals(lineToRemove)) {
+
+                    pw.println(line);
+                    pw.flush();
+                }
+            }
+            pw.close();
+            br.close();
+
+            //Delete the original file
+            if (!inFile.delete()) {
+                System.out.println("Could not delete file");
+                return;
+            }
+
+            //Rename the new file to the filename the original file had.
+            if (!tempFile.renameTo(inFile))
+                System.out.println("Could not rename file");
+
+        }
+        catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        }
+        catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 }

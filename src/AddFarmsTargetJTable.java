@@ -157,7 +157,7 @@ public class AddFarmsTargetJTable extends JPanel {
 
        // try {
             //AddVillagePanel.findFarms("village.txt", "currentFarmList.txt");
-            //AddVillagePanel.filterFarmsBlackList();
+            //AddVillagePanel.filterCurrentFarms();
             //addFarmsModel.
             //addFarmsModel.moveRow(0, 1, 3);
             //AddVillagePanel.populateArray("currentFarmList.txt");
@@ -283,10 +283,7 @@ public class AddFarmsTargetJTable extends JPanel {
                 {"", "", "", "", ""},
                 {"", "", "", "", ""},
                 {"", "", "", "", ""},
-
         };
-
-
 
         public int getColumnCount() {
             return columnNames.length;
@@ -312,25 +309,6 @@ public class AddFarmsTargetJTable extends JPanel {
             data[row][col] = value;
             fireTableCellUpdated(row, col);
         }
-
-
-
-        //public void removeRow(int row) {
-
-            /*
-                Object[][] newData = new Object[data.length-1][data[0].length];
-                for(int i = 0; i < newData.length; i++){
-                    for(int j = 0; j < data[0].length; j++){
-                        newData[i][j] = data[i+1][j];
-                    }
-                }
-                data = new Object[newData.length][columnNames.length];
-                data = newData;
-                //fireTableRowsDeleted(row, row + 1);
-                */
-
-
-        //}
 
         public static String getValueforCell() {
             int selectedRowIndex = addFarmsTable.getSelectedRow();

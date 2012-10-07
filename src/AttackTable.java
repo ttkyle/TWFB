@@ -42,6 +42,7 @@ public class AttackTable extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 MainFrame.addFarmsDialog.setVisible(true);
+                AddVillagePanel.removeLineFromFile("15000.txt", "85896, marittiell1926s+village, 350, 246, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,");
             }
         });
 

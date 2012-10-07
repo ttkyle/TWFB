@@ -146,18 +146,7 @@ public class AddFarmsTroops extends JPanel {
         nobleIconFarmAdder.setOpaque(true);
         nobleIconFarmAdder.setBorder(null);
 
-        setSpearTextFieldFarmAdder("0");
-        setArcherTextFieldFarmAdder("0");
-        setAxeTextFieldFarmAdder("0");
-        setCatapultTextFieldFarmAdder("0");
-        setHeavyCalTextFieldFarmAdder("0");
-        setLightCalTextFieldFarmAdder("0");
-        setMountedArcherTextFieldFarmAdder("0");
-        setNobleTextFieldFarmAdder("0");
-        setPaladinTextFieldFarmAdder("0");
-        setRamTextFieldFarmAdder("0");
-        setScoutTextFieldFarmAdder("0");
-        setSwordTextFieldFarmAdder("0");
+
 
         ///////First Column///////
         gc.anchor = GridBagConstraints.LINE_START;

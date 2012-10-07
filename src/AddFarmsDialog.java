@@ -44,26 +44,19 @@ public class AddFarmsDialog extends JDialog {
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                try {
-                    AddVillagePanel.displayFarmVillages("15000.txt");
-                    AddFarmsTroops.setSpearTextFieldFarmAdder("0");
-                    AddFarmsTroops.setArcherTextFieldFarmAdder("0");
-                    AddFarmsTroops.setAxeTextFieldFarmAdder("0");
-                    AddFarmsTroops.setCatapultTextFieldFarmAdder("0");
-                    AddFarmsTroops.setHeavyCalTextFieldFarmAdder("0");
-                    AddFarmsTroops.setLightCalTextFieldFarmAdder("0");
-                    AddFarmsTroops.setMountedArcherTextFieldFarmAdder("0");
-                    AddFarmsTroops.setNobleTextFieldFarmAdder("0");
-                    AddFarmsTroops.setPaladinTextFieldFarmAdder("0");
-                    AddFarmsTroops.setRamTextFieldFarmAdder("0");
-                    AddFarmsTroops.setScoutTextFieldFarmAdder("0");
-                    AddFarmsTroops.setSwordTextFieldFarmAdder("0");
-
+                    AddFarmsTroops.setSpearTextFieldFarmAdder("");
+                    AddFarmsTroops.setArcherTextFieldFarmAdder("");
+                    AddFarmsTroops.setAxeTextFieldFarmAdder("");
+                    AddFarmsTroops.setCatapultTextFieldFarmAdder("");
+                    AddFarmsTroops.setHeavyCalTextFieldFarmAdder("");
+                    AddFarmsTroops.setLightCalTextFieldFarmAdder("");
+                    AddFarmsTroops.setMountedArcherTextFieldFarmAdder("");
+                    AddFarmsTroops.setNobleTextFieldFarmAdder("");
+                    AddFarmsTroops.setPaladinTextFieldFarmAdder("");
+                    AddFarmsTroops.setRamTextFieldFarmAdder("");
+                    AddFarmsTroops.setScoutTextFieldFarmAdder("");
+                    AddFarmsTroops.setSwordTextFieldFarmAdder("");
                 }
-                catch (IOException e1) {
-                    //
-                }
-            }
         });
 
         setVisible(false);
