@@ -569,14 +569,7 @@ public class AddFarmsTable extends JPanel {
         table.getColumnModel().getColumn(3).setPreferredWidth(5);
         table.getColumnModel().getColumn(4).setPreferredWidth(15);
 
-        //RowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
-        //table.setRowSorter(sorter);
-
-
-
         table.setAutoCreateColumnsFromModel(false);
-
-
 
         farmMenu = new JPopupMenu();
 

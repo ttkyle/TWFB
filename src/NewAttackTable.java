@@ -780,7 +780,7 @@ public class NewAttackTable extends JPanel {
 
 
         table.setAutoCreateColumnsFromModel(false);
-
+        table.changeSelection(0, 0, false, false);
 
         popupMenu = new JPopupMenu();
 

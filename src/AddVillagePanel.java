@@ -322,29 +322,45 @@ public class AddVillagePanel extends JPanel {
             }
 
             //Construct the new file that will later be renamed to the original filename.
-            File tempFile = new File(inFile.getAbsolutePath() + ".tmp");
+
+            File tempFile = new File(inFile.getAbsolutePath() + ".tmp");;
+
 
             BufferedReader br = new BufferedReader(new FileReader(file));
             PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
 
             String line = null;
+            String lineToRemove = null;
 
-            String lineToRemove = NewAttackTable.table.getValueAt(rowNumber, 0) + "," +
+
+            lineToRemove = NewAttackTable.table.getValueAt(rowNumber, 0) + "," +
                     NewAttackTable.table.getValueAt(rowNumber, 1) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 2) + "," + NewAttackTable.table.getValueAt(rowNumber, 3) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 4) + "," + NewAttackTable.table.getValueAt(rowNumber, 5) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 6) + "," + NewAttackTable.table.getValueAt(rowNumber, 7) + ","  +
-                    NewAttackTable.table.getValueAt(rowNumber, 8) + "," + NewAttackTable.table.getValueAt(rowNumber,9) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 10) + "," + NewAttackTable.table.getValueAt(rowNumber, 11) + ","  +
-                    NewAttackTable.table.getValueAt(rowNumber, 12) + "," + NewAttackTable.table.getValueAt(rowNumber, 13) + "," +
+                    NewAttackTable.table.getValueAt(rowNumber, 2) + "," +
+                    NewAttackTable.table.getValueAt(rowNumber, 3) + "," +
+                    NewAttackTable.table.getValueAt(rowNumber, 4) + "," +
+                    NewAttackTable.table.getValueAt(rowNumber, 5) + "," +
+                    NewAttackTable.table.getValueAt(rowNumber, 6) + "," +
+                    NewAttackTable.table.getValueAt(rowNumber, 7) + "," +
+                    NewAttackTable.table.getValueAt(rowNumber, 8) + "," +
+                    NewAttackTable.table.getValueAt(rowNumber, 9) + "," +
+                    NewAttackTable.table.getValueAt(rowNumber, 10) + "," +
+                    NewAttackTable.table.getValueAt(rowNumber, 11) + "," +
+                    NewAttackTable.table.getValueAt(rowNumber, 12) + "," +
+                    NewAttackTable.table.getValueAt(rowNumber, 13) + "," +
                     NewAttackTable.table.getValueAt(rowNumber, 14) + ",";
 
-            if(NewAttackTable.table.getValueAt(rowNumber, 0) != null) {
-                deleteStringFromFile("currentFarmList.txt", NewAttackTable.table.getValueAt(rowNumber, 0) + ",");
-            }
+
+
+
+                if(NewAttackTable.table.getValueAt(rowNumber, 0) != null && NewAttackTable.table.getValueAt(rowNumber, 0) != "") {
+                    deleteStringFromFile("currentFarmList.txt", NewAttackTable.table.getValueAt(rowNumber, 0) + ",");
+                }
+
+
             //Read from the original file and write to the new
             //unless content matches data to be removed.
             int count = 0;
+
             while ((line = br.readLine()) != null) {
                 System.out.println(count + "count before If");
                 NewAttackTable.model.removeRow(count);
@@ -355,6 +371,7 @@ public class AddVillagePanel extends JPanel {
                     pw.flush();
                 }
             }
+
 
             br.close();
             pw.close();
@@ -375,6 +392,9 @@ public class AddVillagePanel extends JPanel {
         }
         catch (IOException ex) {
             ex.printStackTrace();
+        }
+        catch (ArrayIndexOutOfBoundsException ex) {
+
         }
     }
 
@@ -456,6 +476,7 @@ public class AddVillagePanel extends JPanel {
         }
         catch(NullPointerException e) {
         }
+        AddFarmsTable.table.changeSelection(0, 0, false, false);
     }
 
 
@@ -518,6 +539,7 @@ public class AddVillagePanel extends JPanel {
                 }
             }
         }
+        AddFarmsTable.table.changeSelection(0, 0, false, false);
     }
 
 
