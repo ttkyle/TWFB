@@ -797,6 +797,7 @@ public class AddFarmsTable extends JPanel {
                     bufferedWriter.write(", ");
                     bufferedWriter.newLine();
                     bufferedWriter.close();
+                    writer.close();
 
                     DataManipulation.writeFarms(DataManipulation.createFile("currentFarmList.txt"));
                 }
