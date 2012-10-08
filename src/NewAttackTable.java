@@ -314,9 +314,9 @@ public class NewAttackTable extends JPanel {
         deleteItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                getValueforCell();
                 try {
-                    AddVillagePanel.removeLineFromFile("15000.txt", 0);
+                    AddVillagePanel.removeLineFromFile("15000.txt");
                 }
                 catch (IOException e1) {
                 }
@@ -325,26 +325,36 @@ public class NewAttackTable extends JPanel {
                 }
                 catch (IOException e1) {
                 }
+
                 try {
                     AddVillagePanel.findFarms("village.txt");
                 }
                 catch (IOException e1) {
-
                 }
+
                 AddVillagePanel.filterCurrentFarms();
+                AddFarmsTable.sortAllRowsBy(AddFarmsTable.model, 5, true);
+
 
             }
         });
         popupMenu.add(menuItem);
         popupMenu.add(deleteItem);
 
-        try {
-            AddVillagePanel.displayFarmVillages("15000.txt");
-        }
-        catch (IOException e) {
-            //
-        }
+
     }
+
+        public static void getValueforCell() {
+            int selectedRowIndex = table.getSelectedRow();
+            /*
+            columnZero = (String) table.getModel().getValueAt(selectedRowIndex, 0);
+            columnOne = (String) table.getModel().getValueAt(selectedRowIndex, 1);
+            columnTwo = (String) table.getModel().getValueAt(selectedRowIndex, 2);
+            columnThree = (String) table.getModel().getValueAt(selectedRowIndex, 3);
+            return columnZero + " " + columnOne + " " +columnTwo + " " + columnThree;
+            */
+        }
+
 
 
     class JComponentTableCellRenderer implements TableCellRenderer {
@@ -369,8 +379,9 @@ public class NewAttackTable extends JPanel {
             }
         }
     }
-
 }
+
+
 
 
 

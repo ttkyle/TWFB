@@ -32,6 +32,9 @@ public class MainFrame extends JFrame {
         disableButtons();
 
         AddVillagePanel.displayFarmVillages("15000.txt");
+        AddVillagePanel.findFarms("village.txt");
+        AddFarmsTable.sortAllRowsBy(AddFarmsTable.model, 5, true);
+
         AddVillagePanel.filterCurrentFarms();
 
 

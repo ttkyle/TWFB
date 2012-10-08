@@ -71,22 +71,11 @@ public class AddVillagePanel extends JPanel {
                 writeToVillage(createFile(villageID + ".txt"), villageID, villageName, villageX, villageY);
 
                 try {
-                    removeLineFromFile("15000.txt", 0);
+                    removeLineFromFile("15000.txt");
                 }
                 catch (IOException e1) {
 
                 }
-
-
-                /*(
-                writeToVillage2(createFile("15000.txt"));
-                try {
-                    displayFarmVillages("15000.txt");
-
-                } catch (IOException e1) {
-
-                }
-                */
             }
         });
 
@@ -321,7 +310,9 @@ public class AddVillagePanel extends JPanel {
         tempFile.renameTo(inFile);
     }
 
-    public static void removeLineFromFile(String file, int rowNumber) throws IOException {
+    public static void removeLineFromFile(String file) throws IOException {
+
+        int rowNumber = NewAttackTable.table.getSelectedRow();
         try {
             File inFile = new File(file);
 
@@ -348,7 +339,9 @@ public class AddVillagePanel extends JPanel {
                     NewAttackTable.table.getValueAt(rowNumber, 12) + "," + NewAttackTable.table.getValueAt(rowNumber, 13) + "," +
                     NewAttackTable.table.getValueAt(rowNumber, 14) + ",";
 
-            deleteStringFromFile("currentFarmList.txt", NewAttackTable.table.getValueAt(rowNumber, 0) + ",");
+            if(NewAttackTable.table.getValueAt(rowNumber, 0) != null) {
+                deleteStringFromFile("currentFarmList.txt", NewAttackTable.table.getValueAt(rowNumber, 0) + ",");
+            }
             //Read from the original file and write to the new
             //unless content matches data to be removed.
             int count = 0;
@@ -383,7 +376,6 @@ public class AddVillagePanel extends JPanel {
         catch (IOException ex) {
             ex.printStackTrace();
         }
-
     }
 
 

@@ -577,6 +577,7 @@ public class AddFarmsTable extends JPanel {
         table.setAutoCreateColumnsFromModel(false);
 
 
+
         farmMenu = new JPopupMenu();
 
         MouseListener popupListener = new PopupListener();
@@ -588,11 +589,12 @@ public class AddFarmsTable extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 try {
-                    System.out.println(DataManipulation.getValueforCell());
+                    DataManipulation.getValueforCell();
                     DataManipulation.writeToVillage2(DataManipulation.createFile("15000.txt"));
                     try {
                         AddVillagePanel.displayFarmVillages("15000.txt");
                         AddVillagePanel.filterCurrentFarms();
+                        sortAllRowsBy(model, 5, true);
                     }
                     catch (IOException e1) {
                     }
@@ -604,17 +606,10 @@ public class AddFarmsTable extends JPanel {
         });
         farmMenu.add(menuItem);
 
-       try {
-            AddVillagePanel.findFarms("village.txt");
-            //AddVillagePanel.filterCurrentFarms();
-        }
-        catch (IOException e) {
-            //
-        }
-        sortAllRowsBy(model, 5, true);
+
     }
 
-    public void sortAllRowsBy(DefaultTableModel model, int colIndex, boolean ascending) {
+    public static void sortAllRowsBy(DefaultTableModel model, int colIndex, boolean ascending) {
         Vector data = model.getDataVector();
         Collections.sort(data, new ColumnSorter(colIndex, ascending));
         model.fireTableStructureChanged();
@@ -660,6 +655,7 @@ public class AddFarmsTable extends JPanel {
                 }
 
                 bufferedWriter.close();
+                writer.close();
             }
             catch (IOException e) {
             }
@@ -834,7 +830,7 @@ public class AddFarmsTable extends JPanel {
     }
 
     // This comparator is used to sort vectors of data
-    public class ColumnSorter implements Comparator {
+    public static class ColumnSorter implements Comparator {
         int colIndex;
         boolean ascending;
         ColumnSorter(int colIndex, boolean ascending) {
