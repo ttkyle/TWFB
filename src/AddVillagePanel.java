@@ -521,8 +521,6 @@ public class AddVillagePanel extends JPanel {
     }
 
 
-
-
     public static void displayFarmVillages(String fileName) throws IOException {
         FileReader fr = null;
         BufferedReader br = null;
