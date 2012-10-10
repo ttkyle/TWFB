@@ -796,6 +796,7 @@ public class NewAttackTable extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 try {
                     MainFrame.addFarmsDialog.setVisible(true);
+                    AddFarmsTable.table.changeSelection(0, 0, false, false);
                     AddVillagePanel.filterCurrentFarms();
                 }
                 catch(ArrayIndexOutOfBoundsException e1) {

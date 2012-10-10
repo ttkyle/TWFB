@@ -19,7 +19,6 @@ import static java.awt.geom.Point2D.distance;
 public class AddVillagePanel extends JPanel {
 
     public static int countCurrentFarms;
-    public static int farmCount;
     public static String[] currentFarms;
 
     public AddVillagePanel() {
@@ -504,35 +503,30 @@ public class AddVillagePanel extends JPanel {
         FileReader fr = new FileReader(fileName);
         BufferedReader br = new BufferedReader(fr);
 
-        //RandomAccessFile raf = new RandomAccessFile(currentList, "rw");
-
         String farms;
-        String currentFarmList;
         int count = 0;
 
-        String[] values = new String[1];
-        //String[] currentFarms = new String[1];
+        String[] values;
 
         while((farms = br.readLine()) != null) {
             for (int i = 0; i <  1; i++) {
                 try {
                     values = farms.split(",");
 
+                    if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 15 &&
+                            distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) != 0.0
+                            ) {
 
-                if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 15 &&
-                        distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) != 0.0
-                        ) {
-
-                    Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0);
-                    AddFarmsTable.table.setValueAt(values[0], count, 0);
-                    AddFarmsTable.table.setValueAt(values[1], count, 1);
-                    AddFarmsTable.table.setValueAt(values[2], count, 2);
-                    AddFarmsTable.table.setValueAt(values[3], count, 3);
-                    AddFarmsTable.table.setValueAt(values[5], count, 4);
-                    AddFarmsTable.table.setValueAt(newValue, count, 5);
-                    count++;
-                    //break
-                }
+                        Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0);
+                        AddFarmsTable.table.setValueAt(values[0], count, 0);
+                        AddFarmsTable.table.setValueAt(values[1], count, 1);
+                        AddFarmsTable.table.setValueAt(values[2], count, 2);
+                        AddFarmsTable.table.setValueAt(values[3], count, 3);
+                        AddFarmsTable.table.setValueAt(values[5], count, 4);
+                        AddFarmsTable.table.setValueAt(newValue, count, 5);
+                        count++;
+                        //break
+                    }
                 }
                 catch(NullPointerException e) {
                     //do nothing but load
