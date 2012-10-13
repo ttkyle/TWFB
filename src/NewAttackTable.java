@@ -3,13 +3,7 @@ import javax.swing.border.Border;
 import javax.swing.table.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Vector;
 
 
 public class NewAttackTable extends JPanel {
@@ -215,25 +209,28 @@ public class NewAttackTable extends JPanel {
         deleteItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                getValueforCell();
+                getValueForCell();
                 try {
                     AddVillagePanel.removeLineFromFile("15000.txt");
                 }
                 catch (IOException e1) {
+                    //Do nothing
                 }
                 try {
                     AddVillagePanel.displayFarmVillagesAfterDelete("15000.txt");
                 }
                 catch (IOException e1) {
+                    //Do nothing
                 }
 
                 try {
                     AddVillagePanel.findFarms("village.txt");
                 }
                 catch (IOException e1) {
+                    //Do nothing
                 }
                 catch(ArrayIndexOutOfBoundsException e1) {
-
+                    //Do nothing
                 }
 
                 AddVillagePanel.filterCurrentFarms();
@@ -246,8 +243,8 @@ public class NewAttackTable extends JPanel {
 
     }
 
-        public static void getValueforCell() {
-            int selectedRowIndex = table.getSelectedRow();
+        public static void getValueForCell() {
+            table.getSelectedRow();
             /*
             columnZero = (String) table.getModel().getValueAt(selectedRowIndex, 0);
             columnOne = (String) table.getModel().getValueAt(selectedRowIndex, 1);
