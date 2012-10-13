@@ -300,6 +300,7 @@ public class AddVillagePanel extends JPanel {
         for(String line; (line = br.readLine()) != null;) {
             line = line.replace(delete, "");
             pw.println(line);
+            pw.flush();
         }
 
         br.close();
@@ -320,17 +321,13 @@ public class AddVillagePanel extends JPanel {
                 return;
             }
 
-            //Construct the new file that will later be renamed to the original filename.
-
             File tempFile = new File(inFile.getAbsolutePath() + ".tmp");;
-
 
             BufferedReader br = new BufferedReader(new FileReader(file));
             PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
 
             String line = null;
             String lineToRemove = null;
-
 
             lineToRemove = NewAttackTable.table.getValueAt(rowNumber, 0) + "," +
                     NewAttackTable.table.getValueAt(rowNumber, 1) + "," +
@@ -350,21 +347,17 @@ public class AddVillagePanel extends JPanel {
 
                 if(NewAttackTable.table.getValueAt(rowNumber, 0) != null && NewAttackTable.table.getValueAt(rowNumber, 0) != "") {
                     deleteStringFromFile("currentFarmList.txt", NewAttackTable.table.getValueAt(rowNumber, 0) + ",");
+                    System.out.println("delete the ID from farmList");
                 }
 
             //Read from the original file and write to the new
             //unless content matches data to be removed.
             int count = 0;
-
+            NewAttackTable.model.removeRow(rowNumber);
             while ((line = br.readLine()) != null) {
-                System.out.println(count + "count before If");
-                NewAttackTable.model.removeRow(count);
                 if (!line.trim().equals(lineToRemove)) {
-                    count++;
-                    System.out.println(count + "count in if");
                     pw.println(line);
                     pw.flush();
-                    System.out.println("flush");
                 }
             }
             br.close();
@@ -460,7 +453,6 @@ public class AddVillagePanel extends JPanel {
         }
         try {
             for(String s : currentFarms) {
-                 System.out.println(s + "s");
                 for(int i = 0; i < AddFarmsTable.table.getRowCount(); i++) {
                     String value = AddFarmsTable.table.getValueAt(i,0).toString();
 
@@ -563,9 +555,7 @@ public class AddVillagePanel extends JPanel {
                     try {
                         if(i >= 0  && i < 1 ) {
                             NewAttackTable.model.addRow(new Object[] {});
-                            NewAttackTable.model.addRow(new Object[] {});
-                            NewAttackTable.model.addRow(new Object[] {});
-                            NewAttackTable.model.addRow(new Object[] {});
+
                             NewAttackTable.table.setValueAt(currentFarmArray[0], countCurrentFarms, 0);
                             NewAttackTable.table.setValueAt(currentFarmArray[1], countCurrentFarms, 1);
                             NewAttackTable.table.setValueAt(currentFarmArray[2], countCurrentFarms, 2);
@@ -611,6 +601,63 @@ public class AddVillagePanel extends JPanel {
         String currentFarms;
         countCurrentFarms = 0;
         NewAttackTable.model.addRow(new Object[] {});
+        String[] currentFarmArray = new String[1];
+
+        try {
+            while((currentFarms = br.readLine()) != null) {
+                for (int i = 0; i < currentFarmArray.length; i++) {
+                    try {
+                        currentFarmArray = currentFarms.split(",");
+                    }
+                    catch(NullPointerException e) {
+                        //do nothing but load
+                    }
+                    try {
+                        if(i >= 0  && i < 1 ) {
+                            NewAttackTable.table.setValueAt(currentFarmArray[0], countCurrentFarms, 0);
+                            NewAttackTable.table.setValueAt(currentFarmArray[1], countCurrentFarms, 1);
+                            NewAttackTable.table.setValueAt(currentFarmArray[2], countCurrentFarms, 2);
+                            NewAttackTable.table.setValueAt(currentFarmArray[3], countCurrentFarms, 3);
+                            NewAttackTable.table.setValueAt(currentFarmArray[4], countCurrentFarms, 4);
+                            NewAttackTable.table.setValueAt(currentFarmArray[5], countCurrentFarms, 5);
+                            NewAttackTable.table.setValueAt(currentFarmArray[6], countCurrentFarms, 6);
+                            NewAttackTable.table.setValueAt(currentFarmArray[7], countCurrentFarms, 7);
+                            NewAttackTable.table.setValueAt(currentFarmArray[8], countCurrentFarms, 8);
+                            NewAttackTable.table.setValueAt(currentFarmArray[9], countCurrentFarms, 9);
+                            NewAttackTable.table.setValueAt(currentFarmArray[10], countCurrentFarms, 10);
+                            NewAttackTable.table.setValueAt(currentFarmArray[11], countCurrentFarms, 11);
+                            NewAttackTable.table.setValueAt(currentFarmArray[12], countCurrentFarms, 12);
+                            NewAttackTable.table.setValueAt(currentFarmArray[13], countCurrentFarms, 13);
+                            NewAttackTable.table.setValueAt(currentFarmArray[14], countCurrentFarms, 14);
+                            NewAttackTable.table.setValueAt(currentFarmArray[15], countCurrentFarms, 15);
+                            countCurrentFarms++;
+                        }
+                    }
+                    catch(ArrayIndexOutOfBoundsException e) {
+                    }
+                }
+            }
+            fr.close();
+            br.close();
+        }
+        catch(NullPointerException e) {
+        }
+    }
+
+    public static void displayFarmVillagesAfterDelete(String fileName) throws IOException {
+        FileReader fr = null;
+        BufferedReader br = null;
+
+        try {
+            fr = new FileReader(fileName);
+            br = new BufferedReader(fr);
+        }
+        catch(FileNotFoundException e) {
+            createFile(fileName);
+        }
+
+        String currentFarms;
+        countCurrentFarms = 0;
         String[] currentFarmArray = new String[1];
 
         try {
