@@ -589,18 +589,35 @@ public class AddFarmsTable extends JPanel {
                 else {
                     try {
                         DataManipulation.getValueforCell();
-                        DataManipulation.writeToVillage2(DataManipulation.createFile("15000.txt"));
+                        DataManipulation.createFile("15000.txt");
+                        DataManipulation.writeToVillage2("15000.txt");
                         try {
+                            if((AddFarmsTroops.getSpearTextFieldFarmAdder().equals("")     &&
+                                    AddFarmsTroops.getSwordTextFieldFarmAdder().equals("")         &&
+                                    AddFarmsTroops.getArcherTextFieldFarmAdder().equals("")        &&
+                                    AddFarmsTroops.getAxeTextFieldFarmAdder().equals("")           &&
+                                    AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("") &&
+                                    AddFarmsTroops.getScoutTextFieldFarmAdder().equals("")         &&
+                                    AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("")      &&
+                                    AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("")      &&
+                                    AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("")      &&
+                                    AddFarmsTroops.getRamTextFieldFarmAdder().equals("") )          &&
+                                    AddFarmsTroops.getNobleTextFieldFarmAdder().equals("")) {
+                                //do nothing
+                            }
+                            else {
                             AddVillagePanel.displayFarmVillagesAfterVillageAdd("15000.txt");
                             AddVillagePanel.filterCurrentFarms();
                             sortAllRowsBy(model, 5, true);
                             table.changeSelection(0, 0, false, false);
+                            }
                         }
                         catch (IOException e1) {
+                            //Do nothing
                         }
                     }
                     catch(ArrayIndexOutOfBoundsException e1) {
-                        //do nothing
+                        //Do nothing
                     }
                 }
             }
@@ -660,19 +677,8 @@ public class AddFarmsTable extends JPanel {
             }
         }
 
-        public static void writeToVillage2(File village) {
+        public static void writeToVillage2(String village) {
             try {
-                FileWriter writer = new FileWriter(village, true);
-                BufferedWriter bufferedWriter = new BufferedWriter(writer);
-                bufferedWriter.write(columnZero);
-                bufferedWriter.write(", ");
-                bufferedWriter.write(columnOne);
-                bufferedWriter.write(", ");
-                bufferedWriter.write(columnTwo);
-                bufferedWriter.write(", ");
-                bufferedWriter.write(columnThree);
-                bufferedWriter.write(", ");
-
                 if((AddFarmsTroops.getSpearTextFieldFarmAdder().equals("")     &&
                         AddFarmsTroops.getSwordTextFieldFarmAdder().equals("")         &&
                         AddFarmsTroops.getArcherTextFieldFarmAdder().equals("")        &&
@@ -688,6 +694,18 @@ public class AddFarmsTable extends JPanel {
                 }
 
                 else {
+                    FileWriter writer = new FileWriter(village, true);
+
+                    BufferedWriter bufferedWriter = new BufferedWriter(writer);
+                    bufferedWriter.write(columnZero);
+                    bufferedWriter.write(", ");
+                    bufferedWriter.write(columnOne);
+                    bufferedWriter.write(", ");
+                    bufferedWriter.write(columnTwo);
+                    bufferedWriter.write(", ");
+                    bufferedWriter.write(columnThree);
+                    bufferedWriter.write(", ");
+
                     if(AddFarmsTroops.getSpearTextFieldFarmAdder().equals(""))
                     {
                         bufferedWriter.write("0");
@@ -795,6 +813,7 @@ public class AddFarmsTable extends JPanel {
                     }
                     bufferedWriter.write(", ");
                     bufferedWriter.newLine();
+
                     bufferedWriter.close();
                     writer.close();
 

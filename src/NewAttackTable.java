@@ -12,8 +12,6 @@ public class NewAttackTable extends JPanel {
     public static DefaultTableModel model;
     public static JPopupMenu popupMenu;
 
-
-
     public NewAttackTable() {
         super(new GridLayout(1, 0));
         Dimension size = getPreferredSize();
@@ -22,7 +20,6 @@ public class NewAttackTable extends JPanel {
         setPreferredSize(size);
         setMaximumSize(size);
         setMinimumSize(size);
-
 
         String[] columnNames = {"Target ID",
                 "Village",
@@ -41,7 +38,7 @@ public class NewAttackTable extends JPanel {
                 "",
                 "Currently"};
 
-          Object[][] data = {
+        Object[][] data = {
         };
 
 
@@ -211,30 +208,43 @@ public class NewAttackTable extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 getValueForCell();
                 try {
-                    AddVillagePanel.removeLineFromFile("15000.txt");
-                }
-                catch (IOException e1) {
-                    //Do nothing
-                }
-                try {
-                    AddVillagePanel.displayFarmVillagesAfterDelete("15000.txt");
-                }
-                catch (IOException e1) {
-                    //Do nothing
-                }
+                    if(NewAttackTable.table.getValueAt(table.getSelectedRow(), 0) == null ||
+                            NewAttackTable.table.getValueAt(table.getSelectedRow(), 0) == "") {
+                        //do nothing
+                    }
+                    else {
+                        try {
+                            AddVillagePanel.removeLineFromFile("15000.txt");
+                        }
+                        catch (IOException e1) {
+                            //Do nothing
+                        }
+                        try {
+                            AddVillagePanel.displayFarmVillagesAfterDelete("15000.txt");
+                        }
+                        catch (IOException e1) {
+                            //Do nothing
+                        }
 
-                try {
-                    AddVillagePanel.findFarms("village.txt");
-                }
-                catch (IOException e1) {
-                    //Do nothing
+                        try {
+                            AddVillagePanel.findFarms("village.txt");
+                        }
+                        catch (IOException e1) {
+                            //Do nothing
+                        }
+                        catch(ArrayIndexOutOfBoundsException e1) {
+                            //Do nothing
+                        }
+                        AddVillagePanel.filterCurrentFarms();
+                        AddFarmsTable.sortAllRowsBy(AddFarmsTable.model, 5, true);
+                        AddFarmsTable.table.changeSelection(0, 0, false, false);
+                    }
+
                 }
                 catch(ArrayIndexOutOfBoundsException e1) {
-                    //Do nothing
+
                 }
 
-                AddVillagePanel.filterCurrentFarms();
-                AddFarmsTable.sortAllRowsBy(AddFarmsTable.model, 5, true);
             }
         });
         popupMenu.add(menuItem);
@@ -243,16 +253,16 @@ public class NewAttackTable extends JPanel {
 
     }
 
-        public static void getValueForCell() {
-            table.getSelectedRow();
-            /*
-            columnZero = (String) table.getModel().getValueAt(selectedRowIndex, 0);
-            columnOne = (String) table.getModel().getValueAt(selectedRowIndex, 1);
-            columnTwo = (String) table.getModel().getValueAt(selectedRowIndex, 2);
-            columnThree = (String) table.getModel().getValueAt(selectedRowIndex, 3);
-            return columnZero + " " + columnOne + " " +columnTwo + " " + columnThree;
-            */
-        }
+    public static void getValueForCell() {
+        table.getSelectedRow();
+        /*
+        columnZero = (String) table.getModel().getValueAt(selectedRowIndex, 0);
+        columnOne = (String) table.getModel().getValueAt(selectedRowIndex, 1);
+        columnTwo = (String) table.getModel().getValueAt(selectedRowIndex, 2);
+        columnThree = (String) table.getModel().getValueAt(selectedRowIndex, 3);
+        return columnZero + " " + columnOne + " " +columnTwo + " " + columnThree;
+        */
+    }
 
 
 
@@ -279,13 +289,3 @@ public class NewAttackTable extends JPanel {
         }
     }
 }
-
-
-
-
-
-
-
-
-
-

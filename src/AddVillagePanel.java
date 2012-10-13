@@ -313,77 +313,90 @@ public class AddVillagePanel extends JPanel {
     public static void removeLineFromFile(String file) throws IOException {
 
         int rowNumber = NewAttackTable.table.getSelectedRow();
+        PrintWriter pw = null;
+        BufferedReader br = null;
         try {
-            File inFile = new File(file);
+            pw = null;
+            br = null;
+            try {
+                File inFile = new File(file);
 
-            if (!inFile.isFile()) {
-                System.out.println("Parameter is not an existing file");
-                return;
-            }
+                if (!inFile.isFile()) {
+                    System.out.println("Parameter is not an existing file");
+                    return;
+                }
 
-            File tempFile = new File(inFile.getAbsolutePath() + ".tmp");;
+                File tempFile = new File(inFile.getAbsolutePath() + ".tmp");
 
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
 
-            String line = null;
-            String lineToRemove = null;
+                br = new BufferedReader(new FileReader(file));
+                pw = new PrintWriter(new FileWriter(tempFile));
 
-            lineToRemove = NewAttackTable.table.getValueAt(rowNumber, 0) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 1) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 2) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 3) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 4) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 5) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 6) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 7) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 8) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 9) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 10) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 11) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 12) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 13) + "," +
-                    NewAttackTable.table.getValueAt(rowNumber, 14) + ",";
+                String line = null;
+                String lineToRemove = null;
 
-                if(NewAttackTable.table.getValueAt(rowNumber, 0) != null && NewAttackTable.table.getValueAt(rowNumber, 0) != "") {
+                lineToRemove = NewAttackTable.table.getValueAt(rowNumber, 0) + "," +
+                        NewAttackTable.table.getValueAt(rowNumber, 1) + "," +
+                        NewAttackTable.table.getValueAt(rowNumber, 2) + "," +
+                        NewAttackTable.table.getValueAt(rowNumber, 3) + "," +
+                        NewAttackTable.table.getValueAt(rowNumber, 4) + "," +
+                        NewAttackTable.table.getValueAt(rowNumber, 5) + "," +
+                        NewAttackTable.table.getValueAt(rowNumber, 6) + "," +
+                        NewAttackTable.table.getValueAt(rowNumber, 7) + "," +
+                        NewAttackTable.table.getValueAt(rowNumber, 8) + "," +
+                        NewAttackTable.table.getValueAt(rowNumber, 9) + "," +
+                        NewAttackTable.table.getValueAt(rowNumber, 10) + "," +
+                        NewAttackTable.table.getValueAt(rowNumber, 11) + "," +
+                        NewAttackTable.table.getValueAt(rowNumber, 12) + "," +
+                        NewAttackTable.table.getValueAt(rowNumber, 13) + "," +
+                        NewAttackTable.table.getValueAt(rowNumber, 14) + ",";
+
+                if (NewAttackTable.table.getValueAt(rowNumber, 0) != null && NewAttackTable.table.getValueAt(rowNumber, 0) != "") {
                     deleteStringFromFile("currentFarmList.txt", NewAttackTable.table.getValueAt(rowNumber, 0) + ",");
                     System.out.println("delete the ID from farmList");
                 }
 
-            //Read from the original file and write to the new
-            //unless content matches data to be removed.
-            int count = 0;
-            NewAttackTable.model.removeRow(rowNumber);
-            while ((line = br.readLine()) != null) {
-                if (!line.trim().equals(lineToRemove)) {
-                    pw.println(line);
-                    pw.flush();
+                //Read from the original file and write to the new
+                //unless content matches data to be removed.
+                NewAttackTable.model.removeRow(rowNumber);
+                while ((line = br.readLine()) != null) {
+                    if (!line.trim().equals(lineToRemove)) {
+                        pw.println(line);
+                        pw.flush();
+                    }
                 }
+                br.close();
+                pw.close();
+
+                //Delete the original file
+                if (!inFile.delete()) {
+                    System.out.println("Could not delete file");
+                    return;
+                }
+
+                //Rename the new file to the filename the original file had.
+                if (!tempFile.renameTo(inFile)) {
+                    System.out.println("Could not rename file");
+                }
+
+            } finally {
+                br.close();
+                pw.close();
             }
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
             br.close();
             pw.close();
-
-            //Delete the original file
-            if (!inFile.delete()) {
-                System.out.println("Could not delete file");
-                return;
-            }
-
-            //Rename the new file to the filename the original file had.
-            if (!tempFile.renameTo(inFile))
-                System.out.println("Could not rename file");
-
-        }
-        catch (FileNotFoundException ex) {
-            ex.printStackTrace();
             System.out.println("aaa FileNotFound");
-        }
-        catch (IOException ex) {
+        } catch (IOException ex) {
             ex.printStackTrace();
+            br.close();
+            pw.close();
             System.out.println("aaa IOexception");
-        }
-        catch (ArrayIndexOutOfBoundsException ex) {
+        } catch (ArrayIndexOutOfBoundsException ex) {
             System.out.println("aaa Array oOB");
+            br.close();
+            pw.close();
         }
     }
 
@@ -634,6 +647,8 @@ public class AddVillagePanel extends JPanel {
                         }
                     }
                     catch(ArrayIndexOutOfBoundsException e) {
+                        fr.close();
+                        br.close();
                     }
                 }
             }
@@ -691,6 +706,8 @@ public class AddVillagePanel extends JPanel {
                         }
                     }
                     catch(ArrayIndexOutOfBoundsException e) {
+                        fr.close();
+                        br.close();
                     }
                 }
             }
@@ -698,6 +715,7 @@ public class AddVillagePanel extends JPanel {
             br.close();
         }
         catch(NullPointerException e) {
+            System.out.println("null point After Delete");
         }
     }
 
