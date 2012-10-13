@@ -31,7 +31,7 @@ public class MainFrame extends JFrame {
         //Disables frames on GUI creation
         disableButtons();
 
-        AddVillagePanel.displayFarmVillages("15000.txt");
+        AddVillagePanel.displayFarmVillagesInitial("15000.txt");
         AddVillagePanel.findFarms("village.txt");
         AddFarmsTable.sortAllRowsBy(AddFarmsTable.model, 5, true);
 

@@ -48,6 +48,7 @@ public class NewAttackTable extends JPanel {
                 "Currently"};
 
           Object[][] data = {
+
                   {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
                   {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
                   {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
@@ -55,6 +56,7 @@ public class NewAttackTable extends JPanel {
                   {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
                   {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
                   {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
+                  /*
                   {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
                   {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
                   {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
@@ -642,6 +644,9 @@ public class NewAttackTable extends JPanel {
                   {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
                   {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
                   {"", "", "", "", "", "","", "", "", "", "", "", "", "", "", ""},
+                  */
+
+
 
         };
 
@@ -651,6 +656,7 @@ public class NewAttackTable extends JPanel {
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
+            /*
             @Override
             public Class getColumnClass(int column) {
                 Class returnValue;
@@ -661,6 +667,7 @@ public class NewAttackTable extends JPanel {
                 }
                 return returnValue;
             }
+            */
         };
 
         table = new JTable(model);
@@ -815,7 +822,7 @@ public class NewAttackTable extends JPanel {
                 catch (IOException e1) {
                 }
                 try {
-                    AddVillagePanel.displayFarmVillages("15000.txt");
+                    AddVillagePanel.displayFarmVillagesInitial("15000.txt");
                 }
                 catch (IOException e1) {
                 }

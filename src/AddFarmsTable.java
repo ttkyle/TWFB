@@ -583,32 +583,29 @@ public class AddFarmsTable extends JPanel {
             public void actionPerformed(ActionEvent e) {
 
                 if(AddFarmsTable.table.getValueAt( AddFarmsTable.table.getSelectedRow(), 0)
-                == null || AddFarmsTable.table.getValueAt( AddFarmsTable.table.getSelectedRow(), 0) == "") {
+                        == null || AddFarmsTable.table.getValueAt( AddFarmsTable.table.getSelectedRow(), 0) == "") {
                     //do nothing
                 }
-
                 else {
-                try {
-                    DataManipulation.getValueforCell();
-                    DataManipulation.writeToVillage2(DataManipulation.createFile("15000.txt"));
                     try {
-                        AddVillagePanel.displayFarmVillages("15000.txt");
-                        AddVillagePanel.filterCurrentFarms();
-                        sortAllRowsBy(model, 5, true);
-                        table.changeSelection(0, 0, false, false);
+                        DataManipulation.getValueforCell();
+                        DataManipulation.writeToVillage2(DataManipulation.createFile("15000.txt"));
+                        try {
+                            AddVillagePanel.displayFarmVillagesAfterVillageAdd("15000.txt");
+                            AddVillagePanel.filterCurrentFarms();
+                            sortAllRowsBy(model, 5, true);
+                            table.changeSelection(0, 0, false, false);
+                        }
+                        catch (IOException e1) {
+                        }
                     }
-                    catch (IOException e1) {
+                    catch(ArrayIndexOutOfBoundsException e1) {
+                        //do nothing
                     }
                 }
-                catch(ArrayIndexOutOfBoundsException e1) {
-                    //do nothing
-                }
-            }
             }
         });
         farmMenu.add(menuItem);
-
-
     }
 
     public static void sortAllRowsBy(DefaultTableModel model, int colIndex, boolean ascending) {
