@@ -198,7 +198,7 @@ public class NewAttackTable extends JPanel {
                     AddVillagePanel.filterCurrentFarms();
                 }
                 catch(ArrayIndexOutOfBoundsException e1) {
-                    //do nothing
+                    System.out.println("add farm array oob excep");
                 }
             }
         });
@@ -207,50 +207,33 @@ public class NewAttackTable extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 getValueForCell();
-                try {
-                    if(NewAttackTable.table.getValueAt(table.getSelectedRow(), 0) == null ||
-                            NewAttackTable.table.getValueAt(table.getSelectedRow(), 0) == "") {
-                        //do nothing
-                    }
-                    else {
-                        try {
-                            AddVillagePanel.removeLineFromFile("15000.txt");
-                        }
-                        catch (IOException e1) {
-                            //Do nothing
-                        }
-                        try {
-                            AddVillagePanel.displayFarmVillagesAfterDelete("15000.txt");
-                        }
-                        catch (IOException e1) {
-                            //Do nothing
-                        }
 
-                        try {
-                            AddVillagePanel.findFarms("village.txt");
-                        }
-                        catch (IOException e1) {
-                            //Do nothing
-                        }
-                        catch(ArrayIndexOutOfBoundsException e1) {
-                            //Do nothing
-                        }
-                        AddVillagePanel.filterCurrentFarms();
-                        AddFarmsTable.sortAllRowsBy(AddFarmsTable.model, 5, true);
-                        AddFarmsTable.table.changeSelection(0, 0, false, false);
-                    }
-
+                if(NewAttackTable.table.getValueAt(table.getSelectedRow(), 0) == null ||
+                        NewAttackTable.table.getValueAt(table.getSelectedRow(), 0) == "") {
+                    //do nothing
                 }
-                catch(ArrayIndexOutOfBoundsException e1) {
-
+                else {
+                    try {
+                        AddVillagePanel.removeLineFromFile("15000.txt");
+                    }
+                    catch (IOException e1) {
+                        System.out.println("exception at NewAttackTable - removeLineFromFile");
+                    }
+                    try {
+                        AddVillagePanel.displayFarmVillagesAfterDelete("15000.txt");
+                    }
+                    catch (IOException e1) {
+                        System.out.println("exception at NewAttackTable - displayFarmVillagesAfterDelete");
+                    }
+                    AddVillagePanel.findFarmsAfterDelete("village.txt");
+                    AddVillagePanel.filterCurrentFarms();
+                    AddFarmsTable.sortAllRowsBy(AddFarmsTable.model, 5, true);
+                    AddFarmsTable.table.changeSelection(0, 0, false, false);
                 }
-
             }
         });
         popupMenu.add(menuItem);
         popupMenu.add(deleteItem);
-
-
     }
 
     public static void getValueForCell() {

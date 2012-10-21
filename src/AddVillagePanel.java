@@ -267,20 +267,7 @@ public class AddVillagePanel extends JPanel {
         ln.close();
     }
 
-    public static void populateArray(String fileName) throws IOException {
 
-        FileReader fr = new FileReader(fileName);
-        BufferedReader br = new LineNumberReader(fr);
-        String s = null;
-
-        currentFarms = new String[1];
-
-        while((s = br.readLine()) != null) {
-            currentFarms = s.split(",");
-        }
-        fr.close();
-        br.close();
-    }
 
     public static void deleteStringFromFile(String file, String delete) throws IOException  {
 
@@ -458,6 +445,23 @@ public class AddVillagePanel extends JPanel {
             br.close();
     }
 
+
+    public static void populateArray(String fileName) throws IOException {
+
+        FileReader fr = new FileReader(fileName);
+        BufferedReader br = new LineNumberReader(fr);
+        String s = null;
+
+        currentFarms = new String[1];
+
+        while((s = br.readLine()) != null) {
+            currentFarms = s.split(",");
+            System.out.println("Farms = " + s);
+        }
+        fr.close();
+        br.close();
+    }
+
     public static void filterCurrentFarms() {
         try {
             populateArray("currentFarmList.txt");
@@ -470,19 +474,20 @@ public class AddVillagePanel extends JPanel {
                     String value = AddFarmsTable.table.getValueAt(i,0).toString();
 
                     if(s.equals(value)) {
+                        System.out.println("removing row " + i);
                         AddFarmsTable.model.removeRow(i);
                     }
                 }
             }
         }
         catch(NullPointerException e) {
+            System.out.println("Null pointer filterCurrentFarms");
         }
         AddFarmsTable.table.changeSelection(0, 0, false, false);
     }
 
-
     public static void filterByPoints(int pointValue) {
-            try {
+        try {
             for(int i = 0; i < AddFarmsTable.table.getRowCount(); i++) {
                 String value = AddFarmsTable.table.getValueAt(i,4).toString();
                 int newValue = Integer.parseInt(value);
@@ -493,49 +498,101 @@ public class AddVillagePanel extends JPanel {
                     AddFarmsTable.model.removeRow(i);
                 }
             }
-
-            }
-            catch (NumberFormatException e) {
-
-            }
         }
+        catch (NumberFormatException e) {
+        //
+        }
+    }
 
 
-    public static void findFarms(String fileName) throws IOException{
-        FileReader fr = new FileReader(fileName);
-        BufferedReader br = new BufferedReader(fr);
+    public static void findFarms(String fileName) {
 
-        String farms;
-        int count = 0;
+        try {
+            FileReader fr = new FileReader(fileName);
+            BufferedReader br = new BufferedReader(fr);
 
-        String[] values;
+            String farms;
+            int count = 0;
 
-        while((farms = br.readLine()) != null) {
-            for (int i = 0; i <  1; i++) {
-                try {
-                    values = farms.split(",");
+            String[] values;
 
-                    if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 15 &&
-                            distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) != 0.0
-                            ) {
+            while((farms = br.readLine()) != null) {
+                for (int i = 0; i <  1; i++) {
+                    try {
+                        values = farms.split(",");
 
-                        Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0);
-                        AddFarmsTable.table.setValueAt(values[0], count, 0);
-                        AddFarmsTable.table.setValueAt(values[1], count, 1);
-                        AddFarmsTable.table.setValueAt(values[2], count, 2);
-                        AddFarmsTable.table.setValueAt(values[3], count, 3);
-                        AddFarmsTable.table.setValueAt(values[5], count, 4);
-                        AddFarmsTable.table.setValueAt(newValue, count, 5);
-                        count++;
-                        //break
+                        if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 15 &&
+                                distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) != 0.0
+                                ) {
+                            AddFarmsTable.model.addRow(new Object[]{});
+                            Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0);
+                            AddFarmsTable.table.setValueAt(values[0], count, 0);
+                            AddFarmsTable.table.setValueAt(values[1], count, 1);
+                            AddFarmsTable.table.setValueAt(values[2], count, 2);
+                            AddFarmsTable.table.setValueAt(values[3], count, 3);
+                            AddFarmsTable.table.setValueAt(values[5], count, 4);
+                            AddFarmsTable.table.setValueAt(newValue, count, 5);
+                            count++;
+                            //break
+                        }
+                    }
+                    catch(NullPointerException e) {
+                        //do nothing but load
                     }
                 }
-                catch(NullPointerException e) {
-                    //do nothing but load
+            }
+            AddFarmsTable.table.changeSelection(0, 0, false, false);
+        }
+        catch(IOException e) {
+            System.out.println("find Farms IO exception");
+        }
+        AddFarmsTable.sortAllRowsBy(AddFarmsTable.model, 5, true);
+    }
+
+    public static void findFarmsAfterDelete(String fileName) {
+
+        try {
+            FileReader fr = new FileReader(fileName);
+            BufferedReader br = new BufferedReader(fr);
+
+            String farms;
+            int count = 0;
+
+            String[] values;
+
+            while((farms = br.readLine()) != null) {
+                for (int i = 0; i <  1; i++) {
+                    try {
+                        values = farms.split(",");
+
+                        if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 15 &&
+                                distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) != 0.0
+                                ) {
+                            Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0);
+                            AddFarmsTable.table.setValueAt(values[0], count, 0);
+                            AddFarmsTable.table.setValueAt(values[1], count, 1);
+                            AddFarmsTable.table.setValueAt(values[2], count, 2);
+                            AddFarmsTable.table.setValueAt(values[3], count, 3);
+                            AddFarmsTable.table.setValueAt(values[5], count, 4);
+                            AddFarmsTable.table.setValueAt(newValue, count, 5);
+                            count++;
+                            //break
+                        }
+                    }
+                    catch(NullPointerException e) {
+                        //do nothing but load
+                    }
                 }
             }
+            AddFarmsTable.table.changeSelection(0, 0, false, false);
         }
-        AddFarmsTable.table.changeSelection(0, 0, false, false);
+        catch(IOException e) {
+            System.out.println("find Farms IO exception");
+        }
+        catch(ArrayIndexOutOfBoundsException e) {
+
+        }
+        AddFarmsTable.sortAllRowsBy(AddFarmsTable.model, 5, true);
     }
 
 
