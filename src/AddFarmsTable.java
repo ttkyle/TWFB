@@ -169,32 +169,14 @@ public class AddFarmsTable extends JPanel {
             return columnZero + " " + columnOne + " " +columnTwo + " " + columnThree;
         }
 
-        public static void writeFarms(File village) {
+        public static void writeFarms() {
             try {
-
-
-                if((AddFarmsTroops.getSpearTextFieldFarmAdder().equals("0")     &&
-                        AddFarmsTroops.getSwordTextFieldFarmAdder().equals("0")         &&
-                        AddFarmsTroops.getArcherTextFieldFarmAdder().equals("0")        &&
-                        AddFarmsTroops.getAxeTextFieldFarmAdder().equals("0")           &&
-                        AddFarmsTroops.getMountedArcherTextFieldFarmAdder().equals("0") &&
-                        AddFarmsTroops.getScoutTextFieldFarmAdder().equals("0")         &&
-                        AddFarmsTroops.getLightCalTextFieldFarmAdder().equals("0")      &&
-                        AddFarmsTroops.getHeavyCalTextFieldFarmAdder().equals("0")      &&
-                        AddFarmsTroops.getCatapultTextFieldFarmAdder().equals("0")      &&
-                        AddFarmsTroops.getRamTextFieldFarmAdder().equals("0") )          &&
-                        AddFarmsTroops.getNobleTextFieldFarmAdder().equals("0")) {
-                    //do nothing
-                }
-
-                else {
-                    FileWriter writer = new FileWriter(village, true);
+                    FileWriter writer = new FileWriter("currentFarmList.txt", true);
                     BufferedWriter bufferedWriter = new BufferedWriter(writer);
-                    bufferedWriter.append(columnZero);
-                    bufferedWriter.append(",");
+                    bufferedWriter.write(columnZero);
+                    bufferedWriter.write(",");
                     bufferedWriter.close();
                     writer.close();
-                }
             }
             catch (IOException e) {
             }
@@ -339,8 +321,7 @@ public class AddFarmsTable extends JPanel {
 
                     bufferedWriter.close();
                     writer.close();
-
-                    DataManipulation.writeFarms(DataManipulation.createFile("currentFarmList.txt"));
+                    DataManipulation.writeFarms();
                 }
             }
             catch (IOException e) {
