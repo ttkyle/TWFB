@@ -172,11 +172,6 @@ public class NewAttackTable extends JPanel {
         column10.setHeaderRenderer(renderer);
         column10.setHeaderValue(label10);
 
-        //RowSorter<TableModel> sorter = new TableRowSorter<TableModel>(model);
-        //table.setRowSorter(sorter);
-
-
-
         table.setAutoCreateColumnsFromModel(false);
         table.changeSelection(0, 0, false, false);
 

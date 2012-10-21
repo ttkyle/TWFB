@@ -83,11 +83,12 @@ public class AddFarmsTable extends JPanel {
 
         table.setRowSelectionAllowed(true);
         table.getTableHeader().setReorderingAllowed(false);
-        table.getColumnModel().getColumn(0).setPreferredWidth(5);
-        table.getColumnModel().getColumn(1).setPreferredWidth(135);
+        table.getColumnModel().getColumn(0).setPreferredWidth(40);
+        table.getColumnModel().getColumn(1).setPreferredWidth(140);
         table.getColumnModel().getColumn(2).setPreferredWidth(5);
         table.getColumnModel().getColumn(3).setPreferredWidth(5);
-        table.getColumnModel().getColumn(4).setPreferredWidth(15);
+        table.getColumnModel().getColumn(4).setPreferredWidth(45);
+        table.getColumnModel().getColumn(5).setPreferredWidth(40 );
 
         table.setAutoCreateColumnsFromModel(false);
 
