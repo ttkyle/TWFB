@@ -3,7 +3,9 @@ import javax.swing.border.Border;
 import javax.swing.table.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 
 
 public class NewAttackTable extends JPanel {
@@ -187,8 +189,33 @@ public class NewAttackTable extends JPanel {
 
         menuItem.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)   {
                 try {
+
+                    try {
+                        RandomAccessFile randomAccessFile = new RandomAccessFile("deleteBeforeExit.txt", "rw");
+                        try {
+                            if((randomAccessFile.readLine().equals("true"))) {
+                                NewAttackTable.setHaveDeletedFarm(true);
+                            }
+                            else {
+                                NewAttackTable.setHaveDeletedFarm(false);
+                            }
+                            System.out.println(NewAttackTable.getHaveDeletedFarm());
+                        }
+                        catch (IOException e1) {
+                            e1.printStackTrace();
+                        }
+                        catch(NullPointerException e2) {
+                          e2.printStackTrace();
+                        }
+
+                        randomAccessFile.close();
+                    }
+                    catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+
                     MainFrame.addFarmsDialog.setVisible(true);
                     AddFarmsTable.getTable().changeSelection(0, 0, false, false);
                     AddVillagePanel.filterCurrentFarms();

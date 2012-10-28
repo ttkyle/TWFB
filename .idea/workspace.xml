@@ -8,8 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="52965e10-be1c-41ae-82af-f095b03dd629" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AddFarmsTable.java" afterPath="$PROJECT_DIR$/src/AddFarmsTable.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AddVillagePanel.java" afterPath="$PROJECT_DIR$/src/AddVillagePanel.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NewAttackTable.java" afterPath="$PROJECT_DIR$/src/NewAttackTable.java" />
     </list>
     <ignored path="TWFB.iws" />
@@ -77,10 +75,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="AddVillagePanel.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AddVillagePanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AddVillagePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="602" column="60" selection-start="21695" selection-end="21695" vertical-scroll-proportion="-0.51466274">
+            <state line="602" column="60" selection-start="21695" selection-end="21695" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2134#2770#0" expanded="true" />
@@ -91,12 +89,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewAttackTable.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="NewAttackTable.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NewAttackTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="227" column="44" selection-start="9283" selection-end="9283" vertical-scroll-proportion="0.0">
+            <state line="189" column="91" selection-start="7534" selection-end="7534" vertical-scroll-proportion="0.22913505">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#9060#9061#0" expanded="true" />
+                <element signature="e#9112#10479#0" expanded="true" />
+                <element signature="e#10468#10469#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -249,8 +250,8 @@
         <option value="$PROJECT_DIR$/src/MainFrame.java" />
         <option value="$PROJECT_DIR$/Buglist" />
         <option value="$PROJECT_DIR$/src/AddFarmsTable.java" />
-        <option value="$PROJECT_DIR$/src/NewAttackTable.java" />
         <option value="$PROJECT_DIR$/src/AddVillagePanel.java" />
+        <option value="$PROJECT_DIR$/src/NewAttackTable.java" />
       </list>
     </option>
   </component>
@@ -783,7 +784,11 @@
       <created>1351437969755</created>
       <updated>1351437969755</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Made some instance variables private and added getters/setters">
+      <created>1351438190137</created>
+      <updated>1351438190138</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -823,7 +828,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24930748" sideWeight="0.3279743" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39944598" sideWeight="0.6688103" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24930748" sideWeight="0.67165774" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24930748" sideWeight="0.7593583" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24064171" sideWeight="0.80775625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3193138" sideWeight="0.6720086" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1047,23 +1052,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewAttackTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="227" column="44" selection-start="9283" selection-end="9283" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AddVillagePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="602" column="60" selection-start="21695" selection-end="21695" vertical-scroll-proportion="-0.51466274">
+        <state line="602" column="60" selection-start="21695" selection-end="21695" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2134#2770#0" expanded="true" />
             <element signature="e#2759#2760#0" expanded="true" />
             <element signature="e#7046#7054#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NewAttackTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="189" column="91" selection-start="7534" selection-end="7534" vertical-scroll-proportion="0.22913505">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#9060#9061#0" expanded="true" />
+            <element signature="e#9112#10479#0" expanded="true" />
+            <element signature="e#10468#10469#0" expanded="true" />
           </folding>
         </state>
       </provider>
