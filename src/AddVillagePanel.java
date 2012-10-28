@@ -293,12 +293,12 @@ public class AddVillagePanel extends JPanel {
         }
         try {
             for(String s : currentFarms) {
-                for(int i = 0; i < AddFarmsTable.table.getRowCount(); i++) {
-                    String value = AddFarmsTable.table.getValueAt(i,0).toString();
+                for(int i = 0; i < AddFarmsTable.getTable().getRowCount(); i++) {
+                    String value = AddFarmsTable.getTable().getValueAt(i,0).toString();
 
                     if(s.equals(value)) {
                         System.out.println("removing row " + i);
-                        AddFarmsTable.model.removeRow(i);
+                        AddFarmsTable.getModel().removeRow(i);
                     }
                 }
             }
@@ -306,7 +306,7 @@ public class AddVillagePanel extends JPanel {
         catch(NullPointerException e) {
             System.out.println("Null pointer filterCurrentFarms");
         }
-        AddFarmsTable.table.changeSelection(0, 0, false, false);
+        AddFarmsTable.getTable().changeSelection(0, 0, false, false);
     }
 
     public static void deleteStringFromFile(String file, String delete)   {
@@ -496,14 +496,14 @@ public class AddVillagePanel extends JPanel {
 
     public static void filterByPoints(int pointValue) {
         try {
-            for(int i = 0; i < AddFarmsTable.table.getRowCount(); i++) {
-                String value = AddFarmsTable.table.getValueAt(i,4).toString();
+            for(int i = 0; i < AddFarmsTable.getTable().getRowCount(); i++) {
+                String value = AddFarmsTable.getTable().getValueAt(i,4).toString();
                 int newValue = Integer.parseInt(value);
 
                 if(newValue > pointValue ) {
                     System.out.println(newValue);
                     System.out.println("row removed" + i);
-                    AddFarmsTable.model.removeRow(i);
+                    AddFarmsTable.getModel().removeRow(i);
                 }
             }
         }
@@ -532,14 +532,14 @@ public class AddVillagePanel extends JPanel {
                         if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 15 &&
                                 distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) != 0.0
                                 ) {
-                            AddFarmsTable.model.addRow(new Object[]{});
+                            AddFarmsTable.getModel().addRow(new Object[]{});
                             Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0);
-                            AddFarmsTable.table.setValueAt(values[0], count, 0);
-                            AddFarmsTable.table.setValueAt(values[1], count, 1);
-                            AddFarmsTable.table.setValueAt(values[2], count, 2);
-                            AddFarmsTable.table.setValueAt(values[3], count, 3);
-                            AddFarmsTable.table.setValueAt(values[5], count, 4);
-                            AddFarmsTable.table.setValueAt(newValue, count, 5);
+                            AddFarmsTable.getTable().setValueAt(values[0], count, 0);
+                            AddFarmsTable.getTable().setValueAt(values[1], count, 1);
+                            AddFarmsTable.getTable().setValueAt(values[2], count, 2);
+                            AddFarmsTable.getTable().setValueAt(values[3], count, 3);
+                            AddFarmsTable.getTable().setValueAt(values[5], count, 4);
+                            AddFarmsTable.getTable().setValueAt(newValue, count, 5);
                             count++;
                             //break
                         }
@@ -549,12 +549,12 @@ public class AddVillagePanel extends JPanel {
                     }
                 }
             }
-            AddFarmsTable.table.changeSelection(0, 0, false, false);
+            AddFarmsTable.getTable().changeSelection(0, 0, false, false);
         }
         catch(IOException e) {
             System.out.println("find Farms IO exception");
         }
-        AddFarmsTable.sortAllRowsBy(AddFarmsTable.model, 5, true);
+        AddFarmsTable.sortAllRowsBy(AddFarmsTable.getModel(), 5, true);
     }
 
     public static void findFarmsAfterDelete(String fileName) {
@@ -577,12 +577,12 @@ public class AddVillagePanel extends JPanel {
                                 distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) != 0.0
                                 ) {
                             Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0);
-                            AddFarmsTable.table.setValueAt(values[0], count, 0);
-                            AddFarmsTable.table.setValueAt(values[1], count, 1);
-                            AddFarmsTable.table.setValueAt(values[2], count, 2);
-                            AddFarmsTable.table.setValueAt(values[3], count, 3);
-                            AddFarmsTable.table.setValueAt(values[5], count, 4);
-                            AddFarmsTable.table.setValueAt(newValue, count, 5);
+                            AddFarmsTable.getTable().setValueAt(values[0], count, 0);
+                            AddFarmsTable.getTable().setValueAt(values[1], count, 1);
+                            AddFarmsTable.getTable().setValueAt(values[2], count, 2);
+                            AddFarmsTable.getTable().setValueAt(values[3], count, 3);
+                            AddFarmsTable.getTable().setValueAt(values[5], count, 4);
+                            AddFarmsTable.getTable().setValueAt(newValue, count, 5);
                             count++;
                             //break
                         }
@@ -592,7 +592,7 @@ public class AddVillagePanel extends JPanel {
                     }
                 }
             }
-            AddFarmsTable.table.changeSelection(0, 0, false, false);
+            AddFarmsTable.getTable().changeSelection(0, 0, false, false);
         }
         catch(IOException e) {
             System.out.println("find Farms IO exception");
@@ -600,7 +600,7 @@ public class AddVillagePanel extends JPanel {
         catch(ArrayIndexOutOfBoundsException e) {
 
         }
-        AddFarmsTable.sortAllRowsBy(AddFarmsTable.model, 5, true);
+        AddFarmsTable.sortAllRowsBy(AddFarmsTable.getModel(), 5, true);
     }
 
 

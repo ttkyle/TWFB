@@ -10,13 +10,13 @@ import java.util.Vector;
 
 
 public class AddFarmsTable extends JPanel {
-    public static JTable table;
-    public static DefaultTableModel model;
-    public static JPopupMenu farmMenu;
-    public static String columnZero;
-    public static String columnOne;
-    public static String columnTwo;
-    public static String columnThree;
+    private static JTable table;
+    private static DefaultTableModel model;
+    private static JPopupMenu farmMenu;
+    private static String columnZero;
+    private static String columnOne;
+    private static String columnTwo;
+    private static String columnThree;
 
 
     public AddFarmsTable() {

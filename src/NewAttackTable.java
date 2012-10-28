@@ -190,7 +190,7 @@ public class NewAttackTable extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 try {
                     MainFrame.addFarmsDialog.setVisible(true);
-                    AddFarmsTable.table.changeSelection(0, 0, false, false);
+                    AddFarmsTable.getTable().changeSelection(0, 0, false, false);
                     AddVillagePanel.filterCurrentFarms();
                 }
                 catch(ArrayIndexOutOfBoundsException e1) {
@@ -224,8 +224,8 @@ public class NewAttackTable extends JPanel {
                     }
                     AddVillagePanel.findFarmsAfterDelete("village.txt");
                     AddVillagePanel.filterCurrentFarms();
-                    AddFarmsTable.sortAllRowsBy(AddFarmsTable.model, 5, true);
-                    AddFarmsTable.table.changeSelection(0, 0, false, false);
+                    AddFarmsTable.sortAllRowsBy(AddFarmsTable.getModel(), 5, true);
+                    AddFarmsTable.getTable().changeSelection(0, 0, false, false);
                 }
             }
         });
