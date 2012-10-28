@@ -1,8 +1,14 @@
+import org.apache.commons.io.FileDeleteStrategy;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.*;
 import java.util.List;
 
@@ -267,34 +273,77 @@ public class AddVillagePanel extends JPanel {
         ln.close();
     }
 
+    public static void populateArray(String fileName) throws IOException {
 
+        FileReader fr = new FileReader(fileName);
+        BufferedReader br = new LineNumberReader(fr);
+        String s = null;
 
-    public static void deleteStringFromFile(String file, String delete) throws IOException  {
+        currentFarms = new String[1];
 
-        File inFile = new File(file);
-
-        if (!inFile.isFile()) {
-            System.out.println("Parameter is not an existing file");
-            return;
+        while((s = br.readLine()) != null) {
+            currentFarms = s.split(",");
+            System.out.println("Farms = " + s);
         }
-
-        //Construct the new file that will later be renamed to the original filename.
-        File tempFile = new File(inFile.getAbsolutePath() + ".tmp");
-
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
-
-        for(String line; (line = br.readLine()) != null;) {
-            line = line.replace(delete, "");
-            pw.println(line);
-            pw.flush();
-        }
-
+        fr.close();
         br.close();
-        pw.close();
+    }
 
-        inFile.delete();
-        tempFile.renameTo(inFile);
+    public static void filterCurrentFarms() {
+        try {
+            populateArray("currentFarmList.txt");
+        }
+        catch (IOException e) {
+        }
+        try {
+            for(String s : currentFarms) {
+                for(int i = 0; i < AddFarmsTable.table.getRowCount(); i++) {
+                    String value = AddFarmsTable.table.getValueAt(i,0).toString();
+
+                    if(s.equals(value)) {
+                        System.out.println("removing row " + i);
+                        AddFarmsTable.model.removeRow(i);
+                    }
+                }
+            }
+        }
+        catch(NullPointerException e) {
+            System.out.println("Null pointer filterCurrentFarms");
+        }
+        AddFarmsTable.table.changeSelection(0, 0, false, false);
+    }
+
+    public static void deleteStringFromFile(String file, String delete)   {
+        //File inFile = new File(file);
+        try {
+            File inFile = new File(file);
+
+            if (!inFile.isFile()) {
+                System.out.println("Parameter is not an existing file");
+                return;
+            }
+
+            //Construct the new file that will later be renamed to the original filename.
+            File tempFile = new File(inFile.getAbsolutePath() + ".tmp");
+
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
+
+            for(String line; (line = br.readLine()) != null;) {
+                line = line.replace(delete, "");
+                pw.println(line);
+                pw.flush();
+            }
+
+            br.close();
+            pw.close();
+
+            inFile.delete();
+            tempFile.renameTo(inFile);
+        }
+        catch(IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void removeLineFromFile(String file) throws IOException {
@@ -340,7 +389,8 @@ public class AddVillagePanel extends JPanel {
 
                 if (NewAttackTable.table.getValueAt(rowNumber, 0) != null && NewAttackTable.table.getValueAt(rowNumber, 0) != "") {
                     deleteStringFromFile("currentFarmList.txt", NewAttackTable.table.getValueAt(rowNumber, 0) + ",");
-                    System.out.println("delete the ID from farmList");
+                    System.out.println("delete the ID from farmList" + " ");
+                    System.out.println(NewAttackTable.table.getValueAt(rowNumber,0));
                 }
 
                 //Read from the original file and write to the new
@@ -446,45 +496,7 @@ public class AddVillagePanel extends JPanel {
     }
 
 
-    public static void populateArray(String fileName) throws IOException {
 
-        FileReader fr = new FileReader(fileName);
-        BufferedReader br = new LineNumberReader(fr);
-        String s = null;
-
-        currentFarms = new String[1];
-
-        while((s = br.readLine()) != null) {
-            currentFarms = s.split(",");
-            System.out.println("Farms = " + s);
-        }
-        fr.close();
-        br.close();
-    }
-
-    public static void filterCurrentFarms() {
-        try {
-            populateArray("currentFarmList.txt");
-        }
-        catch (IOException e) {
-        }
-        try {
-            for(String s : currentFarms) {
-                for(int i = 0; i < AddFarmsTable.table.getRowCount(); i++) {
-                    String value = AddFarmsTable.table.getValueAt(i,0).toString();
-
-                    if(s.equals(value)) {
-                        System.out.println("removing row " + i);
-                        AddFarmsTable.model.removeRow(i);
-                    }
-                }
-            }
-        }
-        catch(NullPointerException e) {
-            System.out.println("Null pointer filterCurrentFarms");
-        }
-        AddFarmsTable.table.changeSelection(0, 0, false, false);
-    }
 
     public static void filterByPoints(int pointValue) {
         try {

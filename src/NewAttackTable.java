@@ -11,6 +11,7 @@ public class NewAttackTable extends JPanel {
     public static JTable table;
     public static DefaultTableModel model;
     public static JPopupMenu popupMenu;
+    public static boolean haveDeletedFarm = false;
 
     public NewAttackTable() {
         super(new GridLayout(1, 0));
@@ -208,6 +209,7 @@ public class NewAttackTable extends JPanel {
                     //do nothing
                 }
                 else {
+                    haveDeletedFarm = true;
                     try {
                         AddVillagePanel.removeLineFromFile("15000.txt");
                     }

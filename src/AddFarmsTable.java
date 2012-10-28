@@ -3,10 +3,7 @@ import javax.swing.border.Border;
 import javax.swing.table.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Vector;
@@ -20,6 +17,7 @@ public class AddFarmsTable extends JPanel {
     public static String columnOne;
     public static String columnTwo;
     public static String columnThree;
+
 
     public AddFarmsTable() {
         super(new GridLayout(1, 0));
@@ -171,15 +169,23 @@ public class AddFarmsTable extends JPanel {
         }
 
         public static void writeFarms() {
+
             try {
-                    FileWriter writer = new FileWriter("currentFarmList.txt", true);
-                    BufferedWriter bufferedWriter = new BufferedWriter(writer);
-                    bufferedWriter.write(columnZero);
-                    bufferedWriter.write(",");
-                    bufferedWriter.close();
-                    writer.close();
+                RandomAccessFile raf = new RandomAccessFile("currentFarmList.txt", "rw");
+                if(NewAttackTable.haveDeletedFarm) {
+                    raf.skipBytes( (int)raf.length()-2);
+                    raf.writeBytes(columnZero + ",");
+                    raf.close();
+                }
+                if(!NewAttackTable.haveDeletedFarm) {
+                    raf.skipBytes( (int)raf.length());   //-2 works after delete
+                    raf.writeBytes(columnZero + ",");
+                    raf.close();
+                }
+                NewAttackTable.haveDeletedFarm = false;
             }
-            catch (IOException e) {
+            catch (IOException ex ) {
+                ex.printStackTrace();
             }
         }
 
