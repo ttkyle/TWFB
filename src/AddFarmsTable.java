@@ -150,7 +150,63 @@ public class AddFarmsTable extends JPanel {
         model.fireTableStructureChanged();
     }
 
-     class JComponentTableCellRenderer implements TableCellRenderer {
+    public static JTable getTable() {
+        return table;
+    }
+
+    public static void setTable(JTable table) {
+        AddFarmsTable.table = table;
+    }
+
+    public static DefaultTableModel getModel() {
+        return model;
+    }
+
+    public static void setModel(DefaultTableModel model) {
+        AddFarmsTable.model = model;
+    }
+
+    public static JPopupMenu getFarmMenu() {
+        return farmMenu;
+    }
+
+    public static void setFarmMenu(JPopupMenu farmMenu) {
+        AddFarmsTable.farmMenu = farmMenu;
+    }
+
+    public static String getColumnZero() {
+        return columnZero;
+    }
+
+    public static void setColumnZero(String columnZero) {
+        AddFarmsTable.columnZero = columnZero;
+    }
+
+    public static String getColumnOne() {
+        return columnOne;
+    }
+
+    public static void setColumnOne(String columnOne) {
+        AddFarmsTable.columnOne = columnOne;
+    }
+
+    public static String getColumnTwo() {
+        return columnTwo;
+    }
+
+    public static void setColumnTwo(String columnTwo) {
+        AddFarmsTable.columnTwo = columnTwo;
+    }
+
+    public static String getColumnThree() {
+        return columnThree;
+    }
+
+    public static void setColumnThree(String columnThree) {
+        AddFarmsTable.columnThree = columnThree;
+    }
+
+    class JComponentTableCellRenderer implements TableCellRenderer {
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
                                                        boolean hasFocus, int row, int column) {
             return (JComponent) value;
@@ -172,17 +228,17 @@ public class AddFarmsTable extends JPanel {
 
             try {
                 RandomAccessFile raf = new RandomAccessFile("currentFarmList.txt", "rw");
-                if(NewAttackTable.haveDeletedFarm) {
-                    raf.skipBytes( (int)raf.length()-2);
+                if(NewAttackTable.getHaveDeletedFarm()) {
+                    raf.skipBytes((int)raf.length()-2);
                     raf.writeBytes(columnZero + ",");
                     raf.close();
                 }
-                if(!NewAttackTable.haveDeletedFarm) {
-                    raf.skipBytes( (int)raf.length());   //-2 works after delete
+                if(!NewAttackTable.getHaveDeletedFarm()) {
+                    raf.skipBytes((int)raf.length());   //-2 works after delete
                     raf.writeBytes(columnZero + ",");
                     raf.close();
                 }
-                NewAttackTable.haveDeletedFarm = false;
+                NewAttackTable.setHaveDeletedFarm(false);
             }
             catch (IOException ex ) {
                 ex.printStackTrace();

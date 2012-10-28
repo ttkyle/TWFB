@@ -5,10 +5,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.nio.file.StandardCopyOption;
 import java.util.*;
 import java.util.List;
 
@@ -229,7 +225,7 @@ public class AddVillagePanel extends JPanel {
             lines.add(line);
 
             for(int i = 0; i < lines.size() ; i++) {
-                NewAttackTable.table.setValueAt(lines.get(i), 0, i);
+                NewAttackTable.getTable().setValueAt(lines.get(i), 0, i);
             }
         }
         bufferedReader.close();
@@ -256,10 +252,10 @@ public class AddVillagePanel extends JPanel {
                 }
 
                 if(i >= 0 && i < 15) {
-                    NewAttackTable.table.setValueAt(values[i], 0, i);
+                    NewAttackTable.getTable().setValueAt(values[i], 0, i);
                 }
                 if(i >= number && i < number2 ) {
-                    NewAttackTable.table.setValueAt(values[i], count, i - (15 * count));
+                    NewAttackTable.getTable().setValueAt(values[i], count, i - (15 * count));
                 }
 
                 if(i > 0 && i % 15 == 14) {
@@ -348,7 +344,7 @@ public class AddVillagePanel extends JPanel {
 
     public static void removeLineFromFile(String file) throws IOException {
 
-        int rowNumber = NewAttackTable.table.getSelectedRow();
+        int rowNumber = NewAttackTable.getTable().getSelectedRow();
         PrintWriter pw = null;
         BufferedReader br = null;
         try {
@@ -371,31 +367,31 @@ public class AddVillagePanel extends JPanel {
                 String line = null;
                 String lineToRemove = null;
 
-                lineToRemove = NewAttackTable.table.getValueAt(rowNumber, 0) + "," +
-                        NewAttackTable.table.getValueAt(rowNumber, 1) + "," +
-                        NewAttackTable.table.getValueAt(rowNumber, 2) + "," +
-                        NewAttackTable.table.getValueAt(rowNumber, 3) + "," +
-                        NewAttackTable.table.getValueAt(rowNumber, 4) + "," +
-                        NewAttackTable.table.getValueAt(rowNumber, 5) + "," +
-                        NewAttackTable.table.getValueAt(rowNumber, 6) + "," +
-                        NewAttackTable.table.getValueAt(rowNumber, 7) + "," +
-                        NewAttackTable.table.getValueAt(rowNumber, 8) + "," +
-                        NewAttackTable.table.getValueAt(rowNumber, 9) + "," +
-                        NewAttackTable.table.getValueAt(rowNumber, 10) + "," +
-                        NewAttackTable.table.getValueAt(rowNumber, 11) + "," +
-                        NewAttackTable.table.getValueAt(rowNumber, 12) + "," +
-                        NewAttackTable.table.getValueAt(rowNumber, 13) + "," +
-                        NewAttackTable.table.getValueAt(rowNumber, 14) + ",";
+                lineToRemove = NewAttackTable.getTable().getValueAt(rowNumber, 0) + "," +
+                        NewAttackTable.getTable().getValueAt(rowNumber, 1) + "," +
+                        NewAttackTable.getTable().getValueAt(rowNumber, 2) + "," +
+                        NewAttackTable.getTable().getValueAt(rowNumber, 3) + "," +
+                        NewAttackTable.getTable().getValueAt(rowNumber, 4) + "," +
+                        NewAttackTable.getTable().getValueAt(rowNumber, 5) + "," +
+                        NewAttackTable.getTable().getValueAt(rowNumber, 6) + "," +
+                        NewAttackTable.getTable().getValueAt(rowNumber, 7) + "," +
+                        NewAttackTable.getTable().getValueAt(rowNumber, 8) + "," +
+                        NewAttackTable.getTable().getValueAt(rowNumber, 9) + "," +
+                        NewAttackTable.getTable().getValueAt(rowNumber, 10) + "," +
+                        NewAttackTable.getTable().getValueAt(rowNumber, 11) + "," +
+                        NewAttackTable.getTable().getValueAt(rowNumber, 12) + "," +
+                        NewAttackTable.getTable().getValueAt(rowNumber, 13) + "," +
+                        NewAttackTable.getTable().getValueAt(rowNumber, 14) + ",";
 
-                if (NewAttackTable.table.getValueAt(rowNumber, 0) != null && NewAttackTable.table.getValueAt(rowNumber, 0) != "") {
-                    deleteStringFromFile("currentFarmList.txt", NewAttackTable.table.getValueAt(rowNumber, 0) + ",");
+                if (NewAttackTable.getTable().getValueAt(rowNumber, 0) != null && NewAttackTable.getTable().getValueAt(rowNumber, 0) != "") {
+                    deleteStringFromFile("currentFarmList.txt", NewAttackTable.getTable().getValueAt(rowNumber, 0) + ",");
                     System.out.println("delete the ID from farmList" + " ");
-                    System.out.println(NewAttackTable.table.getValueAt(rowNumber,0));
+                    System.out.println(NewAttackTable.getTable().getValueAt(rowNumber,0));
                 }
 
                 //Read from the original file and write to the new
                 //unless content matches data to be removed.
-                NewAttackTable.model.removeRow(rowNumber);
+                NewAttackTable.getModel().removeRow(rowNumber);
                 while ((line = br.readLine()) != null) {
                     if (!line.trim().equals(lineToRemove)) {
                         pw.println(line);
@@ -636,24 +632,24 @@ public class AddVillagePanel extends JPanel {
                     }
                     try {
                         if(i >= 0  && i < 1 ) {
-                            NewAttackTable.model.addRow(new Object[] {});
+                            NewAttackTable.getModel().addRow(new Object[] {});
 
-                            NewAttackTable.table.setValueAt(currentFarmArray[0], countCurrentFarms, 0);
-                            NewAttackTable.table.setValueAt(currentFarmArray[1], countCurrentFarms, 1);
-                            NewAttackTable.table.setValueAt(currentFarmArray[2], countCurrentFarms, 2);
-                            NewAttackTable.table.setValueAt(currentFarmArray[3], countCurrentFarms, 3);
-                            NewAttackTable.table.setValueAt(currentFarmArray[4], countCurrentFarms, 4);
-                            NewAttackTable.table.setValueAt(currentFarmArray[5], countCurrentFarms, 5);
-                            NewAttackTable.table.setValueAt(currentFarmArray[6], countCurrentFarms, 6);
-                            NewAttackTable.table.setValueAt(currentFarmArray[7], countCurrentFarms, 7);
-                            NewAttackTable.table.setValueAt(currentFarmArray[8], countCurrentFarms, 8);
-                            NewAttackTable.table.setValueAt(currentFarmArray[9], countCurrentFarms, 9);
-                            NewAttackTable.table.setValueAt(currentFarmArray[10], countCurrentFarms, 10);
-                            NewAttackTable.table.setValueAt(currentFarmArray[11], countCurrentFarms, 11);
-                            NewAttackTable.table.setValueAt(currentFarmArray[12], countCurrentFarms, 12);
-                            NewAttackTable.table.setValueAt(currentFarmArray[13], countCurrentFarms, 13);
-                            NewAttackTable.table.setValueAt(currentFarmArray[14], countCurrentFarms, 14);
-                            NewAttackTable.table.setValueAt(currentFarmArray[15], countCurrentFarms, 15);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[0], countCurrentFarms, 0);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[1], countCurrentFarms, 1);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[2], countCurrentFarms, 2);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[3], countCurrentFarms, 3);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[4], countCurrentFarms, 4);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[5], countCurrentFarms, 5);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[6], countCurrentFarms, 6);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[7], countCurrentFarms, 7);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[8], countCurrentFarms, 8);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[9], countCurrentFarms, 9);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[10], countCurrentFarms, 10);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[11], countCurrentFarms, 11);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[12], countCurrentFarms, 12);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[13], countCurrentFarms, 13);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[14], countCurrentFarms, 14);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[15], countCurrentFarms, 15);
                             countCurrentFarms++;
                         }
                     }
@@ -682,7 +678,7 @@ public class AddVillagePanel extends JPanel {
 
         String currentFarms;
         countCurrentFarms = 0;
-        NewAttackTable.model.addRow(new Object[] {});
+        NewAttackTable.getModel().addRow(new Object[] {});
         String[] currentFarmArray = new String[1];
 
         try {
@@ -696,22 +692,22 @@ public class AddVillagePanel extends JPanel {
                     }
                     try {
                         if(i >= 0  && i < 1 ) {
-                            NewAttackTable.table.setValueAt(currentFarmArray[0], countCurrentFarms, 0);
-                            NewAttackTable.table.setValueAt(currentFarmArray[1], countCurrentFarms, 1);
-                            NewAttackTable.table.setValueAt(currentFarmArray[2], countCurrentFarms, 2);
-                            NewAttackTable.table.setValueAt(currentFarmArray[3], countCurrentFarms, 3);
-                            NewAttackTable.table.setValueAt(currentFarmArray[4], countCurrentFarms, 4);
-                            NewAttackTable.table.setValueAt(currentFarmArray[5], countCurrentFarms, 5);
-                            NewAttackTable.table.setValueAt(currentFarmArray[6], countCurrentFarms, 6);
-                            NewAttackTable.table.setValueAt(currentFarmArray[7], countCurrentFarms, 7);
-                            NewAttackTable.table.setValueAt(currentFarmArray[8], countCurrentFarms, 8);
-                            NewAttackTable.table.setValueAt(currentFarmArray[9], countCurrentFarms, 9);
-                            NewAttackTable.table.setValueAt(currentFarmArray[10], countCurrentFarms, 10);
-                            NewAttackTable.table.setValueAt(currentFarmArray[11], countCurrentFarms, 11);
-                            NewAttackTable.table.setValueAt(currentFarmArray[12], countCurrentFarms, 12);
-                            NewAttackTable.table.setValueAt(currentFarmArray[13], countCurrentFarms, 13);
-                            NewAttackTable.table.setValueAt(currentFarmArray[14], countCurrentFarms, 14);
-                            NewAttackTable.table.setValueAt(currentFarmArray[15], countCurrentFarms, 15);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[0], countCurrentFarms, 0);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[1], countCurrentFarms, 1);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[2], countCurrentFarms, 2);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[3], countCurrentFarms, 3);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[4], countCurrentFarms, 4);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[5], countCurrentFarms, 5);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[6], countCurrentFarms, 6);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[7], countCurrentFarms, 7);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[8], countCurrentFarms, 8);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[9], countCurrentFarms, 9);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[10], countCurrentFarms, 10);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[11], countCurrentFarms, 11);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[12], countCurrentFarms, 12);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[13], countCurrentFarms, 13);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[14], countCurrentFarms, 14);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[15], countCurrentFarms, 15);
                             countCurrentFarms++;
                         }
                     }
@@ -755,22 +751,22 @@ public class AddVillagePanel extends JPanel {
                     }
                     try {
                         if(i >= 0  && i < 1 ) {
-                            NewAttackTable.table.setValueAt(currentFarmArray[0], countCurrentFarms, 0);
-                            NewAttackTable.table.setValueAt(currentFarmArray[1], countCurrentFarms, 1);
-                            NewAttackTable.table.setValueAt(currentFarmArray[2], countCurrentFarms, 2);
-                            NewAttackTable.table.setValueAt(currentFarmArray[3], countCurrentFarms, 3);
-                            NewAttackTable.table.setValueAt(currentFarmArray[4], countCurrentFarms, 4);
-                            NewAttackTable.table.setValueAt(currentFarmArray[5], countCurrentFarms, 5);
-                            NewAttackTable.table.setValueAt(currentFarmArray[6], countCurrentFarms, 6);
-                            NewAttackTable.table.setValueAt(currentFarmArray[7], countCurrentFarms, 7);
-                            NewAttackTable.table.setValueAt(currentFarmArray[8], countCurrentFarms, 8);
-                            NewAttackTable.table.setValueAt(currentFarmArray[9], countCurrentFarms, 9);
-                            NewAttackTable.table.setValueAt(currentFarmArray[10], countCurrentFarms, 10);
-                            NewAttackTable.table.setValueAt(currentFarmArray[11], countCurrentFarms, 11);
-                            NewAttackTable.table.setValueAt(currentFarmArray[12], countCurrentFarms, 12);
-                            NewAttackTable.table.setValueAt(currentFarmArray[13], countCurrentFarms, 13);
-                            NewAttackTable.table.setValueAt(currentFarmArray[14], countCurrentFarms, 14);
-                            NewAttackTable.table.setValueAt(currentFarmArray[15], countCurrentFarms, 15);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[0], countCurrentFarms, 0);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[1], countCurrentFarms, 1);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[2], countCurrentFarms, 2);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[3], countCurrentFarms, 3);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[4], countCurrentFarms, 4);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[5], countCurrentFarms, 5);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[6], countCurrentFarms, 6);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[7], countCurrentFarms, 7);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[8], countCurrentFarms, 8);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[9], countCurrentFarms, 9);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[10], countCurrentFarms, 10);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[11], countCurrentFarms, 11);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[12], countCurrentFarms, 12);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[13], countCurrentFarms, 13);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[14], countCurrentFarms, 14);
+                            NewAttackTable.getTable().setValueAt(currentFarmArray[15], countCurrentFarms, 15);
                             countCurrentFarms++;
                         }
                     }

@@ -8,10 +8,10 @@ import java.io.IOException;
 
 public class NewAttackTable extends JPanel {
 
-    public static JTable table;
-    public static DefaultTableModel model;
-    public static JPopupMenu popupMenu;
-    public static boolean haveDeletedFarm = false;
+    private static JTable table;
+    private static DefaultTableModel model;
+    private static JPopupMenu popupMenu;
+    private static boolean haveDeletedFarm = false;
 
     public NewAttackTable() {
         super(new GridLayout(1, 0));
@@ -244,7 +244,37 @@ public class NewAttackTable extends JPanel {
         */
     }
 
+    public static JTable getTable() {
+        return table;
+    }
 
+    public static void setTable(JTable table) {
+        NewAttackTable.table = table;
+    }
+
+    public static DefaultTableModel getModel() {
+        return model;
+    }
+
+    public static void setModel(DefaultTableModel model) {
+        NewAttackTable.model = model;
+    }
+
+    public static JPopupMenu getPopupMenu() {
+        return popupMenu;
+    }
+
+    public static void setPopupMenu(JPopupMenu popupMenu) {
+        NewAttackTable.popupMenu = popupMenu;
+    }
+
+    public static boolean getHaveDeletedFarm() {
+        return haveDeletedFarm;
+    }
+
+    public static void setHaveDeletedFarm(boolean haveDeletedFarm) {
+        NewAttackTable.haveDeletedFarm = haveDeletedFarm;
+    }
 
     class JComponentTableCellRenderer implements TableCellRenderer {
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,

@@ -8,6 +8,9 @@
   <component name="ChangeListManager">
     <list default="true" id="52965e10-be1c-41ae-82af-f095b03dd629" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AddFarmsTable.java" afterPath="$PROJECT_DIR$/src/AddFarmsTable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AddVillagePanel.java" afterPath="$PROJECT_DIR$/src/AddVillagePanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NewAttackTable.java" afterPath="$PROJECT_DIR$/src/NewAttackTable.java" />
     </list>
     <ignored path="TWFB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,21 +80,20 @@
       <file leaf-file-name="AddVillagePanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AddVillagePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="318" column="12" selection-start="10042" selection-end="10071" vertical-scroll-proportion="0.0">
+            <state line="6" column="17" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2258#2894#0" expanded="true" />
-                <element signature="e#2883#2884#0" expanded="true" />
-                <element signature="e#7170#7178#0" expanded="true" />
+                <element signature="e#2134#2770#0" expanded="true" />
+                <element signature="e#2759#2760#0" expanded="true" />
+                <element signature="e#7046#7054#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewAttackTable.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="NewAttackTable.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NewAttackTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="51" selection-start="369" selection-end="369" vertical-scroll-proportion="0.3353566">
+            <state line="274" column="32" selection-start="10584" selection-end="10584" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -194,10 +196,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddFarmsTable.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AddFarmsTable.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AddFarmsTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="184" column="55" selection-start="7617" selection-end="7617" vertical-scroll-proportion="0.0">
+            <state line="458" column="83" selection-start="16931" selection-end="16931" vertical-scroll-proportion="2.0938416">
               <folding />
             </state>
           </provider>
@@ -246,8 +248,8 @@
         <option value="$PROJECT_DIR$/src/MainFrame.java" />
         <option value="$PROJECT_DIR$/Buglist" />
         <option value="$PROJECT_DIR$/src/AddVillagePanel.java" />
-        <option value="$PROJECT_DIR$/src/AddFarmsTable.java" />
         <option value="$PROJECT_DIR$/src/NewAttackTable.java" />
+        <option value="$PROJECT_DIR$/src/AddFarmsTable.java" />
       </list>
     </option>
   </component>
@@ -772,7 +774,11 @@
       <created>1351436926780</created>
       <updated>1351436926780</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="I have fixed the bug where deletion of a farm from NewAttackTable would cause the next farm added from AddFarmsTable go to the next line, thus resulting in only one result of x number of farms being fitlered.  FUCK FINALLY">
+      <created>1351436952422</created>
+      <updated>1351436952422</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -797,14 +803,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="-8" width="1871" height="1096" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32834226" sideWeight="0.49557033" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32834226" sideWeight="0.4936288" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.75884247" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17044826" sideWeight="0.6720086" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24972315" sideWeight="0.6720086" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39679146" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24064171" sideWeight="0.18836565" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32834226" sideWeight="0.5024931" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24916944" sideWeight="0.21901709" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290461" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3272727" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -812,7 +818,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24930748" sideWeight="0.3279743" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39944598" sideWeight="0.6688103" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24930748" sideWeight="0.7593583" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24930748" sideWeight="0.67165774" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24064171" sideWeight="0.80775625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3193138" sideWeight="0.6720086" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1029,31 +1035,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AddFarmsTable.java">
+    <entry file="file://$PROJECT_DIR$/src/NewAttackTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="184" column="55" selection-start="7617" selection-end="7617" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="274" column="32" selection-start="10584" selection-end="10584" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AddVillagePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="318" column="12" selection-start="10042" selection-end="10071" vertical-scroll-proportion="0.0">
+        <state line="6" column="17" selection-start="181" selection-end="181" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2258#2894#0" expanded="true" />
-            <element signature="e#2883#2884#0" expanded="true" />
-            <element signature="e#7170#7178#0" expanded="true" />
+            <element signature="e#2134#2770#0" expanded="true" />
+            <element signature="e#2759#2760#0" expanded="true" />
+            <element signature="e#7046#7054#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NewAttackTable.java">
+    <entry file="file://$PROJECT_DIR$/src/AddFarmsTable.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="51" selection-start="369" selection-end="369" vertical-scroll-proportion="0.3353566">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="458" column="83" selection-start="16931" selection-end="16931" vertical-scroll-proportion="2.0938416">
+          <folding />
         </state>
       </provider>
     </entry>
