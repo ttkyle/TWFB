@@ -13,7 +13,7 @@ public class NewAttackTable extends JPanel {
     private static JTable table;
     private static DefaultTableModel model;
     private static JPopupMenu popupMenu;
-    private static boolean haveDeletedFarm = false;
+    private static boolean haveDeletedFarm;
 
     public NewAttackTable() {
         super(new GridLayout(1, 0));
@@ -195,7 +195,7 @@ public class NewAttackTable extends JPanel {
                     try {
                         RandomAccessFile randomAccessFile = new RandomAccessFile("deleteBeforeExit.txt", "rw");
                         try {
-                            if((randomAccessFile.readLine().equals("true"))) {
+                            if((randomAccessFile.readLine().equals("truee"))) {
                                 NewAttackTable.setHaveDeletedFarm(true);
                             }
                             else {
@@ -237,6 +237,26 @@ public class NewAttackTable extends JPanel {
                 }
                 else {
                     haveDeletedFarm = true;
+                    System.out.println(haveDeletedFarm);
+                    System.out.println("after have deleted true");
+                    try {
+                        RandomAccessFile randomAccessFile = new RandomAccessFile("deleteBeforeExit.txt", "rw");
+                        try {
+                            randomAccessFile.seek(0);
+                            randomAccessFile.writeBytes("true");
+                        }
+                        catch (IOException e1) {
+                            e1.printStackTrace();
+                        }
+                        catch(NullPointerException e2) {
+                            e2.printStackTrace();
+                        }
+
+                        randomAccessFile.close();
+                    }
+                    catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
                     try {
                         AddVillagePanel.removeLineFromFile("15000.txt");
                     }

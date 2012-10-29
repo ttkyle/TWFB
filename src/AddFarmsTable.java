@@ -239,6 +239,26 @@ public class AddFarmsTable extends JPanel {
                     raf.close();
                 }
                 NewAttackTable.setHaveDeletedFarm(false);
+
+                try {
+                    RandomAccessFile randomAccessFile = new RandomAccessFile("deleteBeforeExit.txt", "rw");
+                    try {
+                        randomAccessFile.seek(0);
+                        randomAccessFile.writeBytes("false");
+                    }
+                    catch (IOException e1) {
+                        e1.printStackTrace();
+                    }
+                    catch(NullPointerException e2) {
+                        e2.printStackTrace();
+                    }
+
+                    randomAccessFile.close();
+                }
+                catch (IOException e1) {
+                    e1.printStackTrace();
+                }
+
             }
             catch (IOException ex ) {
                 ex.printStackTrace();
