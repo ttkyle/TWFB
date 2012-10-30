@@ -304,9 +304,11 @@ public class AddVillagePanel extends JPanel {
             for(String s : currentFarms) {
                 for(int i = 0; i < AddFarmsTable.getTable().getRowCount(); i++) {
                     String value = AddFarmsTable.getTable().getValueAt(i,0).toString();
-                    String pointValue = AddFarmsTable.getTable().getValueAt(i, 4).toString();
 
+                    String pointValue = AddFarmsTable.getTable().getValueAt(i, 4).toString();
                     double newValue = Double.parseDouble(pointValue);
+
+                    //String villageName = AddFarmsTable.getTable().getValueAt(i, 1).toString();
 
                     if(s.equals(value) || newValue > maxPointValue) {
                         System.out.println("removing row " + i);

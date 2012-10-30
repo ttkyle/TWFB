@@ -14,6 +14,7 @@ public class AddFarmsOptionsPanel extends JPanel{
 
     public static JTextField distanceField;
     public static JTextField pointField;
+    public static Checkbox barbOnly;
     public AddFarmsOptionsPanel() {
 
         //create and set the size of the panel
@@ -38,10 +39,11 @@ public class AddFarmsOptionsPanel extends JPanel{
 
         JLabel distanceLabel = new JLabel("Distance:");
         JLabel pointLabel = new JLabel("Points:");
-        JButton searchButton = new JButton("   Search    ");
+        JButton searchButton = new JButton("Search");
+        barbOnly = new Checkbox("Only Barb");
 
         distanceField = new JTextField(10);
-         pointField = new JTextField(10);
+        pointField = new JTextField(10);
 
         distanceField.setText("0");
         pointField.setText("0");
@@ -74,13 +76,13 @@ public class AddFarmsOptionsPanel extends JPanel{
         gc.gridy = 0;
         add(distanceLabel, new GridBagConstraints( 0, 0, 1, 1, 1.0,
                 1.0, GridBagConstraints.CENTER, GridBagConstraints.NONE,
-                 new Insets( 0, 0, 0, 0 ), 0, 0 ) );
+                 new Insets(0, -4, 0, 0 ), 0, 0 ) );
 
         gc.gridx = 0;
         gc.gridy = 1;
         add(pointLabel, new GridBagConstraints( 0, 1, 1, 1, 1.0,
                 1.0, GridBagConstraints.CENTER, GridBagConstraints.NONE,
-                new Insets( 0, -15, 0, 0 ), 0, 0 ) );
+                new Insets( 0, -18, 0, 0 ), 0, 0 ) );
 
         ////// Second column /////
         gc.anchor = GridBagConstraints.LINE_START;
@@ -105,6 +107,12 @@ public class AddFarmsOptionsPanel extends JPanel{
         gc.fill = GridBagConstraints.VERTICAL;
         gc.weightx = .0;
         gc.weighty = .0;
+
+        gc.gridx = 1;
+        gc.gridy = 4;
+        add(barbOnly, new GridBagConstraints( 1, 2, 1, 1, 1.0,
+                1.0, GridBagConstraints.CENTER, GridBagConstraints.NONE,
+                new Insets( 0, 0, 0, 0 ), 0, 0 ));
 
         gc.gridx = 1;
         gc.gridy = 3;
