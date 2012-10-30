@@ -8,8 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="52965e10-be1c-41ae-82af-f095b03dd629" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AddFarmsOptionsPanel.java" afterPath="$PROJECT_DIR$/src/AddFarmsOptionsPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AddVillagePanel.java" afterPath="$PROJECT_DIR$/src/AddVillagePanel.java" />
     </list>
     <ignored path="TWFB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -135,7 +133,7 @@
       <file leaf-file-name="AddVillagePanel.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AddVillagePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="314" column="61" selection-start="10305" selection-end="10305" vertical-scroll-proportion="0.4824962">
+            <state line="313" column="114" selection-start="10240" selection-end="10240" vertical-scroll-proportion="0.456621">
               <folding />
             </state>
           </provider>
@@ -797,7 +795,11 @@
       <created>1351625690255</created>
       <updated>1351625690255</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Barb only filter kinda works.">
+      <created>1351626945599</created>
+      <updated>1351626945599</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -822,7 +824,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="57" y="-8" width="1871" height="1092" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32834226" sideWeight="0.4936288" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.75884247" order="3" side_tool="false" content_ui="tabs" />
@@ -838,7 +840,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39944598" sideWeight="0.6688103" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24930748" sideWeight="0.7604726" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23952739" sideWeight="0.80775625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23952739" sideWeight="0.80775625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3193138" sideWeight="0.6720086" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -885,7 +887,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Point and distance filters work. (pre checkbox)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Barb only filter kinda works." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -898,7 +900,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="Now users can not add blank rows as farm targets.  Which in turn fixes several bugs that resulted from adding blank targets." />
     <MESSAGE value="The farm table will now always select the top choice after something is added or the window is closed.  Got rid of a few useless variables." />
     <MESSAGE value="The AttackTable now dynamically adds rows instead of loading with 800 rows.  This reduces loading time.  Need to look at delete methods, they got out of bounds sometimes." />
     <MESSAGE value="AttackTable is now completely dynamic.  Fixed the deletion issues with common-sense (use the row number you already have stupid)!" />
@@ -923,6 +924,7 @@
     <MESSAGE value="Started working on pointFilters" />
     <MESSAGE value="Point and distance filters work." />
     <MESSAGE value="Point and distance filters work. (pre checkbox)" />
+    <MESSAGE value="Barb only filter kinda works." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1015,7 +1017,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AddVillagePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="314" column="61" selection-start="10305" selection-end="10305" vertical-scroll-proportion="0.4824962">
+        <state line="313" column="114" selection-start="10240" selection-end="10240" vertical-scroll-proportion="0.456621">
           <folding />
         </state>
       </provider>
