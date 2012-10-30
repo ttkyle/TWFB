@@ -3,8 +3,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 import javax.swing.*;
 import java.io.File;
-import java.sql.Driver;
-
 
 /**
  * Web automation class.  This class is used to automate the web browser.
@@ -18,11 +16,6 @@ public class WebAutomation  {
     static String password;
 
     private static String currentlySelectedServer;
-
-    //String serverName = "en64";
-    //String logonPage = "http://www.tribalwars.net";
-    //String overViewPage = "http://" + serverName + ".tribalwars.net/game.php?screen=overview&intro";
-    //String pageRally = "http://" + serverName + ".tribalwars.net/game.php?village=60018&screen=place";
 
     public static void login(String user, String pass) throws InterruptedException {
 
@@ -118,7 +111,6 @@ public class WebAutomation  {
             }
 
             //takes user back to the main page
-            //driver.get("http://en63.tribalwars.net/game.php?village=119799&screen=overview");
             driver.get(currentlySelectedServer + ".tribalwars.net/game.php?screen=overview&intro");
         }
 

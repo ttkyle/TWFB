@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,5 +33,71 @@ public class AddFarmsOptionsPanel extends JPanel{
 
         //sets the border color and title
         setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(outLineColor), "Village Filter Options"));
+
+        JLabel distanceLabel = new JLabel("Distance:");
+        JLabel pointLabel = new JLabel("Points:");
+        JButton searchButton = new JButton("   Search    ");
+
+        final JTextField distanceField = new JTextField(10);
+        final JTextField pointField = new JTextField(10);
+
+        distanceField.setPreferredSize(new Dimension(50,25));
+        pointField.setPreferredSize(new Dimension(50,25));
+        searchButton.setPreferredSize(new Dimension(110,30));
+
+        searchButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                String points = pointField.getText();
+                String distance = distanceField.getText();
+            }
+        });
+
+        ////// First Column///////
+        gc.anchor = GridBagConstraints.LINE_START;
+        gc.fill = GridBagConstraints.VERTICAL;
+        gc.weightx = 0.5;
+        gc.weighty = 0.5;
+
+        gc.gridx =  0;
+        gc.gridy = 0;
+        add(distanceLabel, new GridBagConstraints( 0, 0, 1, 1, 1.0,
+                1.0, GridBagConstraints.CENTER, GridBagConstraints.NONE,
+                 new Insets( 0, 0, 0, 0 ), 0, 0 ) );
+
+        gc.gridx = 0;
+        gc.gridy = 1;
+        add(pointLabel, new GridBagConstraints( 0, 1, 1, 1, 1.0,
+                1.0, GridBagConstraints.CENTER, GridBagConstraints.NONE,
+                new Insets( 0, -15, 0, 0 ), 0, 0 ) );
+
+        ////// Second column /////
+        gc.anchor = GridBagConstraints.LINE_START;
+        gc.fill = GridBagConstraints.VERTICAL;
+        gc.weightx = 1;
+        gc.weighty = 1;
+
+        gc.gridx = 1;
+        gc.gridy = 0;
+        add(distanceField,   new GridBagConstraints( 1, 0, 1, 1, 1.0,
+                1.0, GridBagConstraints.CENTER, GridBagConstraints.NONE,
+                new Insets( 0, 0, 0, 0 ), 0, 0 ) );
+
+        gc.gridx = 1;
+        gc.gridy = 1;
+        add(pointField, new GridBagConstraints( 1, 1, 1, 1, 1.0,
+                1.0, GridBagConstraints.CENTER, GridBagConstraints.NONE,
+                new Insets( 0, 0, 0, 0 ), 0, 0 ) );
+
+        ///final row
+        gc.anchor = GridBagConstraints.LINE_START;
+        gc.fill = GridBagConstraints.VERTICAL;
+        gc.weightx = .0;
+        gc.weighty = .0;
+
+        gc.gridx = 1;
+        gc.gridy = 3;
+        add(searchButton, new GridBagConstraints( 1, 2, 1, 1, 1.0,
+                1.0, GridBagConstraints.CENTER, GridBagConstraints.NONE,
+                new Insets( 0, 0, 75, 0 ), 0, 0 ));
     }
 }

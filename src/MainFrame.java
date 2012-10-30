@@ -11,7 +11,7 @@ public class MainFrame extends JFrame {
     public TroopsDetailPanel troopsDetailPanel;
     public static AddFarmsDialog addFarmsDialog;
     public static ServerNotOnAccountDialog serverNotOnAccountDialog;
-    //
+
 
     public MainFrame(String title) throws IOException {
         super(title);
@@ -28,7 +28,7 @@ public class MainFrame extends JFrame {
         ServerTimePanel serverTimePanel = new ServerTimePanel();
         attackTable2 = new AttackTable();
         addFarmsDialog = new AddFarmsDialog();
-         serverNotOnAccountDialog = new ServerNotOnAccountDialog();
+        serverNotOnAccountDialog = new ServerNotOnAccountDialog();
 
         //Disables frames on GUI creation
         disableButtons();
