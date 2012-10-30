@@ -7,7 +7,7 @@ import java.io.IOException;
  */
 public class MainFrame extends JFrame {
 
-    public static NewAttackTable attackTable2;
+    public static AttackTable attackTable2;
     public TroopsDetailPanel troopsDetailPanel;
     public static AddFarmsDialog addFarmsDialog;
     //
@@ -25,7 +25,7 @@ public class MainFrame extends JFrame {
         AddVillagePanel addVillagePanel = new AddVillagePanel();
         BuildingConstructionPanel buildingConstructionPanel = new BuildingConstructionPanel();
         ServerTimePanel serverTimePanel = new ServerTimePanel();
-        attackTable2 = new NewAttackTable();
+        attackTable2 = new AttackTable();
         addFarmsDialog = new AddFarmsDialog();
 
         //Disables frames on GUI creation

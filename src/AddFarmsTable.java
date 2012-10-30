@@ -230,17 +230,17 @@ public class AddFarmsTable extends JPanel {
 
             try {
                 RandomAccessFile raf = new RandomAccessFile("currentFarmList.txt", "rw");
-                if(NewAttackTable.getHaveDeletedFarm()) {
+                if(AttackTable.getHaveDeletedFarm()) {
                     raf.skipBytes((int)raf.length()-2);
                     raf.writeBytes(columnZero + ",");
                     raf.close();
                 }
-                if(!NewAttackTable.getHaveDeletedFarm()) {
+                if(!AttackTable.getHaveDeletedFarm()) {
                     raf.skipBytes((int)raf.length());   //-2 works after delete
                     raf.writeBytes(columnZero + ",");
                     raf.close();
                 }
-                NewAttackTable.setHaveDeletedFarm(false);
+                AttackTable.setHaveDeletedFarm(false);
 
                 try {
                     RandomAccessFile randomAccessFile = new RandomAccessFile("deleteBeforeExit.txt", "rw");
