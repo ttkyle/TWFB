@@ -64,7 +64,7 @@ public class MainFrame extends JFrame {
         gc.weighty = .5;
         gc.fill = GridBagConstraints.VERTICAL;
         gc.fill = GridBagConstraints.HORIZONTAL;
-        gc.insets = new Insets(-352, 0, 0, 595);
+        gc.insets = new Insets(-428, 0, 0, 595);    //-352, 0, 0, 595
         gc.gridx = 0;
         gc.gridy = 1;
         add(troopsDetailPanel, gc);
@@ -74,7 +74,7 @@ public class MainFrame extends JFrame {
         gc.weighty = .5;
         gc.fill = GridBagConstraints.VERTICAL;
         gc.fill = GridBagConstraints.HORIZONTAL;
-        gc.insets = new Insets(-96, 0, 0, 595);
+        gc.insets = new Insets(-136, 0, 0, 595);      //-96, 0, 0, 595
         gc.gridx = 0;
         gc.gridy = 3;
         add(currentVillagePanel, gc);
@@ -106,7 +106,7 @@ public class MainFrame extends JFrame {
         gc.weighty = .0;
         gc.fill = GridBagConstraints.VERTICAL;
         gc.fill = GridBagConstraints.HORIZONTAL;
-        gc.insets = new Insets(0, -595 , 188, -1);
+        gc.insets = new Insets(0, -595 , 280, -1);     //0, -595, 188, -1
         gc.gridx = 1;
         gc.gridy = 0;
         add(buildPanel, gc);
@@ -116,7 +116,7 @@ public class MainFrame extends JFrame {
         gc.weighty = .0;
         gc.fill = GridBagConstraints.VERTICAL;
         gc.fill = GridBagConstraints.HORIZONTAL;
-        gc.insets = new Insets(-432, -595 , 0, -1);
+        gc.insets = new Insets(-560, -595 , 0, -1);      //-432, -595, 0, -1
         gc.gridx = 1;
         gc.gridy = 1;
         add(buildingConstructionPanel, gc);
@@ -126,12 +126,10 @@ public class MainFrame extends JFrame {
         gc.weighty = .0;
         gc.fill = GridBagConstraints.VERTICAL;
         gc.fill = GridBagConstraints.HORIZONTAL;
-        gc.insets = new Insets(-338, 3 , 0, -1);
+        gc.insets = new Insets(-415, 3 , 0, -1);    //-338, 3, 0, -1
         gc.gridx = 0;
         gc.gridy = 2;
         add(attackTable2, gc);
-
-
     }
 
     //used to disable all the buttons once ui created

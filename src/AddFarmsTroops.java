@@ -54,7 +54,6 @@ public class AddFarmsTroops extends JPanel {
         axeTextFieldFarmAdder = new JTextField(5);
         scoutTextFieldFarmAdder = new JTextField(5);
         lightCalTextFieldFarmAdder = new JTextField(5);
-        paladinTextFieldFarmAdder = new JTextField(5);
         catapultTextFieldFarmAdder = new JTextField(5);
         ramTextFieldFarmAdder = new JTextField(5);
         heavyCalTextFieldFarmAdder = new JTextField(5);
@@ -62,6 +61,7 @@ public class AddFarmsTroops extends JPanel {
         archerTextFieldFarmAdder = new JTextField(5);
         nobleTextFieldFarmAdder = new JTextField(5);
 
+        paladinTextFieldFarmAdder = new JTextField(5);
         paladinTextFieldFarmAdder.setEnabled(false);
         paladinTextFieldFarmAdder.setBackground(Color.GRAY);
 
