@@ -17,12 +17,13 @@ public class AddFarmsTable extends JPanel {
     private static String columnOne;
     private static String columnTwo;
     private static String columnThree;
+    public static DefaultTableCellRenderer centerRenderer;
 
 
     public AddFarmsTable() {
         super(new GridLayout(1, 0));
         Dimension size = getPreferredSize();
-        size.width = 400;
+        size.width = 600;
         size.height = 550;
         setPreferredSize(size);
         setMaximumSize(size);
@@ -70,10 +71,7 @@ public class AddFarmsTable extends JPanel {
 
         Border headerBorder = UIManager.getBorder("TableHeader.cellBorder");
 
-        DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
-        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
 
-        table.setDefaultRenderer(String.class, centerRenderer);
 
         //Add the scroll pane to this panel.
         add(scrollPane);
@@ -142,6 +140,10 @@ public class AddFarmsTable extends JPanel {
             }
         });
         farmMenu.add(menuItem);
+
+        centerRenderer = new DefaultTableCellRenderer();
+        centerRenderer.setHorizontalAlignment(JLabel.CENTER);
+        table.setDefaultRenderer(String.class, centerRenderer);
     }
 
     public static void sortAllRowsBy(DefaultTableModel model, int colIndex, boolean ascending) {

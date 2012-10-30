@@ -62,6 +62,9 @@ public class AddFarmsTroops extends JPanel {
         archerTextFieldFarmAdder = new JTextField(5);
         nobleTextFieldFarmAdder = new JTextField(5);
 
+        paladinTextFieldFarmAdder.setEnabled(false);
+        paladinTextFieldFarmAdder.setBackground(Color.GRAY);
+
         JLabel spearIconFarmAdder = new JLabel ("", TroopsDetailPanel.getSpearIcon(), JLabel.CENTER);
         spearIconFarmAdder.setVerticalTextPosition(JLabel.TOP);
         spearIconFarmAdder.setHorizontalTextPosition(JLabel.RIGHT);

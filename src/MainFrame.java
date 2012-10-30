@@ -36,11 +36,6 @@ public class MainFrame extends JFrame {
         AddVillagePanel.filterCurrentFarms();
 
 
-
-
-
-
-
         //Details panel listener
         detailsPanel.addDetailListener(new DetailListener() {
             public void detailEventOccurred(DetailEvent event) {
