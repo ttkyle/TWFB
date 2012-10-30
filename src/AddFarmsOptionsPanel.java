@@ -44,6 +44,7 @@ public class AddFarmsOptionsPanel extends JPanel{
          pointField = new JTextField(10);
 
         distanceField.setText("0");
+        pointField.setText("0");
 
         distanceField.setPreferredSize(new Dimension(50,25));
         pointField.setPreferredSize(new Dimension(50,25));

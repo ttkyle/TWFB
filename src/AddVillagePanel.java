@@ -304,8 +304,35 @@ public class AddVillagePanel extends JPanel {
         catch(NullPointerException e) {
             System.out.println("Null pointer filterCurrentFarms");
         }
+        filterByPoints();
         AddFarmsTable.getTable().changeSelection(0, 0, false, false);
     }
+
+    public static void filterByPoints() {
+        double maxPointValue = 30000;
+        if(AddFarmsOptionsPanel.pointField.getText().equals("0") ||AddFarmsOptionsPanel.pointField.getText().equals(null)) {
+            maxPointValue = 30000;
+        }
+        else {
+            maxPointValue = Double.parseDouble(AddFarmsOptionsPanel.pointField.getText());
+        }
+        try {
+            for(int i = 0; i < AddFarmsTable.getTable().getRowCount(); i++) {
+                String value = AddFarmsTable.getTable().getValueAt(i, 4).toString();
+                double newValue = Double.parseDouble(value);
+
+                if(maxPointValue < newValue) {
+                    //System.out.println(newValue);
+                    System.out.println("row removed " + "Point value " + newValue + " row " + i);
+                    AddFarmsTable.getModel().removeRow(i);
+                }
+            }
+        }
+        catch (NumberFormatException e) {
+            //
+        }
+    }
+
 
     public static void deleteStringFromFile(String file, String delete)   {
         //File inFile = new File(file);
@@ -489,31 +516,9 @@ public class AddVillagePanel extends JPanel {
             br.close();
     }
 
-
-
-
-    public static void filterByPoints(int pointValue) {
-        try {
-            for(int i = 0; i < AddFarmsTable.getTable().getRowCount(); i++) {
-                String value = AddFarmsTable.getTable().getValueAt(i,4).toString();
-                int newValue = Integer.parseInt(value);
-
-                if(newValue > pointValue ) {
-                    System.out.println(newValue);
-                    System.out.println("row removed" + i);
-                    AddFarmsTable.getModel().removeRow(i);
-                }
-            }
-        }
-        catch (NumberFormatException e) {
-        //
-        }
-    }
-
-
     public static void findFarms(String fileName) {
         double distanceSearch = 15;
-        if(AddFarmsOptionsPanel.distanceField.equals(null) || AddFarmsOptionsPanel.distanceField.getText().equals("0")) {
+        if(AddFarmsOptionsPanel.distanceField.getText().equals(null) || AddFarmsOptionsPanel.distanceField.getText().equals("0")) {
             distanceSearch = 15;
         }
         else {
