@@ -284,6 +284,17 @@ public class AddVillagePanel extends JPanel {
     }
 
     public static void filterCurrentFarms() {
+       // filterByPoints();
+        double maxPointValue = 30000;
+        if(AddFarmsOptionsPanel.pointField.getText().equals("0") || AddFarmsOptionsPanel.pointField.getText().equals("")) {
+            maxPointValue = 30000;
+            System.out.println(maxPointValue + " in if");
+        }
+        else {
+            maxPointValue = Double.parseDouble(AddFarmsOptionsPanel.pointField.getText());
+            System.out.println(maxPointValue + " in else");
+        }
+
         try {
             populateArray("currentFarmList.txt");
         }
@@ -293,8 +304,11 @@ public class AddVillagePanel extends JPanel {
             for(String s : currentFarms) {
                 for(int i = 0; i < AddFarmsTable.getTable().getRowCount(); i++) {
                     String value = AddFarmsTable.getTable().getValueAt(i,0).toString();
+                    String pointValue = AddFarmsTable.getTable().getValueAt(i, 4).toString();
 
-                    if(s.equals(value)) {
+                    double newValue = Double.parseDouble(pointValue);
+
+                    if(s.equals(value) || newValue > maxPointValue) {
                         System.out.println("removing row " + i);
                         AddFarmsTable.getModel().removeRow(i);
                     }
@@ -304,22 +318,26 @@ public class AddVillagePanel extends JPanel {
         catch(NullPointerException e) {
             System.out.println("Null pointer filterCurrentFarms");
         }
-        filterByPoints();
+
         AddFarmsTable.getTable().changeSelection(0, 0, false, false);
     }
 
     public static void filterByPoints() {
         double maxPointValue = 30000;
-        if(AddFarmsOptionsPanel.pointField.getText().equals("0") ||AddFarmsOptionsPanel.pointField.getText().equals(null)) {
+        if(AddFarmsOptionsPanel.pointField.getText().equals("0") || AddFarmsOptionsPanel.pointField.getText().equals(null)) {
             maxPointValue = 30000;
+            System.out.println(maxPointValue + " in if");
         }
         else {
             maxPointValue = Double.parseDouble(AddFarmsOptionsPanel.pointField.getText());
+            System.out.println(maxPointValue + " in else");
         }
         try {
             for(int i = 0; i < AddFarmsTable.getTable().getRowCount(); i++) {
                 String value = AddFarmsTable.getTable().getValueAt(i, 4).toString();
+
                 double newValue = Double.parseDouble(value);
+                System.out.println(newValue + " value as double");
 
                 if(maxPointValue < newValue) {
                     //System.out.println(newValue);
@@ -329,7 +347,7 @@ public class AddVillagePanel extends JPanel {
             }
         }
         catch (NumberFormatException e) {
-            //
+            System.out.println("numberFormatWrong");
         }
     }
 
@@ -518,7 +536,7 @@ public class AddVillagePanel extends JPanel {
 
     public static void findFarms(String fileName) {
         double distanceSearch = 15;
-        if(AddFarmsOptionsPanel.distanceField.getText().equals(null) || AddFarmsOptionsPanel.distanceField.getText().equals("0")) {
+        if(AddFarmsOptionsPanel.distanceField.getText().equals("") || AddFarmsOptionsPanel.distanceField.getText().equals("0")) {
             distanceSearch = 15;
         }
         else {
