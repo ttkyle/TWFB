@@ -512,7 +512,13 @@ public class AddVillagePanel extends JPanel {
 
 
     public static void findFarms(String fileName) {
-
+        int distanceSearch = 15;
+        if(AddFarmsOptionsPanel.distanceField.equals(null) || AddFarmsOptionsPanel.distanceField.getText().equals("0")) {
+            distanceSearch = 15;
+        }
+        else {
+            distanceSearch = Integer.parseInt(AddFarmsOptionsPanel.distanceField.getText());
+        }
         try {
             FileReader fr = new FileReader(fileName);
             BufferedReader br = new BufferedReader(fr);
@@ -527,7 +533,7 @@ public class AddVillagePanel extends JPanel {
                     try {
                         values = farms.split(",");
 
-                        if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= 15 &&
+                        if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= distanceSearch &&
                                 distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) != 0.0
                                 ) {
                             AddFarmsTable.getModel().addRow(new Object[]{});
@@ -552,6 +558,7 @@ public class AddVillagePanel extends JPanel {
         catch(IOException e) {
             System.out.println("find Farms IO exception");
         }
+        AddVillagePanel.filterCurrentFarms();
         AddFarmsTable.sortAllRowsBy(AddFarmsTable.getModel(), 5, true);
     }
 

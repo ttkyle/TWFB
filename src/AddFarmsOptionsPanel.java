@@ -12,6 +12,8 @@ import java.awt.event.ActionListener;
  */
 public class AddFarmsOptionsPanel extends JPanel{
 
+    public static JTextField distanceField;
+    public static JTextField pointField;
     public AddFarmsOptionsPanel() {
 
         //create and set the size of the panel
@@ -38,8 +40,10 @@ public class AddFarmsOptionsPanel extends JPanel{
         JLabel pointLabel = new JLabel("Points:");
         JButton searchButton = new JButton("   Search    ");
 
-        final JTextField distanceField = new JTextField(10);
-        final JTextField pointField = new JTextField(10);
+        distanceField = new JTextField(10);
+         pointField = new JTextField(10);
+
+        distanceField.setText("0");
 
         distanceField.setPreferredSize(new Dimension(50,25));
         pointField.setPreferredSize(new Dimension(50,25));
@@ -49,6 +53,13 @@ public class AddFarmsOptionsPanel extends JPanel{
             public void actionPerformed(ActionEvent e) {
                 String points = pointField.getText();
                 String distance = distanceField.getText();
+
+                int rows = AddFarmsTable.getModel().getRowCount();
+                for(int i = rows - 1; i >=0; i--)
+                {
+                    AddFarmsTable.getModel().removeRow(i);
+                }
+                AddVillagePanel.findFarms("village.txt");
             }
         });
 
