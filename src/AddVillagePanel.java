@@ -284,7 +284,7 @@ public class AddVillagePanel extends JPanel {
     }
 
     public static void filterCurrentFarms() {
-       // filterByPoints();
+        // filterByPoints();
         double maxPointValue = 30000;
         if(AddFarmsOptionsPanel.pointField.getText().equals("0") || AddFarmsOptionsPanel.pointField.getText().equals("")) {
             maxPointValue = 30000;
@@ -308,11 +308,19 @@ public class AddVillagePanel extends JPanel {
                     String pointValue = AddFarmsTable.getTable().getValueAt(i, 4).toString();
                     double newValue = Double.parseDouble(pointValue);
 
-                    //String villageName = AddFarmsTable.getTable().getValueAt(i, 1).toString();
+                    String villageName = AddFarmsTable.getTable().getValueAt(i, 1).toString();
 
-                    if(s.equals(value) || newValue > maxPointValue) {
-                        System.out.println("removing row " + i);
-                        AddFarmsTable.getModel().removeRow(i);
+                    if (AddFarmsOptionsPanel.barbOnly.isSelected()) {
+                        if(s.equals(value) || newValue > maxPointValue || !villageName.equals("Barbarian+village")) {
+                            System.out.println("removing rows " + i);
+                            AddFarmsTable.getModel().removeRow(i);
+                        }
+                    }
+                    else {
+                        if(s.equals(value) || newValue > maxPointValue) {
+                            System.out.println("removing row " + i);
+                            AddFarmsTable.getModel().removeRow(i);
+                        }
                     }
                 }
             }

@@ -14,7 +14,7 @@ public class AddFarmsOptionsPanel extends JPanel{
 
     public static JTextField distanceField;
     public static JTextField pointField;
-    public static Checkbox barbOnly;
+    public static JCheckBox barbOnly;
     public AddFarmsOptionsPanel() {
 
         //create and set the size of the panel
@@ -40,7 +40,7 @@ public class AddFarmsOptionsPanel extends JPanel{
         JLabel distanceLabel = new JLabel("Distance:");
         JLabel pointLabel = new JLabel("Points:");
         JButton searchButton = new JButton("Search");
-        barbOnly = new Checkbox("Only Barb");
+        barbOnly = new JCheckBox("Only Barb");
 
         distanceField = new JTextField(10);
         pointField = new JTextField(10);
