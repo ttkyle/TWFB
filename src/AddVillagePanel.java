@@ -512,12 +512,12 @@ public class AddVillagePanel extends JPanel {
 
 
     public static void findFarms(String fileName) {
-        int distanceSearch = 15;
+        double distanceSearch = 15;
         if(AddFarmsOptionsPanel.distanceField.equals(null) || AddFarmsOptionsPanel.distanceField.getText().equals("0")) {
             distanceSearch = 15;
         }
         else {
-            distanceSearch = Integer.parseInt(AddFarmsOptionsPanel.distanceField.getText());
+            distanceSearch = Double.parseDouble(AddFarmsOptionsPanel.distanceField.getText());
         }
         try {
             FileReader fr = new FileReader(fileName);
