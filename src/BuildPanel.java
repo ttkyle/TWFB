@@ -57,7 +57,7 @@ public class BuildPanel extends JPanel {
         //create and set the size of the panel
         Dimension size = getPreferredSize();
         size.width = 600;
-        size.height = 266;
+        size.height = 258;
         setPreferredSize(size);
         setMaximumSize(size);
         setMinimumSize(size);

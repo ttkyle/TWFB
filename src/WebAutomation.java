@@ -1,8 +1,9 @@
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import javax.swing.*;
 import java.io.File;
-
+import java.sql.Driver;
 
 
 /**
@@ -16,6 +17,8 @@ public class WebAutomation  {
     static String userName;
     static String password;
 
+    private static String currentlySelectedServer;
+
     //String serverName = "en64";
     //String logonPage = "http://www.tribalwars.net";
     //String overViewPage = "http://" + serverName + ".tribalwars.net/game.php?screen=overview&intro";
@@ -27,6 +30,9 @@ public class WebAutomation  {
         userName = user;
         password = pass;
 
+        String convertServerToString = DetailsPanel.getServerListComboBox().getSelectedItem().toString();
+        currentlySelectedServer = convertServerToString.substring(6, 10);
+        System.out.println(currentlySelectedServer);
 
         //Get the logon page
         driver.get("http://www.tribalwars.net");
@@ -48,52 +54,85 @@ public class WebAutomation  {
 
         //Choose which server to login and wait
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("Index.submit_login('server_en64')");
+        js.executeScript("Index.submit_login('server_" + currentlySelectedServer +"')");
 
-        //the main screen is loading so wait 4 seconds for it to load
+        driver.get(currentlySelectedServer + ".tribalwars.net/game.php?screen=overview&intro");
+        Thread.sleep(1000);
 
-        //display units in village to the GUI
-        Village.updateTroops();
-        Village.isAttacked();
-        Village.setWoodResource();
-        Village.setClayResource();
-        Village.setIronResource();
 
-        //Waits for the VillageHQ to load then gets the building levels and resource generation
-        //driver.get("http://en63.tribalwars.net/game.php?village=119799&screen=main");
-        driver.get("http://en64.tribalwars.net/game.php?village=60018&screen=main");
-        Village.getAllBuildingCosts();
+        String currentUrl = null;
+        try {
+             currentUrl = driver.getCurrentUrl().substring(7, 57);
+        }
+        catch(StringIndexOutOfBoundsException e) {
+            System.out.println("NO ACCOUNT ON SERVER");
+            JOptionPane.showMessageDialog(MainFrame.serverNotOnAccountDialog,
+                    "THERE IS NO VILLAGE CREATED IN THIS WORLD!!!!!",
+                    "NO VILLAGE IN THIS WORLD",
+                    JOptionPane.ERROR_MESSAGE);
 
-        //updates all the buildings and resources on load
-        Village.updateBuildings();
-
-        Thread.sleep(500);
-        Village.constructionOne();
-        Village.constructionTwo();
-        Village.constructionOneGetNumbers();
-        Village.constructionOneGetTime();
-        Village.constructionTwoGetNumbers();
-        Village.constructionTwoGetTime();
-        Thread.sleep(500);
-
-        //two new thread to keep updating resources on any page and keeping watch for incoming attacks
-        TroopThread troops = new TroopThread();
-        ResourceUpdateThread resources = new ResourceUpdateThread();
-        IsAttackedThread attack = new IsAttackedThread();
-        BuildingResourceCostThread buildingCosts = new BuildingResourceCostThread();
-        ConstructOneThread constructOneThread = new ConstructOneThread();
-
-        if(Village.getTotalOne() > 0) {
-            ConstructOneThread.constructionFlagOne = true;
+            driver.close();
+            driver = null;
         }
 
-        //takes user back to the main page
-        //driver.get("http://en63.tribalwars.net/game.php?village=119799&screen=overview");
-        driver.get("http://en64.tribalwars.net/game.php?screen=overview&intro");
+        System.out.println(currentUrl);
+        Thread.sleep(1000);
+        if(currentUrl.equals(currentlySelectedServer + ".tribalwars.net/game.php?screen=overview&intro")) {
+            System.out.println("SERVER EXISTS ON ACCOUNT");
+
+
+            //display units in village to the GUI
+            Village.updateTroops();
+            Village.isAttacked();
+            Village.setWoodResource();
+            Village.setClayResource();
+            Village.setIronResource();
+
+            //Waits for the VillageHQ to load then gets the building levels and resource generation
+            //driver.get("http://en63.tribalwars.net/game.php?village=119799&screen=main");
+            System.out.println(currentlySelectedServer + ".tribalwars.net/game.php?village=34634&screen=main");
+            driver.get( currentlySelectedServer + ".tribalwars.net/game.php?village=34634&screen=main");
+            Village.getAllBuildingCosts();
+
+            //updates all the buildings and resources on load
+            Village.updateBuildings();
+
+            Thread.sleep(500);
+            Village.constructionOne();
+            Village.constructionTwo();
+            Village.constructionOneGetNumbers();
+            Village.constructionOneGetTime();
+            Village.constructionTwoGetNumbers();
+            Village.constructionTwoGetTime();
+            Thread.sleep(500);
+
+            //two new thread to keep updating resources on any page and keeping watch for incoming attacks
+            TroopThread troops = new TroopThread();
+            ResourceUpdateThread resources = new ResourceUpdateThread();
+            IsAttackedThread attack = new IsAttackedThread();
+            BuildingResourceCostThread buildingCosts = new BuildingResourceCostThread();
+            ConstructOneThread constructOneThread = new ConstructOneThread();
+
+            if(Village.getTotalOne() > 0) {
+                ConstructOneThread.constructionFlagOne = true;
+            }
+
+            //takes user back to the main page
+            //driver.get("http://en63.tribalwars.net/game.php?village=119799&screen=overview");
+            driver.get(currentlySelectedServer + ".tribalwars.net/game.php?screen=overview&intro");
+        }
+
+        else {
+            System.out.println("NO ACCOUNT ON SERVER NOT IN CATCH");
+            JOptionPane.showMessageDialog(MainFrame.serverNotOnAccountDialog,
+                    "THERE IS NO VILLAGE CREATED IN THIS WORLD!!!!!",
+                    "NO VILLAGE IN THIS WORLD",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public void openRally() throws InterruptedException {
-        driver.get("http://en64.tribalwars.net/game.php?village=60018&screen=place");
+        driver.get(currentlySelectedServer + ".tribalwars.net/game.php?village=34634&screen=place");
         Thread.sleep(1000);
     }
 

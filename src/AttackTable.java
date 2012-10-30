@@ -18,7 +18,7 @@ public class AttackTable extends JPanel {
         super(new GridLayout(1, 0));
         Dimension size = getPreferredSize();
         size.width = 790;
-        size.height = 145;
+        size.height = 137;
         setPreferredSize(size);
         setMaximumSize(size);
         setMinimumSize(size);

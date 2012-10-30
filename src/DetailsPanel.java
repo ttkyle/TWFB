@@ -14,6 +14,7 @@ public class DetailsPanel extends JPanel {
 
 
     private EventListenerList listenerList = new EventListenerList();
+    private static JComboBox serverListComboBox;
 
     public  DetailsPanel() {
 
@@ -37,8 +38,13 @@ public class DetailsPanel extends JPanel {
         final JTextField nameField = new JTextField(10);
         final JTextField passwordField = new JTextField(10);
 
-        String[] serverList = {"World 58           "    , "World 59", "World 60", "World 61", "World 62", "World 63", "World 64", "World 65"};
-        JComboBox serverListLabel = new JComboBox(serverList);
+        String[] serverList = {"World en58       "    , "World en59", "World en60", "World en61", "World en62",
+                               "World en63", "World en64", "World en65"};
+
+        serverListComboBox = new JComboBox(serverList);
+
+        String currentlySelectedServer = DetailsPanel.getServerListComboBox().getSelectedItem().toString();
+        System.out.println(currentlySelectedServer.substring(6, 10));
 
         //labels to let the user know what the textfields are for
         JLabel  nameLabel = new JLabel("User:");
@@ -101,7 +107,7 @@ public class DetailsPanel extends JPanel {
 
         gc.gridx = 1;
         gc.gridy = 2;
-        add(serverListLabel, gc);
+        add(serverListComboBox, gc);
 
         ///final row
         gc.anchor = GridBagConstraints.LINE_START;
@@ -134,5 +140,13 @@ public class DetailsPanel extends JPanel {
     //removes detail listeners to detail panel
     public void removeDetailListener(DetailListener listener) {
         listenerList.remove(DetailListener.class, listener);
+    }
+
+    public static JComboBox getServerListComboBox() {
+        return serverListComboBox;
+    }
+
+    public static void setServerListComboBox(JComboBox serverListComboBox) {
+        DetailsPanel.serverListComboBox = serverListComboBox;
     }
 }
