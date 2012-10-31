@@ -96,10 +96,9 @@
       <file leaf-file-name="WebAutomation.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WebAutomation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="170" column="0" selection-start="6578" selection-end="6578" vertical-scroll-proportion="0.3600605">
+            <state line="258" column="12" selection-start="9655" selection-end="9655" vertical-scroll-proportion="0.61422086">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#downloadVillageTxt#0;class#WebAutomation#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -140,7 +139,7 @@
       <file leaf-file-name="TestDownLoadThread.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/TestDownLoadThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="23" selection-start="758" selection-end="758" vertical-scroll-proportion="0.0">
+            <state line="31" column="0" selection-start="759" selection-end="759" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -825,7 +824,11 @@
       <created>1351655103903</created>
       <updated>1351655103903</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="All village download links are correct from Dropbox">
+      <created>1351655224338</created>
+      <updated>1351655224338</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -985,13 +988,6 @@
         <state line="21" column="25" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AddFarmsDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="8" selection-start="1250" selection-end="2221" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="26" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0">
@@ -1050,19 +1046,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestDownLoadThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="23" selection-start="758" selection-end="758" vertical-scroll-proportion="0.0">
+        <state line="31" column="0" selection-start="759" selection-end="759" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AddFarmsDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="8" selection-start="1250" selection-end="2221" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/WebAutomation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="170" column="0" selection-start="6578" selection-end="6578" vertical-scroll-proportion="0.3600605">
+        <state line="258" column="12" selection-start="9655" selection-end="9655" vertical-scroll-proportion="0.61422086">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#downloadVillageTxt#0;class#WebAutomation#0" expanded="false" />
           </folding>
         </state>
       </provider>
