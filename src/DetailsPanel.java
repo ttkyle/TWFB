@@ -42,6 +42,12 @@ public class DetailsPanel extends JPanel {
                                "World en63", "World en64", "World en65"};
 
         serverListComboBox = new JComboBox(serverList);
+        serverListComboBox.setSelectedIndex(7);
+        serverListComboBox.addActionListener (new ActionListener () {
+            public void actionPerformed(ActionEvent e) {
+                //later
+            }
+        });
 
         String currentlySelectedServer = DetailsPanel.getServerListComboBox().getSelectedItem().toString();
         System.out.println(currentlySelectedServer.substring(6, 10));

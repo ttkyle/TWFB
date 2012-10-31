@@ -29,10 +29,7 @@ public class TestDownLoadThread implements Runnable {
 
 
     public void run() {
-        try {
-            WebAutomation.aaa();
-        } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-        }
+        WebAutomation.downloadVillageTxt();
+
     }
 }

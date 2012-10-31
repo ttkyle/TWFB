@@ -165,12 +165,12 @@ public class WebAutomation  {
     }
 
 
-    public static void aaa() throws IOException {
+    public static void aaa(String worldUrl) throws IOException {
         InputStream is = null;
         BufferedOutputStream bos = null;
         try{
-            //is = fetch("http://en65.tribalwars.net/map/village.txt");
-            is = fetch("https://dl.dropbox.com/s/rnp66dutpnfuypg/village.txt?dl=1");
+            //is = fetch("https://dl.dropbox.com/s/01tqozyyq57nn8c/village.txt?dl=1");
+            is = fetch(worldUrl);
             bos = new BufferedOutputStream(new FileOutputStream(new File("village.txt")));
 
             byte[] buffer = new byte[8192];
@@ -178,7 +178,8 @@ public class WebAutomation  {
             while((bytesRead = is.read(buffer, 0, buffer.length)) > -1){
                 bos.write(buffer, 0, bytesRead);
             }
-        }finally{
+        }
+        finally{
             if(bos != null) bos.close();
             if(is != null) is.close();
         }
@@ -192,6 +193,27 @@ public class WebAutomation  {
         BufferedHttpEntity buffHttpEntity = new BufferedHttpEntity(entity);
         InputStream instream = buffHttpEntity.getContent();
         return instream;
+    }
+
+    public static void downloadVillageTxt() {
+        String convertServerToString = DetailsPanel.getServerListComboBox().getSelectedItem().toString();
+        String currentlySelectedServer = convertServerToString.substring(6, 10);
+        if(currentlySelectedServer.equals("en58")) {
+            try {
+                aaa("https://dl.dropbox.com/s/8j9xl7owcwaa2ig/village.txt?dl=1");
+            } catch (IOException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+        }
+
+        if(currentlySelectedServer.equals("en65")) {
+            try {
+                aaa("https://dl.dropbox.com/sh/m3gsazyljoyhn37/uKU2o1HJOm/village.txt?dl=1");
+            } catch (IOException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+        }
+
     }
 }
 
