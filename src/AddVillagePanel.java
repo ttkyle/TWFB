@@ -566,11 +566,11 @@ public class AddVillagePanel extends JPanel {
                     try {
                         values = farms.split(",");
 
-                        if(distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) <= distanceSearch &&
-                                distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0) != 0.0
+                        if(distanceMethod(Double.parseDouble(values[2]), 500.0, Double.parseDouble(values[3]), 314.0) <= distanceSearch &&
+                                distanceMethod(Double.parseDouble(values[2]), 500.0, Double.parseDouble(values[3]), 314.0) != 0.0
                                 ) {
                             AddFarmsTable.getModel().addRow(new Object[]{});
-                            Double newValue = distanceMethod(Double.parseDouble(values[2]), 346.0, Double.parseDouble(values[3]), 243.0);
+                            Double newValue = distanceMethod(Double.parseDouble(values[2]), 500.0, Double.parseDouble(values[3]), 314.0);
                             AddFarmsTable.getTable().setValueAt(values[0], count, 0);
                             AddFarmsTable.getTable().setValueAt(values[1], count, 1);
                             AddFarmsTable.getTable().setValueAt(values[2], count, 2);
@@ -590,6 +590,9 @@ public class AddVillagePanel extends JPanel {
         }
         catch(IOException e) {
             System.out.println("find Farms IO exception");
+
+            MainFrame.addFarmsDialog.setVisible(false);
+
         }
         AddVillagePanel.filterCurrentFarms();
         AddFarmsTable.sortAllRowsBy(AddFarmsTable.getModel(), 5, true);

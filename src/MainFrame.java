@@ -1,6 +1,10 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 /**
  * The main frame that you see for the GUI
@@ -30,14 +34,17 @@ public class MainFrame extends JFrame {
         addFarmsDialog = new AddFarmsDialog();
         serverNotOnAccountDialog = new ServerNotOnAccountDialog();
 
+
+        File village2 = new File("village.txt");
+        village2.delete();
         //Disables frames on GUI creation
         disableButtons();
 
-        AddVillagePanel.displayFarmVillagesInitial("15000.txt");
-        AddVillagePanel.findFarms("village.txt");
-        AddVillagePanel.filterCurrentFarms();
+       AddVillagePanel.displayFarmVillagesInitial("15000.txt");
+       // AddVillagePanel.findFarms("village.txt");
+        //AddVillagePanel.filterCurrentFarms();
 
-
+         TestDownLoadThread testDownLoadThread = new TestDownLoadThread();
         //Details panel listener
         detailsPanel.addDetailListener(new DetailListener() {
             public void detailEventOccurred(DetailEvent event) {
@@ -48,6 +55,13 @@ public class MainFrame extends JFrame {
         setLayout(new GridBagLayout());
         GridBagConstraints gc = new GridBagConstraints();
 
+        this.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                File village = new File("village.txt");
+                village.delete();
+            }
+        });
 
 
         ////////////First Column/////////////////////

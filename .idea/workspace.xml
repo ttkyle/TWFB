@@ -8,6 +8,10 @@
   <component name="ChangeListManager">
     <list default="true" id="52965e10-be1c-41ae-82af-f095b03dd629" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AddVillagePanel.java" afterPath="$PROJECT_DIR$/src/AddVillagePanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AttackTable.java" afterPath="$PROJECT_DIR$/src/AttackTable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/MainFrame.java" afterPath="$PROJECT_DIR$/src/MainFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WebAutomation.java" afterPath="$PROJECT_DIR$/src/WebAutomation.java" />
     </list>
     <ignored path="TWFB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -77,16 +81,7 @@
       <file leaf-file-name="MainFrame.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MainFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="47" selection-start="1316" selection-end="1316" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CurrentVillagePanel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/CurrentVillagePanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="25" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0">
+            <state line="38" column="26" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -95,16 +90,7 @@
       <file leaf-file-name="AttackTable.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AttackTable.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="278" column="34" selection-start="11355" selection-end="11355" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BuildPanel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BuildPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="25" selection-start="2017" selection-end="2017" vertical-scroll-proportion="0.0">
+            <state line="213" column="113" selection-start="8561" selection-end="8561" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -113,7 +99,47 @@
       <file leaf-file-name="WebAutomation.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WebAutomation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="0" selection-start="4390" selection-end="4390" vertical-scroll-proportion="0.0">
+            <state line="188" column="57" selection-start="7396" selection-end="7396" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddFarmsTable.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AddFarmsTable.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="41" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddFarmsDialog.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AddFarmsDialog.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="8" selection-start="1250" selection-end="2221" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestDownLoadThread.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/TestDownLoadThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="51" selection-start="957" selection-end="957" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ResourceUpdateThread.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ResourceUpdateThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="4" selection-start="317" selection-end="520" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -133,34 +159,7 @@
       <file leaf-file-name="AddVillagePanel.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AddVillagePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="313" column="114" selection-start="10240" selection-end="10240" vertical-scroll-proportion="0.456621">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddFarmsTable.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AddFarmsTable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="41" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DetailsPanel.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DetailsPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="48" selection-start="2662" selection-end="3719" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServerNotOnAccountDialog.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ServerNotOnAccountDialog.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="17" selection-start="797" selection-end="823" vertical-scroll-proportion="0.0">
+            <state line="579" column="33" selection-start="21219" selection-end="21219" vertical-scroll-proportion="0.15128593">
               <folding />
             </state>
           </provider>
@@ -195,8 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/AddFarmsDialog.java" />
-        <option value="$PROJECT_DIR$/src/AddFarmsTable.java" />
         <option value="$PROJECT_DIR$/src/NewAttackTable.java" />
         <option value="$PROJECT_DIR$/src/AddFarmsTroops.java" />
         <option value="$PROJECT_DIR$/src/DetailsPanel.java" />
@@ -206,10 +203,12 @@
         <option value="$PROJECT_DIR$/src/BuildPanel.java" />
         <option value="$PROJECT_DIR$/src/TroopsDetailPanel.java" />
         <option value="$PROJECT_DIR$/src/CurrentVillagePanel.java" />
+        <option value="$PROJECT_DIR$/src/AddFarmsOptionsPanel.java" />
+        <option value="$PROJECT_DIR$/src/TestDownLoadThread.java" />
         <option value="$PROJECT_DIR$/src/WebAutomation.java" />
         <option value="$PROJECT_DIR$/src/MainFrame.java" />
+        <option value="$PROJECT_DIR$/src/DownloadVillageFiles.java" />
         <option value="$PROJECT_DIR$/src/AttackTable.java" />
-        <option value="$PROJECT_DIR$/src/AddFarmsOptionsPanel.java" />
         <option value="$PROJECT_DIR$/src/AddVillagePanel.java" />
       </list>
     </option>
@@ -218,7 +217,7 @@
     <option name="x" value="57" />
     <option name="y" value="-8" />
     <option name="width" value="1871" />
-    <option name="height" value="1092" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -799,7 +798,11 @@
       <created>1351626945599</created>
       <updated>1351626945599</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Barb only filter kinda works.">
+      <created>1351627337565</created>
+      <updated>1351627337565</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -823,13 +826,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="57" y="-8" width="1871" height="1092" extended-state="0" />
+    <frame x="57" y="-8" width="1871" height="1096" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32834226" sideWeight="0.4936288" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963988" sideWeight="0.75884247" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17044826" sideWeight="0.6720086" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24972315" sideWeight="0.6720086" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24930748" sideWeight="0.7614973" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3957219" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32834226" sideWeight="0.5024931" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24916944" sideWeight="0.21901709" order="2" side_tool="true" content_ui="tabs" />
@@ -838,9 +841,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24930748" sideWeight="0.3279743" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39944598" sideWeight="0.6688103" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24930748" sideWeight="0.7604726" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23952739" sideWeight="0.80775625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39944598" sideWeight="0.7614973" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24930748" sideWeight="0.7614973" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23850267" sideWeight="0.80775625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3193138" sideWeight="0.6720086" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -934,26 +937,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Village.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="841" column="73" selection-start="34585" selection-end="34585" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ConstructOneThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="89" column="33" selection-start="4029" selection-end="4029" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AddFarmsTroops.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="54" selection-start="2408" selection-end="2408" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AddFarmsDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="38" selection-start="2312" selection-end="2622" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BuildingConstructionPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="13" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" />
@@ -974,36 +957,35 @@
         <state line="30" column="17" selection-start="797" selection-end="823" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AddFarmsTable.java">
+    <entry file="file://$PROJECT_DIR$/src/BuildPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="41" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0">
+        <state line="59" column="25" selection-start="2017" selection-end="2017" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CurrentVillagePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="25" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ResourceUpdateThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="4" selection-start="317" selection-end="520" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AddFarmsDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="8" selection-start="1250" selection-end="2221" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MainFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="47" selection-start="1316" selection-end="1316" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BuildPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="25" selection-start="2017" selection-end="2017" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebAutomation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="0" selection-start="4390" selection-end="4390" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AttackTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="278" column="34" selection-start="11355" selection-end="11355" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CurrentVillagePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="25" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0" />
+        <state line="38" column="26" selection-start="1325" selection-end="1325" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AddFarmsOptionsPanel.java">
@@ -1015,9 +997,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/AddFarmsTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="41" selection-start="1373" selection-end="1373" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/TestDownLoadThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="51" selection-start="957" selection-end="957" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebAutomation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="188" column="57" selection-start="7396" selection-end="7396" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AttackTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="213" column="113" selection-start="8561" selection-end="8561" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/AddVillagePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="313" column="114" selection-start="10240" selection-end="10240" vertical-scroll-proportion="0.456621">
+        <state line="579" column="33" selection-start="21219" selection-end="21219" vertical-scroll-proportion="0.15128593">
           <folding />
         </state>
       </provider>

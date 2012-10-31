@@ -3,6 +3,7 @@ import javax.swing.border.Border;
 import javax.swing.table.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
@@ -189,6 +190,7 @@ public class AttackTable extends JPanel {
         menuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e)   {
+                AddVillagePanel.findFarms("village.txt");
                 try {
 
                     try {
@@ -215,7 +217,17 @@ public class AttackTable extends JPanel {
                         e1.printStackTrace();
                     }
 
-                    MainFrame.addFarmsDialog.setVisible(true);
+                    File f = new File("village.txt");
+                    if(f.exists()) {
+                        MainFrame.addFarmsDialog.setVisible(true);
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(MainFrame.serverNotOnAccountDialog,
+                                "VILLAGE DATA NOT DONE DOWNLOADING, IT WILL BE DONE IN ~20 SECONDS",
+                                "NO VILLAGE DATA",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
+
                     AddFarmsTable.getTable().changeSelection(0, 0, false, false);
                     AddVillagePanel.filterCurrentFarms();
                 }

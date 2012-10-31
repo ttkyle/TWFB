@@ -1,8 +1,19 @@
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.entity.BufferedHttpEntity;
+import org.apache.http.impl.client.DefaultHttpClient;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.interactions.Actions;
 
 import javax.swing.*;
-import java.io.File;
+import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URI;
+
 
 /**
  * Web automation class.  This class is used to automate the web browser.
@@ -19,7 +30,19 @@ public class WebAutomation  {
 
     public static void login(String user, String pass) throws InterruptedException {
 
+
+        FirefoxProfile firefoxProfile = new FirefoxProfile();
+
+        firefoxProfile.setPreference("browser.download.folderList",2);
+        firefoxProfile.setPreference("browser.download.manager.showWhenStarting",false);
+        firefoxProfile.setPreference("browser.download.dir","C:\\Users\\kyle\\IdeaProjects\\TWFB");
+        firefoxProfile.setPreference("browser.helperApps.neverAsk.saveToDisk","text/csv");
+
+
         driver = new FirefoxDriver();
+
+        //driver.navigate().to("http://en65.tribalwars.net/map/village.txt");
+
         userName = user;
         password = pass;
 
@@ -140,6 +163,38 @@ public class WebAutomation  {
             //}
         }
     }
+
+
+    public static void aaa() throws IOException {
+        InputStream is = null;
+        BufferedOutputStream bos = null;
+        try{
+            //is = fetch("http://en65.tribalwars.net/map/village.txt");
+            is = fetch("https://dl.dropbox.com/s/rnp66dutpnfuypg/village.txt?dl=1");
+            bos = new BufferedOutputStream(new FileOutputStream(new File("village.txt")));
+
+            byte[] buffer = new byte[8192];
+            int bytesRead = 0;
+            while((bytesRead = is.read(buffer, 0, buffer.length)) > -1){
+                bos.write(buffer, 0, bytesRead);
+            }
+        }finally{
+            if(bos != null) bos.close();
+            if(is != null) is.close();
+        }
+    }
+
+    public static InputStream fetch(String address) throws MalformedURLException, IOException {
+        HttpGet httpRequest = new HttpGet(URI.create(address));
+        HttpClient httpclient = new DefaultHttpClient();
+        HttpResponse response = (HttpResponse) httpclient.execute(httpRequest);
+        HttpEntity entity = response.getEntity();
+        BufferedHttpEntity buffHttpEntity = new BufferedHttpEntity(entity);
+        InputStream instream = buffHttpEntity.getContent();
+        return instream;
+    }
 }
+
+
 
 
