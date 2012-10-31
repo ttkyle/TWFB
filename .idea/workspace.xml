@@ -8,8 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="52965e10-be1c-41ae-82af-f095b03dd629" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DetailsPanel.java" afterPath="$PROJECT_DIR$/src/DetailsPanel.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TestDownLoadThread.java" afterPath="$PROJECT_DIR$/src/TestDownLoadThread.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/WebAutomation.java" afterPath="$PROJECT_DIR$/src/WebAutomation.java" />
     </list>
     <ignored path="TWFB.iws" />
@@ -98,7 +96,7 @@
       <file leaf-file-name="WebAutomation.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WebAutomation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="207" column="8" selection-start="8243" selection-end="8243" vertical-scroll-proportion="0.0">
+            <state line="259" column="78" selection-start="10362" selection-end="10362" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -109,7 +107,7 @@
       <file leaf-file-name="DetailsPanel.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DetailsPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="23" selection-start="1738" selection-end="1738" vertical-scroll-proportion="0.61422086">
+            <state line="44" column="45" selection-start="1585" selection-end="1585" vertical-scroll-proportion="0.3827534">
               <folding>
                 <element signature="e#1634#1762#0" expanded="true" />
                 <element signature="e#1751#1752#0" expanded="true" />
@@ -211,8 +209,8 @@
         <option value="$PROJECT_DIR$/src/AttackTable.java" />
         <option value="$PROJECT_DIR$/src/AddVillagePanel.java" />
         <option value="$PROJECT_DIR$/src/ResourceUpdateThread.java" />
-        <option value="$PROJECT_DIR$/src/WebAutomation.java" />
         <option value="$PROJECT_DIR$/src/TestDownLoadThread.java" />
+        <option value="$PROJECT_DIR$/src/WebAutomation.java" />
         <option value="$PROJECT_DIR$/src/DetailsPanel.java" />
       </list>
     </option>
@@ -814,7 +812,11 @@
       <created>1351651965991</created>
       <updated>1351651965991</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Added the begginings of the JComboBox action listener that will change all the shit.">
+      <created>1351653773777</created>
+      <updated>1351653773777</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -902,7 +904,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Downloads a new village.txt every time and checks if download is done." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the begginings of the JComboBox action listener that will change all the shit." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -915,7 +917,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="AttackTable is now completely dynamic.  Fixed the deletion issues with common-sense (use the row number you already have stupid)!" />
     <MESSAGE value="AttackTable is now completely dynamic.  Fixed the deletion issues with common-sense (use the row number you already have stupid)!&#10;&#10;Deleted the 600 empty table rows in NewAttackTable.java" />
     <MESSAGE value="AttackTable is now completely dynamic.  Fixed the deletion issues with common-sense (use the row number you already have stupid)!&#10;&#10;Deleted the 600 empty table rows in NewAttackTable.java&#10;&#10;Took out some reduant things" />
     <MESSAGE value="Holy shit I may have fixed every String deletion error.  AddFarmsTable.writeToVillage2 was attempting to write information even if no row was selected, those situations made it impossible to delete the old &quot;villagename.txt&quot; and rename the &quot;villagename.txt.tmp&quot;" />
@@ -940,6 +941,7 @@
     <MESSAGE value="Barb only filter kinda works." />
     <MESSAGE value="a new village.txt is created every time and farm finder won't open if the village file is not yet downloaded" />
     <MESSAGE value="Downloads a new village.txt every time and checks if download is done." />
+    <MESSAGE value="Added the begginings of the JComboBox action listener that will change all the shit." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1025,15 +1027,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WebAutomation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="207" column="8" selection-start="8243" selection-end="8243" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/TestDownLoadThread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="23" selection-start="758" selection-end="758" vertical-scroll-proportion="0.0">
@@ -1043,9 +1036,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/WebAutomation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="259" column="78" selection-start="10362" selection-end="10362" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/DetailsPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="23" selection-start="1738" selection-end="1738" vertical-scroll-proportion="0.61422086">
+        <state line="44" column="45" selection-start="1585" selection-end="1585" vertical-scroll-proportion="0.3827534">
           <folding>
             <element signature="e#1634#1762#0" expanded="true" />
             <element signature="e#1751#1752#0" expanded="true" />

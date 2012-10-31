@@ -198,6 +198,7 @@ public class WebAutomation  {
     public static void downloadVillageTxt() {
         String convertServerToString = DetailsPanel.getServerListComboBox().getSelectedItem().toString();
         String currentlySelectedServer = convertServerToString.substring(6, 10);
+
         if(currentlySelectedServer.equals("en58")) {
             try {
                 aaa("https://dl.dropbox.com/s/8j9xl7owcwaa2ig/village.txt?dl=1");
@@ -206,9 +207,57 @@ public class WebAutomation  {
             }
         }
 
+        if(currentlySelectedServer.equals("en59")) {
+            try {
+                aaa("https://dl.dropbox.com/s/15inwz3bwc2wd80/village.txt?dl=1");
+            } catch (IOException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+        }
+
+        if(currentlySelectedServer.equals("en60")) {
+            try {
+                aaa("https://dl.dropbox.com/s/01tqozyyq57nn8c/village.txt?dl=1");
+            } catch (IOException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+        }
+
+        if(currentlySelectedServer.equals("en61")) {
+            try {
+                aaa("https://dl.dropbox.com/s/3f98xq4nebibl8x/village.txt?dl=1");
+            } catch (IOException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+        }
+
+        if(currentlySelectedServer.equals("en62")) {
+            try {
+                aaa("https://dl.dropbox.com/s/k20tiy3yxfm0oxe/village.txt?dl=1");
+            } catch (IOException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+        }
+
+        if(currentlySelectedServer.equals("en63")) {
+            try {
+                aaa("https://dl.dropbox.com/s/ji3m74pgdiqmycg/village.txt?dl=1");
+            } catch (IOException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+        }
+
+        if(currentlySelectedServer.equals("en64")) {
+            try {
+                aaa("https://dl.dropbox.com/s/ui94p4fz9znk9lc/village.txt?dl=1");
+            } catch (IOException e) {
+                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            }
+        }
+
         if(currentlySelectedServer.equals("en65")) {
             try {
-                aaa("https://dl.dropbox.com/sh/m3gsazyljoyhn37/uKU2o1HJOm/village.txt?dl=1");
+                aaa("https://dl.dropbox.com/s/rnp66dutpnfuypg/village.txt?dl=1");
             } catch (IOException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
