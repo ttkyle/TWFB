@@ -168,7 +168,6 @@ public class WebAutomation  {
         InputStream is = null;
         BufferedOutputStream bos = null;
         try{
-            //is = fetch("https://dl.dropbox.com/s/01tqozyyq57nn8c/village.txt?dl=1");
             is = fetch(worldUrl);
             bos = new BufferedOutputStream(new FileOutputStream(new File("village.txt")));
 

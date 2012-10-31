@@ -96,7 +96,7 @@
       <file leaf-file-name="WebAutomation.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WebAutomation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="196" column="0" selection-start="7641" selection-end="7641" vertical-scroll-proportion="0.7692308">
+            <state line="170" column="0" selection-start="6578" selection-end="6578" vertical-scroll-proportion="0.3600605">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#downloadVillageTxt#0;class#WebAutomation#0" expanded="false" />
@@ -211,8 +211,8 @@
         <option value="$PROJECT_DIR$/src/ResourceUpdateThread.java" />
         <option value="$PROJECT_DIR$/src/TestDownLoadThread.java" />
         <option value="$PROJECT_DIR$/src/DetailsPanel.java" />
-        <option value="$PROJECT_DIR$/src/WebAutomation.java" />
         <option value="$PROJECT_DIR$/src/AddVillagePanel.java" />
+        <option value="$PROJECT_DIR$/src/WebAutomation.java" />
       </list>
     </option>
   </component>
@@ -821,7 +821,11 @@
       <created>1351655002806</created>
       <updated>1351655002806</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="All village download links are correct from Dropbox">
+      <created>1351655103903</created>
+      <updated>1351655103903</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -862,8 +866,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24930748" sideWeight="0.3279743" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39944598" sideWeight="0.7614973" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24930748" sideWeight="0.67165774" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23850267" sideWeight="0.80775625" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24930748" sideWeight="0.7614973" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23850267" sideWeight="0.80775625" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3193138" sideWeight="0.6720086" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1055,7 +1059,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WebAutomation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="196" column="0" selection-start="7641" selection-end="7641" vertical-scroll-proportion="0.7692308">
+        <state line="170" column="0" selection-start="6578" selection-end="6578" vertical-scroll-proportion="0.3600605">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#downloadVillageTxt#0;class#WebAutomation#0" expanded="false" />
