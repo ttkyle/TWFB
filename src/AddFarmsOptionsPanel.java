@@ -57,11 +57,7 @@ public class AddFarmsOptionsPanel extends JPanel{
                 String points = pointField.getText();
                 String distance = distanceField.getText();
 
-                int rows = AddFarmsTable.getModel().getRowCount();
-                for(int i = rows - 1; i >=0; i--)
-                {
-                    AddFarmsTable.getModel().removeRow(i);
-                }
+
                 AddVillagePanel.findFarms("village.txt");
             }
         });
