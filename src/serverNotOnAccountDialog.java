@@ -9,9 +9,9 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class ServerNotOnAccountDialog extends JDialog {
+public class serverNotOnAccountDialog extends JDialog {
 
-    public ServerNotOnAccountDialog() {
+    public serverNotOnAccountDialog() {
         setModal(true);
 
         setLocation(400, 0);

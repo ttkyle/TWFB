@@ -4,7 +4,6 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 
 /**
  * The main frame that you see for the GUI
@@ -14,7 +13,7 @@ public class MainFrame extends JFrame {
     public static AttackTable attackTable2;
     public TroopsDetailPanel troopsDetailPanel;
     public static AddFarmsDialog addFarmsDialog;
-    public static ServerNotOnAccountDialog serverNotOnAccountDialog;
+    public static serverNotOnAccountDialog serverNotOnAccountDialog;
 
 
     public MainFrame(String title) throws IOException {
@@ -32,7 +31,7 @@ public class MainFrame extends JFrame {
         ServerTimePanel serverTimePanel = new ServerTimePanel();
         attackTable2 = new AttackTable();
         addFarmsDialog = new AddFarmsDialog();
-        serverNotOnAccountDialog = new ServerNotOnAccountDialog();
+        serverNotOnAccountDialog = new serverNotOnAccountDialog();
 
 
         File village2 = new File("village.txt");

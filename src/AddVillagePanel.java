@@ -327,6 +327,12 @@ public class AddVillagePanel extends JPanel {
         }
         catch(NullPointerException e) {
             System.out.println("Null pointer filterCurrentFarms");
+            int rows = AddFarmsTable.getModel().getRowCount();
+            for(int i = rows - 1; i >=0; i--)
+            {
+                AddFarmsTable.getModel().removeRow(i);
+            }
+            findFarms("village.txt");
         }
 
         AddFarmsTable.getTable().changeSelection(0, 0, false, false);
@@ -578,11 +584,10 @@ public class AddVillagePanel extends JPanel {
                             AddFarmsTable.getTable().setValueAt(values[5], count, 4);
                             AddFarmsTable.getTable().setValueAt(newValue, count, 5);
                             count++;
-                            //break
                         }
                     }
                     catch(NullPointerException e) {
-                        //do nothing but load
+                        e.printStackTrace();
                     }
                 }
             }
@@ -591,7 +596,7 @@ public class AddVillagePanel extends JPanel {
         catch(IOException e) {
             System.out.println("find Farms IO exception");
 
-            MainFrame.addFarmsDialog.setVisible(false);
+            //MainFrame.addFarmsDialog.setVisible(false);
 
         }
         AddVillagePanel.filterCurrentFarms();

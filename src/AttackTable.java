@@ -220,6 +220,9 @@ public class AttackTable extends JPanel {
                     File f = new File("village.txt");
                     if(f.exists()) {
                         MainFrame.addFarmsDialog.setVisible(true);
+
+                        AddFarmsTable.getTable().changeSelection(0, 0, false, false);
+                        AddVillagePanel.filterCurrentFarms();
                     }
                     else {
                         JOptionPane.showMessageDialog(MainFrame.serverNotOnAccountDialog,
@@ -228,8 +231,6 @@ public class AttackTable extends JPanel {
                                 JOptionPane.ERROR_MESSAGE);
                     }
 
-                    AddFarmsTable.getTable().changeSelection(0, 0, false, false);
-                    AddVillagePanel.filterCurrentFarms();
                 }
                 catch(ArrayIndexOutOfBoundsException e1) {
                     System.out.println("add farm array oob excep");
