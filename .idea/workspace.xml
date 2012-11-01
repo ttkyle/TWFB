@@ -161,7 +161,7 @@
       <file leaf-file-name="AddVillagePanel.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AddVillagePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="334" column="9" selection-start="11090" selection-end="11090" vertical-scroll-proportion="0.77397263">
+            <state line="328" column="66" selection-start="10862" selection-end="10862" vertical-scroll-proportion="0.40182647">
               <folding />
             </state>
           </provider>
@@ -832,7 +832,11 @@
       <created>1351806403617</created>
       <updated>1351806403617</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Started using the nullpointer in filterCurrentFarms to clear the table and re-find farms">
+      <created>1351806561949</created>
+      <updated>1351806561949</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -1061,7 +1065,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AddVillagePanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="334" column="9" selection-start="11090" selection-end="11090" vertical-scroll-proportion="0.77397263">
+        <state line="328" column="66" selection-start="10862" selection-end="10862" vertical-scroll-proportion="0.40182647">
           <folding />
         </state>
       </provider>

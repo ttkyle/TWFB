@@ -327,11 +327,6 @@ public class AddVillagePanel extends JPanel {
         }
         catch(NullPointerException e) {
             System.out.println("Null pointer filterCurrentFarms");
-            int rows = AddFarmsTable.getModel().getRowCount();
-            for(int i = rows - 1; i >=0; i--) {
-                AddFarmsTable.getModel().removeRow(i);
-            }
-            findFarms("village.txt");
         }
         AddFarmsTable.getTable().changeSelection(0, 0, false, false);
     }
@@ -549,6 +544,11 @@ public class AddVillagePanel extends JPanel {
     }
 
     public static void findFarms(String fileName) {
+        int rows = AddFarmsTable.getModel().getRowCount();
+        for(int i = rows - 1; i >=0; i--)
+        {
+            AddFarmsTable.getModel().removeRow(i);
+        }
         double distanceSearch = 15;
         if(AddFarmsOptionsPanel.distanceField.getText().equals("") || AddFarmsOptionsPanel.distanceField.getText().equals("0")) {
             distanceSearch = 15;
