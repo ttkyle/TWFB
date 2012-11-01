@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="52965e10-be1c-41ae-82af-f095b03dd629" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AddFarmsOptionsPanel.java" afterPath="$PROJECT_DIR$/src/AddFarmsOptionsPanel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AddVillagePanel.java" afterPath="$PROJECT_DIR$/src/AddVillagePanel.java" />
     </list>
     <ignored path="TWFB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -149,19 +149,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddFarmsOptionsPanel.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AddFarmsOptionsPanel.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AddFarmsOptionsPanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="16" selection-start="2008" selection-end="2008" vertical-scroll-proportion="0.5525114">
+            <state line="67" column="14" selection-start="2241" selection-end="2241" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddVillagePanel.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AddVillagePanel.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AddVillagePanel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="328" column="66" selection-start="10862" selection-end="10862" vertical-scroll-proportion="0.0">
+            <state line="12" column="4" selection-start="293" selection-end="293" vertical-scroll-proportion="0.15525115">
               <folding />
             </state>
           </provider>
@@ -210,8 +210,8 @@
         <option value="$PROJECT_DIR$/src/WebAutomation.java" />
         <option value="$PROJECT_DIR$/src/serverNotOnAccountDialog.java" />
         <option value="$PROJECT_DIR$/src/AttackTable.java" />
-        <option value="$PROJECT_DIR$/src/AddVillagePanel.java" />
         <option value="$PROJECT_DIR$/src/AddFarmsOptionsPanel.java" />
+        <option value="$PROJECT_DIR$/src/AddVillagePanel.java" />
       </list>
     </option>
   </component>
@@ -840,7 +840,11 @@
       <created>1351807232652</created>
       <updated>1351807232652</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="removed a redudant clearing of rows">
+      <created>1351807436774</created>
+      <updated>1351807436774</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -928,7 +932,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Now clearing table every time I find farms to stop nullPointer in filterCurrentFarms" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed a redudant clearing of rows" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -941,7 +945,6 @@
     <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
     <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
-    <MESSAGE value="This push is just me adding the IDE files so that the program will run correctly directly from GitHub" />
     <MESSAGE value="Added findFarmsAfterDelete so that rows wouldn't double and it fixed the filtercurrentfarms method by association." />
     <MESSAGE value="Now farms won't be written to a new line in currentFarmList.txt (writing to a new line broke the filter method)" />
     <MESSAGE value="findFarmsTable columns are correctly sized" />
@@ -966,6 +969,7 @@
     <MESSAGE value="All village download links are correct from Dropbox" />
     <MESSAGE value="Started using the nullpointer in filterCurrentFarms to clear the table and re-find farms" />
     <MESSAGE value="Now clearing table every time I find farms to stop nullPointer in filterCurrentFarms" />
+    <MESSAGE value="removed a redudant clearing of rows" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1053,13 +1057,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AddVillagePanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="328" column="66" selection-start="10862" selection-end="10862" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/serverNotOnAccountDialog.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="21" selection-start="218" selection-end="218" vertical-scroll-proportion="0.0">
@@ -1069,7 +1066,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AddFarmsOptionsPanel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="16" selection-start="2008" selection-end="2008" vertical-scroll-proportion="0.5525114">
+        <state line="67" column="14" selection-start="2241" selection-end="2241" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AddVillagePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="4" selection-start="293" selection-end="293" vertical-scroll-proportion="0.15525115">
           <folding />
         </state>
       </provider>

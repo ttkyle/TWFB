@@ -8,8 +8,6 @@ import java.util.List;
 
 import static java.awt.geom.Point2D.distance;
 
-
-
 /**
  * The GUI element that will eventually allow the user to add
  * the villages they currently own.
