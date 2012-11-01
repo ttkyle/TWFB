@@ -8,7 +8,6 @@
   <component name="ChangeListManager">
     <list default="true" id="52965e10-be1c-41ae-82af-f095b03dd629" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AddVillagePanel.java" afterPath="$PROJECT_DIR$/src/AddVillagePanel.java" />
     </list>
     <ignored path="TWFB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -844,7 +843,11 @@
       <created>1351807436774</created>
       <updated>1351807436774</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="removed a redudant clearing of rows">
+      <created>1351808183418</created>
+      <updated>1351808183418</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
