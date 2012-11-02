@@ -543,8 +543,7 @@ public class AddVillagePanel extends JPanel {
 
     public static void findFarms(String fileName) {
         int rows = AddFarmsTable.getModel().getRowCount();
-        for(int i = rows - 1; i >=0; i--)
-        {
+        for(int i = rows - 1; i >=0; i--){
             AddFarmsTable.getModel().removeRow(i);
         }
         double distanceSearch = 15;

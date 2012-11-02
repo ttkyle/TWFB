@@ -56,8 +56,6 @@ public class AddFarmsOptionsPanel extends JPanel{
             public void actionPerformed(ActionEvent e) {
                 String points = pointField.getText();
                 String distance = distanceField.getText();
-
-
                 AddVillagePanel.findFarms("village.txt");
             }
         });
