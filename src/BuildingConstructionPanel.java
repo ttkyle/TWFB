@@ -245,4 +245,28 @@ public class BuildingConstructionPanel extends JPanel {
     public static void setCancelTwoButton(String label) {
         cancelTwoButton.setText(label);
     }
+
+    public static JLabel getCompletionTwo() {
+        return completionTwo;
+    }
+
+    public static JLabel getDurationTwo() {
+        return durationTwo;
+    }
+
+    public static JLabel getAssignmentTwo() {
+        return assignmentTwo;
+    }
+
+    public static JLabel getCompletionOne() {
+        return completionOne;
+    }
+
+    public static JLabel getDurationOne() {
+        return durationOne;
+    }
+
+    public static JLabel getAssignmentOne() {
+        return assignmentOne;
+    }
 }

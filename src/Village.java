@@ -12,117 +12,137 @@ import static org.apache.commons.lang.StringUtils.substring;
  * and holds most of the methods that manipulate GUI elements
  *
  * The village class will update on the fly when a user selects a
- * village to manipulate.  test
+ * village to manipulate.
  */
 public class Village {
 
     //global variables
-    static public String xLoc;
-    static public String yLoc;
+    static private String xLoc;
+    static private String yLoc;
     static public FileOutputStream fout;
-    static public String villageFileName;
-    static public int numberOfFarms = 1;
+    static private String villageFileName;
+    static private int numberOfFarms = 1;
 
 
-    static public int villageHQWoodCost;
-    static public int villageHQClayCost;
-    static public int villageHQIronCost;
-    static public boolean villageHQHasCost = true;
+    static private int villageHQWoodCost;
+    static private int villageHQClayCost;
+    static private int villageHQIronCost;
+    static private boolean villageHQHasCost = true;
 
 
-    static public int barracksWoodCost;
-    static public int barracksClayCost;
-    static public int barracksIronCost;
-    static public boolean barracksHasCost = true;
+    static private int barracksWoodCost;
+    static private int barracksClayCost;
+    static private int barracksIronCost;
+    static private boolean barracksHasCost = true;
 
 
-    static public int stableWoodCost;
-    static public int stableClayCost;
-    static public int stableIronCost;
-    static public boolean stableHasCost = true;
-
-    static public int workShopWoodCost;
-    static public int workShopClayCost;
-    static public int workShopIronCost;
-    static public boolean workShopHasCost = true;
+    static private int stableWoodCost;
+    static private int stableClayCost;
+    static private int stableIronCost;
+    static private boolean stableHasCost = true;
 
 
-    static public int smithyWoodCost;
-    static public int smithyClayCost;
-    static public int smithyIronCost;
-    static public boolean smithyHasCost = true;
+    static private int workShopWoodCost;
+    static private int workShopClayCost;
+    static private int workShopIronCost;
+    static private boolean workShopHasCost = true;
 
 
-    static public int marketWoodCost;
-    static public int marketClayCost;
-    static public int marketIronCost;
-    static public boolean marketHasCost = true;
+    static private int smithyWoodCost;
+    static private int smithyClayCost;
+    static private int smithyIronCost;
+    static private boolean smithyHasCost = true;
 
 
-    static public int timberWoodCost;
-    static public int timberClayCost;
-    static public int timberIronCost;
-    static public boolean timberHasCost = true;
+    static private int marketWoodCost;
+    static private int marketClayCost;
+    static private int marketIronCost;
+    static private boolean marketHasCost = true;
 
 
-    static public int clayWoodCost;
-    static public int clayClayCost;
-    static public int clayIronCost;
-    static public boolean clayHasCost = true;
+    static private int timberWoodCost;
+    static private int timberClayCost;
+    static private int timberIronCost;
+    static private boolean timberHasCost = true;
 
 
-    static public int ironWoodCost;
-    static public int ironClayCost;
-    static public int ironIronCost;
-    static public boolean ironHasCost = true;
+    static private int clayWoodCost;
+    static private int clayClayCost;
+    static private int clayIronCost;
+    static private boolean clayHasCost = true;
 
 
-    static public int farmWoodCost;
-    static public int farmClayCost;
-    static public int farmIronCost;
-    static public boolean farmHasCost = true;
+    static private int ironWoodCost;
+    static private int ironClayCost;
+    static private int ironIronCost;
+    static private boolean ironHasCost = true;
 
 
-    static public int wareHouseWoodCost;
-    static public int wareHouseClayCost;
-    static public int wareHouseIronCost;
-    static public boolean wareHouseHasCost = true;
+    static private int farmWoodCost;
+    static private int farmClayCost;
+    static private int farmIronCost;
+    static private boolean farmHasCost = true;
 
 
-    static public int wallWoodCost;
-    static public int wallClayCost;
-    static public int wallIronCost;
-    static public boolean wallHasCost = true;
+    static private int wareHouseWoodCost;
+    static private int wareHouseClayCost;
+    static private int wareHouseIronCost;
+    static private boolean wareHouseHasCost = true;
 
 
-    static public int academyWoodCost;
-    static public int academyClayCost;
-    static public int academyIronCost;
-    static public boolean academyHasCost = true;
+    static private int wallWoodCost;
+    static private int wallClayCost;
+    static private int wallIronCost;
+    static private boolean wallHasCost = true;
 
 
-    static public int hidingPlaceWoodCost;
-    static public int hidingPlaceClayCost;
-    static public int hidingPlaceIronCost;
-    static public boolean hidingPlaceHasCost = true;
+    static private int academyWoodCost;
+    static private int academyClayCost;
+    static private int academyIronCost;
+    static private boolean academyHasCost = true;
 
 
-    static public int currentWood;
-    static public int currentClay;
-    static public int currentIron;
-    static public int currentPopulation;
-    static public int maxPopulation;
+    static private int hidingPlaceWoodCost;
+    static private int hidingPlaceClayCost;
+    static private int hidingPlaceIronCost;
+    static private boolean hidingPlaceHasCost = true;
 
-    static public String durationOne;
-    static public double totalOne = 0;
-    static public double totalOneOne;
-    static public double totalOneThird;
-    static public double totalOneFourth;
-    static public double totalOneSixth;
-    static public double totalOneSeventh;
 
-    static public double totalOneSecond;
-    static public double totalOneEighth;
+    static private int currentWood;
+    static private int currentClay;
+    static private int currentIron;
+    static private int currentPopulation;
+    static private int maxPopulation;
+
+
+    static private String durationOne;
+    static private double totalOne = 0;
+    static private double totalOneOne;
+    static private double totalOneThird;
+    static private double totalOneFourth;
+    static private double totalOneSixth;
+    static private double totalOneSeventh;
+    static private double totalOneSecond;
+    static private double totalOneEighth;
+    static private double totalOneFifth;
+
+
+    static private String durationTwo;
+    static private double totalTwo = 0;
+    static private double totalTwoOne;
+    static private double totalTwoThird;
+    static private double totalTwoFourth;
+    static private double totalTwoSixth;
+    static private double totalTwoSeventh;
+    static private double totalTwoSecond;
+    static private double totalTwoEighth;
+    static private double totalTwoFifth;
+
+    static private String buildingNameOne;
+    static private String completionOne;
+    static private String buildingNameTwo;
+    static private String completionTwo;
+
 
 
     //Constructor to set village name so that we know what to name text files
@@ -397,6 +417,29 @@ public class Village {
                 //the troop was not found
                 else {
                     TroopsDetailPanel.setCatapultLabel("0");
+                }
+            }
+            catch(NoSuchElementException e) {
+            }
+        }
+    }
+
+    //Sends the number of Rams to the GUI
+    public static void setRam() {
+
+        //loop through all the show unit lines
+        //if the unit name is found then display it on the GUI
+        for(int i = 1; i < 15; i++) {
+            try {
+                String ramLabel = WebAutomation.driver.findElement(By.xpath("//*[@id=\"show_units\"]/div/table/tbody/tr[" + i + "]")).getText();
+                if(substring(ramLabel, 3, 6).equals("Ram") || substring(ramLabel, 4, 7).equals("Catapult") || substring(ramLabel, 5, 8).equals("Ram")
+                        || substring(ramLabel, 6, 9).equals("Ram") || substring(ramLabel, 7, 10).equals("Ram") || substring(ramLabel, 8, 11).equals("Ram")) {
+                    TroopsDetailPanel.setRamLabel(WebAutomation.driver.findElement(By.xpath("//*[@id='show_units']/div/table/tbody/tr[" + i + "]/td/strong")).getText());
+                    break;
+                }
+                //the troop was not found
+                else {
+                    TroopsDetailPanel.setRamLabel("0");
                 }
             }
             catch(NoSuchElementException e) {
@@ -779,14 +822,14 @@ public class Village {
     public static void constructionOne() {
 
             try {
-                String buildingName = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[2]/td[1]")).getText();
-                BuildingConstructionPanel.setAssignmentOne(buildingName);
+                buildingNameOne = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[2]/td[1]")).getText();
+                BuildingConstructionPanel.setAssignmentOne(buildingNameOne);
 
                 durationOne = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[2]/td[2]/span")).getText();
                 BuildingConstructionPanel.setDurationOne(durationOne);
 
-                String completion = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[2]/td[3]")).getText();
-                BuildingConstructionPanel.setCompletionOne(completion);
+                completionOne = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[2]/td[3]")).getText();
+                BuildingConstructionPanel.setCompletionOne(completionOne);
             }
             catch(NoSuchElementException e) {
             }
@@ -794,43 +837,24 @@ public class Village {
 
     public static void constructionOneTimer() throws InterruptedException {
 
-        for(int i = 0; i < 500; i++) {
             int hours = (int) (totalOne / (60 * 60 * 1000));
-            int minutes = (int) ((totalOne /(60 * 1000)) % 60);
+            int minutes = (int) ((totalOne / (60 * 1000)) % 60);
             int seconds = (int) ((totalOne / 1000) % 60);
-            String sec = Integer.toString(seconds);
-            String min = Integer.toString(minutes);
-            System.out.println(min);
-            System.out.println(substring(min, 0, 1));
-            System.out.println(substring(min, 0, 2));
 
-
-            //if(Integer.parseInt(durationOne.substring(6,7)) == 0) {
-                //BuildingConstructionPanel.setDurationOne(hours + ":" + minutes + ":" + seconds + 0);
-            //}
-
-            if(substring(sec, 1, 2).equals("")) {
-                BuildingConstructionPanel.setDurationOne(hours + ":" + minutes + ":" + 0 + seconds);
+            if(seconds > 10 && minutes > 10) {
+                BuildingConstructionPanel.setDurationOne(hours + ":" + minutes + ":"  + seconds);
             }
-            if(substring(min, 1, 2).equals("")) {
-                BuildingConstructionPanel.setDurationOne(hours + ":" + 0 + minutes + ":" +  seconds);
+            if(seconds < 10) {
+                BuildingConstructionPanel.setDurationOne(hours + ":" + minutes + ":" + "0" + seconds);
             }
-            if(substring(sec, 1, 2).equals("") && substring(min, 1, 2).equals("")) {
-                BuildingConstructionPanel.setDurationOne(hours + ":" + 0 + minutes + ":" + "0" +  seconds);
+            if(minutes < 10) {
+                BuildingConstructionPanel.setDurationOne(hours + ":" + "0" + minutes + ":" +  seconds);
+            }
+            if(seconds < 10 && minutes < 10) {
+                BuildingConstructionPanel.setDurationOne(hours + ":" + "0" + minutes + ":" + "0" +  seconds);
             }
 
-
-            else {
-                BuildingConstructionPanel.setDurationOne(hours + ":" + minutes + ":" + seconds);
-            }
-
-            if(totalOne < 10000) {
-                BuildingConstructionPanel.setDurationOne("0");
-                break;
-            }
             totalOne = totalOne - 10000;
-            Thread.sleep(10000);
-        }
     }
 
     public static void constructionOneGetTime() {
@@ -891,7 +915,6 @@ public class Village {
             Village.totalOneSeventh = Integer.parseInt(substring(Village.durationOne, 6, 7));
             }
             catch(NumberFormatException e) {
-
             }
             //int eight =  would be last number
     }
@@ -901,17 +924,98 @@ public class Village {
     public static void constructionTwo() {
 
         try {
-            String buildingName = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[1]")).getText();
-            BuildingConstructionPanel.setAssignmentOne(buildingName);
+            buildingNameTwo = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[1]")).getText();
+            BuildingConstructionPanel.setAssignmentTwo(buildingNameTwo);
 
-            String duration = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[2]/span")).getText();
-            BuildingConstructionPanel.setDurationOne(duration);
+            durationTwo = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[2]/span")).getText();
+            BuildingConstructionPanel.setDurationTwo(durationTwo);
 
-            String completion = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[3]")).getText();
-            BuildingConstructionPanel.setCompletionOne(completion);
+            completionTwo = WebAutomation.driver.findElement(By.xpath("//*[@id=\"buildqueue\"]/tr[3]/td[3]")).getText();
+            BuildingConstructionPanel.setCompletionTwo(completionTwo);
         }
         catch(NoSuchElementException e) {
         }
+    }
+
+    public static void constructionTwoGetTime() {
+        try {
+            if(substring(Village.durationTwo, 1, 2).equals(":")) {
+                if(totalTwoOne == 0) {
+                    totalTwoOne = 0;
+                }
+                else {
+                    totalTwoOne = totalTwoOne * 3600000;
+                }
+
+                if(totalTwoThird == 0) {
+                    totalTwoThird = 0;
+                }
+                else {
+                    totalTwoThird *= 600000;
+                }
+
+                if(totalTwoFourth == 0) {
+                    totalTwoFourth = 0;
+                }
+                else {
+                    totalTwoFourth *= 60000;
+                }
+
+                if(totalTwoSixth == 0) {
+                    totalTwoSixth = 0;
+                }
+                else {
+                    totalTwoSixth *= 10000;
+                }
+
+                if(totalTwoSeventh == 0) {
+                    totalTwoSeventh = 0;
+                }
+                else {
+                    totalTwoSeventh *= 1000;
+                }
+                totalTwo = totalTwoOne +  totalTwoThird + totalTwoFourth + totalTwoSixth + totalTwoSeventh;
+            }
+            else {
+            }
+        }
+        catch(NullPointerException e) {
+        }
+    }
+
+    public static void ConstructionTwoTimer() {
+
+        int hours = (int) (totalTwo / (60 * 60 * 1000));
+        int minutes = (int) ((totalTwo / (60 * 1000)) % 60);
+        int seconds = (int) ((totalTwo / 1000) % 60);
+
+        if(seconds > 10 && minutes > 10) {
+            BuildingConstructionPanel.setDurationTwo(hours + ":" + minutes + ":"  + seconds);
+        }
+        if(seconds < 10) {
+            BuildingConstructionPanel.setDurationTwo(hours + ":" + minutes + ":" + "0" + seconds);
+        }
+        if(minutes < 10) {
+            BuildingConstructionPanel.setDurationTwo(hours + ":" + "0" + minutes + ":" +  seconds);
+        }
+        if(seconds < 10 && minutes < 10) {
+            BuildingConstructionPanel.setDurationTwo(hours + ":" + "0" + minutes + ":" + "0" +  seconds);
+        }
+    }
+
+    public static void constructionTwoGetNumbers() {
+        try {
+            Village.totalTwoOne = Integer.parseInt(substring(Village.durationTwo, 0, 1));
+            // String second =  :
+            Village.totalTwoThird = Integer.parseInt(substring(Village.durationTwo, 2, 3));
+            Village.totalTwoFourth = Integer.parseInt(substring(Village.durationTwo, 3, 4));
+            //int fifth =  :
+            Village.totalTwoSixth = Integer.parseInt(substring(Village.durationTwo, 5, 6));
+            Village.totalTwoSeventh = Integer.parseInt(substring(Village.durationTwo, 6, 7));
+        }
+        catch(NumberFormatException e) {
+        }
+        //int eight =  would be last number
     }
 
 
@@ -1020,6 +1124,7 @@ public class Village {
         setLightCal();
         setPaladin();
         setCatapult();
+        setRam();
     }
 
     //gets the village HQ cost
@@ -1228,6 +1333,718 @@ public class Village {
         getWallCost();
         getAcademyCost();
         getHidingPlaceCost();
+    }
+
+    public static String getxLoc() {
+        return xLoc;
+    }
+
+    public static void setxLoc(String xLocation) {
+        xLoc = xLocation;
+    }
+
+    public static String getyLoc() {
+        return yLoc;
+    }
+
+    public static void setyLoc(String yLocation) {
+        yLoc = yLocation;
+    }
+
+    public static String getVillageFileName() {
+        return villageFileName;
+    }
+
+    public static void setVillageFileName(String villageFileName) {
+        Village.villageFileName = villageFileName;
+    }
+
+    public static int getNumberOfFarms() {
+        return numberOfFarms;
+    }
+
+    public static void setNumberOfFarms(int newNumber) {
+        numberOfFarms = newNumber;
+    }
+
+    public static int getVillageHQWoodCost() {
+        return villageHQWoodCost;
+    }
+
+    public static void setVillageHQWoodCost(int newNumber) {
+        villageHQWoodCost = newNumber;
+    }
+
+    public static int getVillageHQClayCost() {
+        return villageHQClayCost;
+    }
+
+    public static void setVillageHQClayCost(int newNumber) {
+        villageHQClayCost = newNumber;
+    }
+
+    public static int getVillageHQIronCost() {
+        return villageHQIronCost;
+    }
+
+    public static void setVillageHQIronCost(int newNumber) {
+        villageHQIronCost = newNumber;
+    }
+
+    public static boolean isVillageHQHasCost() {
+        return villageHQHasCost;
+    }
+
+    public static void setVillageHQHasCost(boolean newBoolean) {
+        villageHQHasCost = newBoolean;
+    }
+
+    public static int getBarracksWoodCost() {
+        return barracksWoodCost;
+    }
+
+    public static void setBarracksWoodCost(int newNumber) {
+         barracksWoodCost = newNumber;
+    }
+
+    public static int getBarracksClayCost() {
+        return barracksClayCost;
+    }
+
+    public static void setBarracksClayCost(int newNumber) {
+         barracksClayCost = newNumber;
+    }
+
+    public static int getBarracksIronCost() {
+        return barracksIronCost;
+    }
+
+    public static void setBarracksIronCost(int newNumber) {
+        barracksIronCost = newNumber;
+    }
+
+    public static boolean isBarracksHasCost() {
+        return barracksHasCost;
+    }
+
+    public static void setBarracksHasCost(boolean newBoolean) {
+        barracksHasCost = newBoolean;
+    }
+
+    public static int getStableWoodCost() {
+        return stableWoodCost;
+    }
+
+    public static void setStableWoodCost(int newNumber) {
+        stableWoodCost = newNumber;
+    }
+
+    public static int getStableClayCost() {
+        return stableClayCost;
+    }
+
+    public static void setStableClayCost(int newNumber) {
+        stableClayCost = newNumber;
+    }
+
+    public static int getStableIronCost() {
+        return stableIronCost;
+    }
+
+    public static void setStableIronCost(int newNumber) {
+        stableIronCost = newNumber;
+    }
+
+    public static boolean isStableHasCost() {
+        return stableHasCost;
+    }
+
+    public static void setStableHasCost(boolean newBoolean) {
+        stableHasCost = newBoolean;
+    }
+
+    public static int getWorkShopWoodCost() {
+        return workShopWoodCost;
+    }
+
+    public static void setWorkShopWoodCost(int newNumber) {
+        workShopWoodCost = newNumber;
+    }
+
+    public static int getWorkShopClayCost() {
+        return workShopClayCost;
+    }
+
+    public static void setWorkShopClayCost(int newNumber) {
+        workShopClayCost = newNumber;
+    }
+
+    public static int getWorkShopIronCost() {
+        return workShopIronCost;
+    }
+
+    public static void setWorkShopIronCost(int newNumber) {
+         workShopIronCost = newNumber;
+    }
+
+    public static boolean isWorkShopHasCost() {
+        return workShopHasCost;
+    }
+
+    public static void setWorkShopHasCost(boolean newBoolean) {
+        workShopHasCost = newBoolean;
+    }
+
+    public static int getSmithyWoodCost() {
+        return smithyWoodCost;
+    }
+
+    public static void setSmithyWoodCost(int newNumber) {
+        smithyWoodCost = newNumber;
+    }
+
+    public static int getSmithyClayCost() {
+        return smithyClayCost;
+    }
+
+    public static void setSmithyClayCost(int newNumber) {
+        smithyClayCost = newNumber;
+    }
+
+    public static int getSmithyIronCost() {
+        return smithyIronCost;
+    }
+
+    public static void setSmithyIronCost(int newNumber) {
+        smithyIronCost = newNumber;
+    }
+
+    public static boolean isSmithyHasCost() {
+        return smithyHasCost;
+    }
+
+    public static void setSmithyHasCost(boolean newBoolean) {
+        smithyHasCost = newBoolean;
+    }
+
+    public static int getMarketWoodCost() {
+        return marketWoodCost;
+    }
+
+    public static void setMarketWoodCost(int newNumber) {
+        marketWoodCost = newNumber;
+    }
+
+    public static int getMarketClayCost() {
+        return marketClayCost;
+    }
+
+    public static void setMarketClayCost(int newNumber) {
+        marketClayCost = newNumber;
+    }
+
+    public static int getMarketIronCost() {
+        return marketIronCost;
+    }
+
+    public static void setMarketIronCost(int newNumber) {
+        marketIronCost = newNumber;
+    }
+
+    public static boolean isMarketHasCost() {
+        return marketHasCost;
+    }
+
+    public static void setMarketHasCost(boolean newBoolean) {
+        marketHasCost = newBoolean;
+    }
+
+    public static int getTimberWoodCost() {
+        return timberWoodCost;
+    }
+
+    public static void setTimberWoodCost(int newNumber) {
+         timberWoodCost = newNumber;
+    }
+
+    public static int getTimberClayCost() {
+        return timberClayCost;
+    }
+
+    public static void setTimberClayCost(int newNumber) {
+        timberClayCost = newNumber;
+    }
+
+    public static int getTimberIronCost() {
+        return timberIronCost;
+    }
+
+    public static void setTimberIronCost(int newNumber) {
+        timberIronCost = newNumber;
+    }
+
+    public static boolean isTimberHasCost() {
+        return timberHasCost;
+    }
+
+    public static void setTimberHasCost(boolean newBoolean) {
+        timberHasCost = newBoolean;
+    }
+
+    public static int getClayWoodCost() {
+        return clayWoodCost;
+    }
+
+    public static void setClayWoodCost(int newNumber) {
+        clayWoodCost = newNumber;
+    }
+
+    public static int getClayClayCost() {
+        return clayClayCost;
+    }
+
+    public static void setClayClayCost(int newNumber) {
+        clayClayCost = newNumber;
+    }
+
+    public static int getClayIronCost() {
+        return clayIronCost;
+    }
+
+    public static void setClayIronCost(int newNumber) {
+        clayIronCost = newNumber;
+    }
+
+    public static boolean isClayHasCost() {
+        return clayHasCost;
+    }
+
+    public static void setClayHasCost(boolean newBoolean) {
+        clayHasCost = newBoolean;
+    }
+
+    public static int getIronWoodCost() {
+        return ironWoodCost;
+    }
+
+    public static void setIronWoodCost(int newNumber) {
+        ironWoodCost = newNumber;
+    }
+
+    public static int getIronClayCost() {
+        return ironClayCost;
+    }
+
+    public static void setIronClayCost(int newNumber) {
+        ironClayCost = newNumber;
+    }
+
+    public static int getIronIronCost() {
+        return ironIronCost;
+    }
+
+    public static void setIronIronCost(int newNumber) {
+        ironIronCost = newNumber;
+    }
+
+    public static boolean isIronHasCost() {
+        return ironHasCost;
+    }
+
+    public static void setIronHasCost(boolean newBoolean) {
+        ironHasCost = newBoolean;
+    }
+
+    public static int getFarmWoodCost() {
+        return farmWoodCost;
+    }
+
+    public static void setFarmWoodCost(int newNumber) {
+         farmWoodCost = newNumber;
+    }
+
+    public static int getFarmClayCost() {
+        return farmClayCost;
+    }
+
+    public static void setFarmClayCost(int newNumber) {
+         farmClayCost = newNumber;
+    }
+
+    public static int getFarmIronCost() {
+        return farmIronCost;
+    }
+
+    public static void setFarmIronCost(int newNumber) {
+         farmIronCost = newNumber;
+    }
+
+    public static boolean isFarmHasCost() {
+        return farmHasCost;
+    }
+
+    public static void setFarmHasCost(boolean newBoolean) {
+        farmHasCost = newBoolean;
+    }
+
+    public static int getWareHouseWoodCost() {
+        return wareHouseWoodCost;
+    }
+
+    public static void setWareHouseWoodCost(int newNumber) {
+        wareHouseWoodCost = newNumber;
+    }
+
+    public static int getWareHouseClayCost() {
+        return wareHouseClayCost;
+    }
+
+    public static void setWareHouseClayCost(int newNumber) {
+         wareHouseClayCost = newNumber;
+    }
+
+    public static int getWareHouseIronCost() {
+        return wareHouseIronCost;
+    }
+
+    public static void setWareHouseIronCost(int newNumber) {
+         wareHouseIronCost = newNumber;
+    }
+
+    public static boolean isWareHouseHasCost() {
+        return wareHouseHasCost;
+    }
+
+    public static void setWareHouseHasCost(boolean newBoolean) {
+        wareHouseHasCost = newBoolean;
+    }
+
+    public static int getWallWoodCost() {
+        return wallWoodCost;
+    }
+
+    public static void setWallWoodCost(int newNumber) {
+        wallWoodCost = newNumber;
+    }
+
+    public static int getWallClayCost() {
+        return wallClayCost;
+    }
+
+    public static void setWallClayCost(int newNumber) {
+        wallClayCost = newNumber;
+    }
+
+    public static int getWallIronCost() {
+        return wallIronCost;
+    }
+
+    public static void setWallIronCost(int newNumber) {
+        wallIronCost = newNumber;
+    }
+
+    public static boolean isWallHasCost() {
+        return wallHasCost;
+    }
+
+    public static void setWallHasCost(boolean newBoolean) {
+        wallHasCost = newBoolean;
+    }
+
+    public static int getAcademyWoodCost() {
+        return academyWoodCost;
+    }
+
+    public static void setAcademyWoodCost(int newNumber) {
+        academyWoodCost = newNumber;
+    }
+
+    public static int getAcademyClayCost() {
+        return academyClayCost;
+    }
+
+    public static void setAcademyClayCost(int newNumber) {
+        academyClayCost = newNumber;
+    }
+
+    public static int getAcademyIronCost() {
+        return academyIronCost;
+    }
+
+    public static void setAcademyIronCost(int newNumber) {
+        academyIronCost = newNumber;
+    }
+
+    public static boolean isAcademyHasCost() {
+        return academyHasCost;
+    }
+
+    public static void setAcademyHasCost(boolean newBoolean) {
+        academyHasCost = newBoolean;
+    }
+
+    public static int getHidingPlaceWoodCost() {
+        return hidingPlaceWoodCost;
+    }
+
+    public static void setHidingPlaceWoodCost(int newNumber) {
+        hidingPlaceWoodCost = newNumber;
+    }
+
+    public static int getHidingPlaceClayCost() {
+        return hidingPlaceClayCost;
+    }
+
+    public static void setHidingPlaceClayCost(int newNumber) {
+        hidingPlaceClayCost = newNumber;
+    }
+
+    public static int getHidingPlaceIronCost() {
+        return hidingPlaceIronCost;
+    }
+
+    public static void setHidingPlaceIronCost(int newNumber) {
+        hidingPlaceIronCost = newNumber;
+    }
+
+    public static boolean isHidingPlaceHasCost() {
+        return hidingPlaceHasCost;
+    }
+
+    public static void setHidingPlaceHasCost(boolean newBoolean) {
+        hidingPlaceHasCost = newBoolean;
+    }
+
+    public static int getCurrentWood() {
+        return currentWood;
+    }
+
+    public static void setCurrentWood(int newNumber) {
+        currentWood = newNumber;
+    }
+
+    public static int getCurrentClay() {
+        return currentClay;
+    }
+
+    public static void setCurrentClay(int newNumber) {
+        currentClay = newNumber;
+    }
+
+    public static int getCurrentIron() {
+        return currentIron;
+    }
+
+    public static void setCurrentIron(int newNumber) {
+        currentIron = newNumber;
+    }
+
+    public static int getCurrentPopulation() {
+        return currentPopulation;
+    }
+
+    public static void setCurrentPopulation(int newNumber) {
+        currentPopulation = newNumber;
+    }
+
+    public static int getMaxPopulation() {
+        return maxPopulation;
+    }
+
+    public static void setMaxPopulation(int newNumber) {
+        maxPopulation = newNumber;
+    }
+
+    public static String getDurationOne() {
+        return durationOne;
+    }
+
+    public static void setDurationOne(String newString) {
+        durationOne = newString;
+    }
+
+    public static double getTotalOne() {
+        return totalOne;
+    }
+
+    public static void setTotalOne(double newNumber) {
+        totalOne = newNumber;
+    }
+
+    public static double getTotalOneOne() {
+        return totalOneOne;
+    }
+
+    public static void setTotalOneOne(double newNumber) {
+        totalOneOne = newNumber;
+    }
+
+    public static double getTotalOneThird() {
+        return totalOneThird;
+    }
+
+    public static void setTotalOneThird(double newNumber) {
+        totalOneThird = newNumber;
+    }
+
+    public static double getTotalOneFourth() {
+        return totalOneFourth;
+    }
+
+    public static void setTotalOneFourth(double newNumber) {
+        totalOneFourth = newNumber;
+    }
+
+    public static double getTotalOneSixth() {
+        return totalOneSixth;
+    }
+
+    public static void setTotalOneSixth(double newNumber) {
+        totalOneSixth = newNumber;
+    }
+
+    public static double getTotalOneSeventh() {
+        return totalOneSeventh;
+    }
+
+    public static void setTotalOneSeventh(double newNumber) {
+        totalOneSeventh = newNumber;
+    }
+
+    public static double getTotalOneSecond() {
+        return totalOneSecond;
+    }
+
+    public static void setTotalOneSecond(double newNumber) {
+        totalOneSecond = newNumber;
+    }
+
+    public static double getTotalOneEighth() {
+        return totalOneEighth;
+    }
+
+    public static void setTotalOneEighth(double newNumber) {
+        totalOneEighth = newNumber;
+    }
+
+    public static String getDurationTwo() {
+        return durationTwo;
+    }
+
+    public static void setDurationTwo(String newString) {
+        durationTwo = newString;
+    }
+
+    public static double getTotalTwo() {
+        return totalTwo;
+    }
+
+    public static void setTotalTwo(double newNumber) {
+        totalTwo = newNumber;
+    }
+
+    public static double getTotalTwoOne() {
+        return totalTwoOne;
+    }
+
+    public static void setTotalTwoOne(double newNumber) {
+        totalTwoOne = newNumber;
+    }
+
+    public static double getTotalTwoThird() {
+        return totalTwoThird;
+    }
+
+    public static void setTotalTwoThird(double newNumber) {
+        totalTwoThird = newNumber;
+    }
+
+    public static double getTotalTwoFourth() {
+        return totalTwoFourth;
+    }
+
+    public static void setTotalTwoFourth(double newNumber) {
+        totalTwoFourth = newNumber;
+    }
+
+    public static double getTotalTwoSixth() {
+        return totalTwoSixth;
+    }
+
+    public static void setTotalTwoSixth(double newNumber) {
+        totalTwoSixth = newNumber;
+    }
+
+    public static double getTotalTwoSeventh() {
+        return totalTwoSeventh;
+    }
+
+    public static void setTotalTwoSeventh(double newNumber) {
+        totalTwoSeventh = newNumber;
+    }
+
+    public static double getTotalTwoSecond() {
+        return totalTwoSecond;
+    }
+
+    public static void setTotalTwoSecond(double newNumber) {
+        totalTwoSecond = newNumber;
+    }
+
+    public static double getTotalTwoEighth() {
+        return totalTwoEighth;
+    }
+
+    public static void setTotalTwoEighth(double newNumber) {
+        totalTwoEighth = newNumber;
+    }
+
+    public static double getTotalTwoFifth() {
+        return totalTwoFifth;
+    }
+
+    public static void setTotalTwoFifth(double newNumber) {
+        totalTwoFifth = newNumber;
+    }
+
+    public static double getTotalOneFifth() {
+        return totalOneFifth;
+    }
+
+    public static void setTotalOneFifth(double newNumber) {
+        totalOneFifth = newNumber;
+    }
+
+    public static String getBuildingNameOne() {
+        return buildingNameOne;
+    }
+
+    public static void setBuildingNameOne(String newString) {
+        buildingNameOne = newString;
+    }
+
+    public static String getCompletionOne() {
+        return completionOne;
+    }
+
+    public static void setCompletionOne(String newString) {
+        completionOne = newString;
+    }
+
+    public static String getBuildingNameTwo() {
+        return buildingNameTwo;
+    }
+
+    public static void setBuildingNameTwo(String newString) {
+        buildingNameTwo = newString;
+    }
+
+    public static String getCompletionTwo() {
+        return completionTwo;
+    }
+
+    public static void setCompletionTwo(String newString) {
+        completionTwo = newString;
     }
 }
 

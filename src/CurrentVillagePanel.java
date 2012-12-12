@@ -19,7 +19,7 @@ public class CurrentVillagePanel extends JPanel {
         //create and set the size of the panel
         Dimension size = getPreferredSize();
         size.width = 190;
-        size.height = 100;
+        size.height = 105;
         setMinimumSize(size);
         setMaximumSize(size);
         setPreferredSize(size);

@@ -26,6 +26,19 @@ public class TroopsDetailPanel extends JPanel {
     private static JLabel mountedArcherLabel;
     private static JLabel heavyCalLabel;
     private static JLabel archerLabel;
+    private static ImageIcon spearIcon;
+    private static ImageIcon axeIcon;
+    private static ImageIcon lightCalIcon;
+    private static ImageIcon scoutIcon;
+    private static ImageIcon swordIcon;
+    private static ImageIcon paladinIcon;
+    private static ImageIcon catapultIcon;
+    private static ImageIcon nobleIcon;
+    private static ImageIcon populationCountIcon;
+    private static ImageIcon ramIcon;
+    private static ImageIcon mountedArcherIcon;
+    private static ImageIcon heavyCalIcon;
+    private static ImageIcon archerIcon;
 
 
 
@@ -35,7 +48,7 @@ public class TroopsDetailPanel extends JPanel {
         //create and set the size of the panel
         Dimension size = getPreferredSize();
         size.width = 190;
-        size.height = 411;
+        size.height = 238;   //262    275
         setMinimumSize(size);
         setMaximumSize(size);
         setPreferredSize(size);
@@ -46,19 +59,19 @@ public class TroopsDetailPanel extends JPanel {
         setBackground(bgColor);
 
         //various troop icons
-        ImageIcon spearIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\spear.png");
-        ImageIcon axeIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\axe.png");
-        ImageIcon lightcalIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\lightcal.png");
-        ImageIcon scoutIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\scout.png");
-        ImageIcon swordIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\sword.png");
-        ImageIcon paladinIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\paladin.png");
-        ImageIcon catapultIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\catapult.png");
-        ImageIcon populationCountIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\farmFace.png");
-        ImageIcon nobleIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\snob.png");
-        ImageIcon ramIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\unit_ram.png");
-        ImageIcon mountedArcherIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\unit_marcher.png");
-        ImageIcon heavyCalIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\unit_heavy.png");
-        ImageIcon archerIcon = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\unit_archer.png");
+         spearIcon = new ImageIcon("unitpic\\spear.png");
+         axeIcon = new ImageIcon("unitpic\\axe.png");
+         lightCalIcon = new ImageIcon("unitpic\\lightcal.png");
+         scoutIcon = new ImageIcon("unitpic\\scout.png");
+         swordIcon = new ImageIcon("unitpic\\sword.png");
+         paladinIcon = new ImageIcon("unitpic\\paladin.png");
+         catapultIcon = new ImageIcon("unitpic\\catapult.png");
+         populationCountIcon = new ImageIcon("unitpic\\farmFace.png");
+         nobleIcon = new ImageIcon("unitpic\\snob.png");
+         ramIcon = new ImageIcon("unitpic\\unit_ram.png");
+         mountedArcherIcon = new ImageIcon("unitpic\\unit_marcher.png");
+         heavyCalIcon = new ImageIcon("unitpic\\unit_heavy.png");
+         archerIcon = new ImageIcon("unitpic\\unit_archer.png");
 
         //sets the layout manager of the panel
         setLayout(new GridBagLayout());
@@ -104,7 +117,7 @@ public class TroopsDetailPanel extends JPanel {
         spyLabel.setOpaque(true);
         spyLabel.setBorder(null);
 
-        lightCalLabel = new JLabel ("0", lightcalIcon, JLabel.CENTER);
+        lightCalLabel = new JLabel ("0", lightCalIcon, JLabel.CENTER);
         lightCalLabel.setVerticalTextPosition(JLabel.TOP);
         lightCalLabel.setHorizontalTextPosition(JLabel.RIGHT);
         lightCalLabel.setBackground(bgColor);
@@ -335,6 +348,66 @@ public class TroopsDetailPanel extends JPanel {
 
     public static String getArcherLabel() {
         return archerLabel.getText();
+    }
+
+    public static ImageIcon getSpearIcon() {
+        return spearIcon;
+    }
+
+    public static JLabel getPopulationCountLabel() {
+        return populationCountLabel;
+    }
+
+    public static JLabel getNobleLabel() {
+        return nobleLabel;
+    }
+
+    public static ImageIcon getAxeIcon() {
+        return axeIcon;
+    }
+
+    public static ImageIcon getLightCalIcon() {
+        return lightCalIcon;
+    }
+
+    public static ImageIcon getScoutIcon() {
+        return scoutIcon;
+    }
+
+    public static ImageIcon getSwordIcon() {
+        return swordIcon;
+    }
+
+    public static ImageIcon getPaladinIcon() {
+        return paladinIcon;
+    }
+
+    public static ImageIcon getCatapultIcon() {
+        return catapultIcon;
+    }
+
+    public static ImageIcon getNobleIcon() {
+        return nobleIcon;
+    }
+
+    public static ImageIcon getPopulationCountIcon() {
+        return populationCountIcon;
+    }
+
+    public static ImageIcon getRamIcon() {
+        return ramIcon;
+    }
+
+    public static ImageIcon getMountedArcherIcon() {
+        return mountedArcherIcon;
+    }
+
+    public static ImageIcon getHeavyCalIcon() {
+        return heavyCalIcon;
+    }
+
+    public static ImageIcon getArcherIcon() {
+        return archerIcon;
     }
 }
 

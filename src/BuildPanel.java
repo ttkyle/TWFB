@@ -57,7 +57,7 @@ public class BuildPanel extends JPanel {
         //create and set the size of the panel
         Dimension size = getPreferredSize();
         size.width = 600;
-        size.height = 250;
+        size.height = 258;
         setPreferredSize(size);
         setMaximumSize(size);
         setMinimumSize(size);
@@ -75,24 +75,24 @@ public class BuildPanel extends JPanel {
         setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(outLineColor), "Tribal Wars Building Levels"));
 
         //icons for the various buildings
-        ImageIcon villageHQ = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\main.png");
-        ImageIcon barracks = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\barracks.png");
-        ImageIcon stable = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\stable.png");
-        ImageIcon workShop = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\garage.png");
-        ImageIcon smithy = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\smith.png");
-        ImageIcon market = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\market.png");
-        ImageIcon timber = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\wood.png");
-        ImageIcon clay = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\stone.png");
-        ImageIcon iron = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\iron.png");
-        ImageIcon farm = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\farm.png");
-        ImageIcon wareHouse = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\storage.png");
-        ImageIcon hidingPlace = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\hide.png");
-        ImageIcon wall = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\wall.png");
-        ImageIcon academy = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\academy.png");
-        ImageIcon woodPic = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\woodPic.png");
-        ImageIcon clayPic = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\clayPic.png");
-        ImageIcon ironPic = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\ironPic.png");
-        ImageIcon attPic = new ImageIcon("C:\\Users\\kyle\\Documents\\Tribalwars\\unitpic\\attack.png");
+        ImageIcon villageHQ = new ImageIcon("unitpic\\main.png");
+        ImageIcon barracks = new ImageIcon("unitpic\\barracks.png");
+        ImageIcon stable = new ImageIcon("unitpic\\stable.png");
+        ImageIcon workShop = new ImageIcon("unitpic\\garage.png");
+        ImageIcon smithy = new ImageIcon("unitpic\\smith.png");
+        ImageIcon market = new ImageIcon("unitpic\\market.png");
+        ImageIcon timber = new ImageIcon("unitpic\\wood.png");
+        ImageIcon clay = new ImageIcon("unitpic\\stone.png");
+        ImageIcon iron = new ImageIcon("unitpic\\iron.png");
+        ImageIcon farm = new ImageIcon("unitpic\\farm.png");
+        ImageIcon wareHouse = new ImageIcon("unitpic\\storage.png");
+        ImageIcon hidingPlace = new ImageIcon("unitpic\\hide.png");
+        ImageIcon wall = new ImageIcon("unitpic\\wall.png");
+        ImageIcon academy = new ImageIcon("unitpic\\academy.png");
+        ImageIcon woodPic = new ImageIcon("unitpic\\woodPic.png");
+        ImageIcon clayPic = new ImageIcon("unitpic\\clayPic.png");
+        ImageIcon ironPic = new ImageIcon("unitpic\\ironPic.png");
+        ImageIcon attPic = new ImageIcon("unitpic\\attack.png");
 
 
         //////////Create all the labels///////////////
@@ -249,7 +249,7 @@ public class BuildPanel extends JPanel {
         });
 
         //button will upgrade barracks and update building costs
-        upgradeBarracks = new JButton("Upgrade Barracks");
+        upgradeBarracks = new JButton("Upgrade Barracks  ");
         upgradeBarracks.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -274,7 +274,7 @@ public class BuildPanel extends JPanel {
         });
 
         //button will upgrade stable and update building costs
-        upgradeStable = new JButton("Upgrade Stable");
+        upgradeStable = new JButton("   Upgrade Stable    ");
         upgradeStable.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -324,7 +324,7 @@ public class BuildPanel extends JPanel {
         });
 
         //button will upgrade smithy and update building costs
-        upgradeSmithy = new JButton("Upgrade Smithy");
+        upgradeSmithy = new JButton("   Upgrade Smithy    ");
         upgradeSmithy.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -349,7 +349,7 @@ public class BuildPanel extends JPanel {
         });
 
         //button will upgrade market and update building costs
-        upgradeMarket = new JButton("Upgrade Market");
+        upgradeMarket = new JButton("   Upgrade Market   ");
         upgradeMarket.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -374,7 +374,7 @@ public class BuildPanel extends JPanel {
         });
 
         //button will upgrade farm and update building costs
-        upgradeFarm = new JButton("Upgrade Farm");
+        upgradeFarm = new JButton("      Upgrade Farm       ");
         upgradeFarm.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -399,7 +399,7 @@ public class BuildPanel extends JPanel {
         });
 
         //button will upgrade wall and update building costs
-        upgradeWall = new JButton("Upgrade Wall");
+        upgradeWall = new JButton("     Upgrade Wall      ");
         upgradeWall.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -424,7 +424,7 @@ public class BuildPanel extends JPanel {
         });
 
         //button will upgrade timber and update building costs
-        upgradeTimber = new JButton("Upgrade Timber");
+        upgradeTimber = new JButton("    Upgrade Timber     ");
         upgradeTimber.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -449,7 +449,7 @@ public class BuildPanel extends JPanel {
         });
 
         //button will upgrade clay and update building costs
-        upgradeClay = new JButton("Upgrade Clay");
+        upgradeClay = new JButton("       Upgrade Clay       ");
         upgradeClay.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -473,7 +473,7 @@ public class BuildPanel extends JPanel {
         });
 
         //button will upgrade iron and update building costs
-        upgradeIron = new JButton("Upgrade Iron");
+        upgradeIron = new JButton("        Upgrade Iron       ");
         upgradeIron.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -497,7 +497,7 @@ public class BuildPanel extends JPanel {
         });
 
         //button will upgrade warehouse and update building costs
-        upgradeWareHouse = new JButton("Upgrade Warehouse");
+        upgradeWareHouse = new JButton("Upgrade Warehouse ");
         upgradeWareHouse.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -521,7 +521,7 @@ public class BuildPanel extends JPanel {
         });
 
         //button will upgrade academy and update building costs
-        upgradeAcademy = new JButton("Upgrade Academy");
+        upgradeAcademy = new JButton("   Upgrade Academy  ");
         upgradeAcademy.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
@@ -562,7 +562,7 @@ public class BuildPanel extends JPanel {
                     Village.constructionOneGetNumbers();
                     Village.constructionOneGetTime();
 
-                    if(Village.totalOne > 0) {
+                    if(Village.getTotalOne() > 0) {
                         ConstructOneThread.constructionFlagOne = true;
                     }
                     Thread.sleep(1500);
@@ -921,6 +921,62 @@ public class BuildPanel extends JPanel {
 
     public static void setHidingPlaceButtonTrueOrFalse(Boolean bool) {
         upgradeHidingPlace.setEnabled(bool);
+    }
+
+    public static JButton getUpgradeVillageHQ() {
+        return upgradeVillageHQ;
+    }
+
+    public static JButton getUpgradeBarracks() {
+        return upgradeBarracks;
+    }
+
+    public static JButton getUpgradeStable() {
+        return upgradeStable;
+    }
+
+    public static JButton getUpgradeWorkShop() {
+        return upgradeWorkShop;
+    }
+
+    public static JButton getUpgradeSmithy() {
+        return upgradeSmithy;
+    }
+
+    public static JButton getUpgradeMarket() {
+        return upgradeMarket;
+    }
+
+    public static JButton getUpgradeFarm() {
+        return upgradeFarm;
+    }
+
+    public static JButton getUpgradeWall() {
+        return upgradeWall;
+    }
+
+    public static JButton getUpgradeClay() {
+        return upgradeClay;
+    }
+
+    public static JButton getUpgradeTimber() {
+        return upgradeTimber;
+    }
+
+    public static JButton getUpgradeWareHouse() {
+        return upgradeWareHouse;
+    }
+
+    public static JButton getUpgradeAcademy() {
+        return upgradeAcademy;
+    }
+
+    public static JButton getUpgradeIron() {
+        return upgradeIron;
+    }
+
+    public static JButton getUpgradeHidingPlace() {
+        return upgradeHidingPlace;
     }
 }
 

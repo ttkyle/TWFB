@@ -14,13 +14,14 @@ public class DetailsPanel extends JPanel {
 
 
     private EventListenerList listenerList = new EventListenerList();
+    private static JComboBox serverListComboBox;
 
     public  DetailsPanel() {
 
         //create and set the size of the panel
         Dimension size = getPreferredSize();
         size.width = 190;
-        size.height = 89;
+        size.height = 120;
         setMinimumSize(size);
         setMaximumSize(size);
         setPreferredSize(size);
@@ -37,9 +38,24 @@ public class DetailsPanel extends JPanel {
         final JTextField nameField = new JTextField(10);
         final JTextField passwordField = new JTextField(10);
 
+        String[] serverList = {"World en58       "    , "World en59", "World en60", "World en61", "World en62",
+                               "World en63", "World en64", "World en65"};
+
+        serverListComboBox = new JComboBox(serverList);
+        serverListComboBox.setSelectedIndex(7);
+        serverListComboBox.addActionListener (new ActionListener () {
+            public void actionPerformed(ActionEvent e) {
+                //later
+            }
+        });
+
+        String currentlySelectedServer = DetailsPanel.getServerListComboBox().getSelectedItem().toString();
+        System.out.println(currentlySelectedServer.substring(6, 10));
+
         //labels to let the user know what the textfields are for
         JLabel  nameLabel = new JLabel("User:");
         JLabel passwordLabel = new JLabel("Password:");
+        JLabel server = new JLabel("Server");
 
         //the login button
         JButton loginButton = new JButton("        Login" + "        ");
@@ -77,6 +93,10 @@ public class DetailsPanel extends JPanel {
         gc.gridy = 1;
         add(passwordLabel, gc);
 
+        gc.gridx = 0;
+        gc.gridy = 2;
+        add(server, gc);
+
         ////// Second column /////
         gc.anchor = GridBagConstraints.LINE_START;
         gc.fill = GridBagConstraints.VERTICAL;
@@ -87,9 +107,13 @@ public class DetailsPanel extends JPanel {
         gc.gridy = 0;
         add(nameField, gc);
 
-        gc.gridx= 1;
-        gc.gridy=1;
+        gc.gridx = 1;
+        gc.gridy = 1;
         add(passwordField, gc);
+
+        gc.gridx = 1;
+        gc.gridy = 2;
+        add(serverListComboBox, gc);
 
         ///final row
         gc.anchor = GridBagConstraints.LINE_START;
@@ -98,7 +122,7 @@ public class DetailsPanel extends JPanel {
         gc.weighty = .0;
 
         gc.gridx = 1;
-        gc.gridy = 2;
+        gc.gridy = 3;
         add(loginButton, gc);
     }
 
@@ -122,5 +146,13 @@ public class DetailsPanel extends JPanel {
     //removes detail listeners to detail panel
     public void removeDetailListener(DetailListener listener) {
         listenerList.remove(DetailListener.class, listener);
+    }
+
+    public static JComboBox getServerListComboBox() {
+        return serverListComboBox;
+    }
+
+    public static void setServerListComboBox(JComboBox serverListComboBox) {
+        DetailsPanel.serverListComboBox = serverListComboBox;
     }
 }

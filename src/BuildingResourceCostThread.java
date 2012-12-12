@@ -1,6 +1,8 @@
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 
+import java.awt.*;
+
 /**
  * This thread runs every 5 seconds. The purpose of this thread
  * is to use information gathered when the user logs in or
@@ -33,12 +35,14 @@ public class BuildingResourceCostThread implements Runnable {
             while(true) {
 
                 //if the village HQ wood cost is > 0 then set hasCost flag as true
-                if(Village.villageHQWoodCost > 0) {
-                    Village.villageHQHasCost = true;
+                if(Village.getVillageHQWoodCost() > 0) {
+                    Village.setVillageHQHasCost(true);
 
                     //determines if the user has enough resources to build the village HQ
                     //if not then the button is greyed
-                    if(Village.villageHQWoodCost > Village.currentWood || Village.villageHQClayCost > Village.currentClay || Village.villageHQIronCost > Village.currentIron) {
+                    if(Village.getVillageHQWoodCost() > Village.getCurrentWood() ||
+                    Village.getVillageHQClayCost() > Village.getCurrentClay() ||
+                    Village.getVillageHQIronCost() > Village.getCurrentIron()) {
                         BuildPanel.setVillageHQButtonTrueOrFalse(false);
                     }
                 }
@@ -50,12 +54,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the barracks wood cost is > 0 then set hasCost flag as true
-                if(Village.barracksWoodCost > 0) {
-                    Village.barracksHasCost = true;
+                if(Village.getBarracksWoodCost() > 0) {
+                    Village.setBarracksHasCost(true);
 
                     //determines if the user has enough resources to build the barracks
                     //if not then the button is greyed
-                    if(Village.barracksWoodCost > Village.currentWood || Village.barracksClayCost > Village.currentClay || Village.barracksIronCost > Village.currentIron) {
+                    if(Village.getBarracksWoodCost() > Village.getCurrentWood() ||
+                    Village.getBarracksClayCost() > Village.getCurrentClay() ||
+                    Village.getBarracksIronCost() > Village.getCurrentIron()) {
                         BuildPanel.setBarracksButtonTrueOrFalse(false);
                     }
                 }
@@ -67,12 +73,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the stable wood cost is > 0 then set hasCost flag as true
-                if(Village.stableWoodCost > 0) {
-                    Village.stableHasCost = true;
+                if(Village.getStableWoodCost() > 0) {
+                    Village.setStableHasCost(true);
 
                     //determines if the user has enough resources to build the stable
                     //if not then the button is greyed
-                    if(Village.stableWoodCost > Village.currentWood || Village.stableClayCost > Village.currentClay || Village.stableIronCost > Village.currentIron) {
+                    if(Village.getStableWoodCost() > Village.getCurrentWood() ||
+                    Village.getStableClayCost() > Village.getCurrentClay() ||
+                    Village.getStableIronCost() > Village.getCurrentIron()) {
                         BuildPanel.setStableButtonTrueOrFalse(false);
                     }
                 }
@@ -84,12 +92,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the WorkShop wood cost is > 0 then set hasCost flag as true
-                if(Village.workShopWoodCost > 0) {
-                    Village.workShopHasCost = true;
+                if(Village.getWorkShopWoodCost() > 0) {
+                    Village.setWorkShopHasCost(true);
 
                     //determines if the user has enough resources to build the workshop
                     //if not then the button is greyed
-                    if(Village.workShopWoodCost > Village.currentWood || Village.workShopClayCost > Village.currentClay || Village.workShopIronCost > Village.currentIron) {
+                    if(Village.getWorkShopWoodCost() > Village.getCurrentWood() ||
+                    Village.getWorkShopClayCost() > Village.getCurrentClay() ||
+                    Village.getWorkShopIronCost() > Village.getCurrentIron()) {
                         BuildPanel.setWorkShopButtonTrueOrFalse(false);
                     }
                 }
@@ -101,12 +111,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the smithy wood cost is > 0 then set the hasCost flag as true
-                if(Village.smithyWoodCost > 0) {
-                    Village.smithyHasCost = true;
+                if(Village.getSmithyWoodCost() > 0) {
+                    Village.setSmithyHasCost(true);
 
                     //determines if the user has enough resources to build the smithy
                     //if not then the button is greyed
-                    if(Village.smithyWoodCost > Village.currentWood || Village.smithyClayCost > Village.currentClay || Village.smithyIronCost > Village.currentIron) {
+                    if(Village.getSmithyWoodCost() > Village.getCurrentWood() ||
+                    Village.getSmithyClayCost() > Village.getCurrentClay() ||
+                    Village.getSmithyIronCost() > Village.getCurrentIron()) {
                         BuildPanel.setSmithyButtonTrueOrFalse(false);
                     }
                 }
@@ -118,12 +130,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the market wood cost is > 0 then set the hasCost flag as true
-                if(Village.marketWoodCost > 0) {
-                    Village.marketHasCost = true;
+                if(Village.getMarketWoodCost() > 0) {
+                    Village.setMarketHasCost(true);
 
                     //determines if the user has enough resources to build the market
                     //if not then the button is greyed
-                    if(Village.marketWoodCost > Village.currentWood || Village.marketClayCost > Village.currentClay || Village.marketIronCost > Village.currentIron) {
+                    if(Village.getMarketWoodCost() > Village.getCurrentWood() ||
+                    Village.getMarketClayCost() > Village.getCurrentClay() ||
+                    Village.getMarketIronCost() > Village.getCurrentIron()) {
                         BuildPanel.setMarketButtonTrueOrFalse(false);
                     }
                 }
@@ -135,12 +149,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the timber wood cost is > 0 then set the hasCost flag as true
-                if(Village.timberWoodCost > 0) {
-                    Village.timberHasCost = true;
+                if(Village.getTimberWoodCost() > 0) {
+                    Village.setTimberHasCost(true);
 
                     //determines if the user has enough resources to build the timber
                     //if not then the button is greyed
-                    if(Village.timberWoodCost > Village.currentWood || Village.timberClayCost > Village.currentClay || Village.timberIronCost > Village.currentIron) {
+                    if(Village.getTimberWoodCost() > Village.getCurrentWood() ||
+                    Village.getTimberClayCost() > Village.getCurrentClay() ||
+                    Village.getTimberIronCost() > Village.getCurrentIron()) {
                         BuildPanel.setTimberButtonTrueOrFalse(false);
                     }
                 }
@@ -152,12 +168,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the clay wood cost is > 0 then set the hasCost flag as true
-                if(Village.clayWoodCost > 0) {
-                    Village.clayHasCost = true;
+                if(Village.getClayWoodCost() > 0) {
+                    Village.setClayHasCost(true);
 
                     //determines if the user has enough resources to build the clay
                     //if not then grey the button
-                    if(Village.clayWoodCost > Village.currentWood || Village.clayClayCost > Village.currentClay || Village.clayIronCost > Village.currentIron) {
+                    if(Village.getClayWoodCost() > Village.getCurrentWood() ||
+                    Village.getClayClayCost() > Village.getCurrentClay() ||
+                    Village.getClayIronCost() > Village.getCurrentIron()) {
                         BuildPanel.setClayButtonTrueOrFalse(false);
                     }
                 }
@@ -169,12 +187,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the iron wood cost is > 0 then set the hasCost flag as true
-                if(Village.ironWoodCost > 0) {
-                    Village.ironHasCost = true;
+                if(Village.getIronWoodCost() > 0) {
+                    Village.setIronHasCost(true);
 
                     //determines if the user has enough resources to build the iron
                     //if not then grey the button
-                    if(Village.ironWoodCost > Village.currentWood || Village.ironClayCost > Village.currentClay || Village.ironIronCost > Village.currentIron) {
+                    if(Village.getIronWoodCost() > Village.getCurrentWood() ||
+                    Village.getIronClayCost() > Village.getCurrentClay() ||
+                    Village.getIronIronCost() > Village.getCurrentIron()) {
                         BuildPanel.setIronButtonTrueOrFalse(false);
                     }
                 }
@@ -186,12 +206,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the farm wood cost is > 0 then set the hasCost flag as true
-                if(Village.farmWoodCost > 0) {
-                    Village.farmHasCost = true;
+                if(Village.getFarmWoodCost() > 0) {
+                    Village.setFarmHasCost(true);
 
                     //determines if the user has enough resources to build the farm
                     //if not then grey the button
-                    if(Village.farmWoodCost > Village.currentWood || Village.farmClayCost > Village.currentClay || Village.farmIronCost > Village.currentIron) {
+                    if(Village.getFarmWoodCost() > Village.getCurrentWood() ||
+                    Village.getFarmClayCost() > Village.getCurrentClay() ||
+                    Village.getFarmIronCost() > Village.getCurrentIron()) {
                         BuildPanel.setFarmButtonTrueOrFalse(false);
                     }
                 }
@@ -203,12 +225,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the warehouse wood cost is > 0 then set the hasCOst flag as true
-                if(Village.wareHouseWoodCost > 0) {
-                    Village.wareHouseHasCost = true;
+                if(Village.getWareHouseWoodCost() > 0) {
+                    Village.setWareHouseHasCost(true);
 
                     //determines if the user has enough resources to build the warehouse
                     //if not then grey the button
-                    if(Village.wareHouseWoodCost > Village.currentWood || Village.wareHouseClayCost > Village.currentClay || Village.wareHouseIronCost > Village.currentIron) {
+                    if(Village.getWareHouseWoodCost() > Village.getCurrentWood() ||
+                    Village.getWareHouseClayCost() > Village.getCurrentClay() ||
+                    Village.getWareHouseIronCost() > Village.getCurrentIron()) {
                         BuildPanel.setWareHouseButtonTrueOrFalse(false);
                     }
                 }
@@ -220,12 +244,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the wall wood cost > 0 then set the hasCost flag as true
-                if(Village.wallWoodCost > 0) {
-                    Village.wallHasCost = true;
+                if(Village.getWallWoodCost() > 0) {
+                    Village.setWallHasCost(true);
 
                     //determines if the user has enough resources to build the wall
                     //if not then grey the button
-                    if(Village.wallWoodCost > Village.currentWood || Village.wallClayCost > Village.currentClay || Village.wallIronCost > Village.currentIron) {
+                    if(Village.getWallWoodCost() > Village.getCurrentWood() ||
+                    Village.getWallClayCost() > Village.getCurrentClay() ||
+                    Village.getWallIronCost() > Village.getCurrentIron()) {
                         BuildPanel.setWallButtonTrueOrFalse(false);
                     }
                 }
@@ -237,12 +263,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the academy wood cost > 0 then set the hasCost flag as true
-                if(Village.academyWoodCost > 0) {
-                    Village.academyHasCost = true;
+                if(Village.getAcademyWoodCost() > 0) {
+                    Village.setAcademyHasCost(true);
 
                     //determines if the user has enough resources to build the academy
                     //if not then grey the button
-                    if(Village.academyWoodCost > Village.currentWood || Village.academyClayCost > Village.currentClay || Village.academyIronCost > Village.currentIron) {
+                    if(Village.getAcademyWoodCost() > Village.getCurrentWood() ||
+                    Village.getAcademyClayCost() > Village.getCurrentClay() ||
+                    Village.getAcademyIronCost() > Village.getCurrentIron()) {
                         BuildPanel.setAcademyButtonTrueOrFalse(false);
                     }
                 }
@@ -254,12 +282,14 @@ public class BuildingResourceCostThread implements Runnable {
 
 
                 //if the hidingplace wood cost  > 0 then set the hasCost flag as true
-                if(Village.hidingPlaceWoodCost > 0) {
-                    Village.hidingPlaceHasCost = true;
+                if(Village.getHidingPlaceWoodCost() > 0) {
+                    Village.setHidingPlaceHasCost(true);
 
                     //determines if the user has enough resources to build the hidingplace
                     //if not then grey the button
-                    if(Village.hidingPlaceWoodCost > Village.currentWood || Village.hidingPlaceClayCost > Village.currentClay || Village.hidingPlaceIronCost > Village.currentIron) {
+                    if(Village.getHidingPlaceWoodCost() > Village.getCurrentWood() ||
+                    Village.getHidingPlaceClayCost() > Village.getCurrentClay() ||
+                    Village.getHidingPlaceIronCost() > Village.getCurrentIron()) {
                         BuildPanel.setHidingPlaceButtonTrueOrFalse(false);
                     }
                 }
@@ -273,8 +303,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the village HQ costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.villageHQWoodCost <= Village.currentWood && Village.villageHQClayCost <= Village.currentClay && Village.villageHQIronCost <= Village.currentIron
-                && Village.villageHQHasCost == true) {
+                if(Village.getVillageHQWoodCost() <= Village.getCurrentWood() &&
+                Village.getVillageHQClayCost() <= Village.getCurrentClay() &&
+                Village.getVillageHQIronCost() <= Village.getCurrentIron() &&
+                Village.isVillageHQHasCost()) {
                     BuildPanel.setVillageHQButtonTrueOrFalse(true);
                 }
                 //sets the button to grey otherwise
@@ -285,8 +317,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the barracks costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.barracksWoodCost <= Village.currentWood && Village.barracksClayCost <= Village.currentClay && Village.barracksIronCost <= Village.currentIron
-                && Village.barracksHasCost == true) {
+                if(Village.getBarracksWoodCost() <= Village.getCurrentWood() &&
+                Village.getBarracksClayCost() <= Village.getCurrentClay() &&
+                Village.getBarracksIronCost() <= Village.getCurrentIron() &&
+                Village.isBarracksHasCost()) {
                     BuildPanel.setBarracksButtonTrueOrFalse(true);
                 }
                 //sets the button to grey otherwise
@@ -297,8 +331,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the stable costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.stableWoodCost <= Village.currentWood && Village.stableClayCost <= Village.currentClay && Village.stableIronCost <= Village.currentIron
-                && Village.stableHasCost == true) {
+                if(Village.getStableWoodCost() <= Village.getCurrentWood() &&
+                Village.getStableClayCost() <= Village.getCurrentClay() &&
+                Village.getStableIronCost() <= Village.getCurrentIron() &&
+                Village.isStableHasCost()) {
                     BuildPanel.setStableButtonTrueOrFalse(true);
                 }
                 //sets the button to grey otherwise
@@ -309,8 +345,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the workshop costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.workShopWoodCost <= Village.currentWood && Village.workShopClayCost <= Village.currentClay && Village.workShopIronCost <= Village.currentIron
-                && Village.workShopHasCost == true) {
+                if(Village.getWorkShopWoodCost() <= Village.getCurrentWood() &&
+                Village.getWorkShopClayCost() <= Village.getCurrentClay() &&
+                Village.getWorkShopIronCost() <= Village.getCurrentIron() &&
+                Village.isWorkShopHasCost()) {
                     BuildPanel.setWorkShopButtonTrueOrFalse(true);
                 }
                 //sets the button to grey otherwise
@@ -321,8 +359,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the smithy costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.smithyWoodCost <= Village.currentWood && Village.smithyClayCost <= Village.currentClay && Village.smithyIronCost <= Village.currentIron
-                && Village.smithyHasCost == true) {
+                if(Village.getSmithyWoodCost() <= Village.getCurrentWood() &&
+                Village.getSmithyClayCost() <= Village.getCurrentClay() &&
+                Village.getSmithyIronCost() <= Village.getCurrentIron() &&
+                Village.isSmithyHasCost()) {
                     BuildPanel.setSmithyButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -333,8 +373,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the market costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.marketWoodCost <= Village.currentWood && Village.marketClayCost <= Village.currentClay && Village.marketIronCost <= Village.currentIron
-                && Village.marketHasCost == true) {
+                if(Village.getMarketWoodCost() <= Village.getCurrentWood() &&
+                Village.getMarketClayCost() <= Village.getCurrentClay() &&
+                Village.getMarketIronCost() <= Village.getCurrentIron() &&
+                Village.isMarketHasCost()) {
                     BuildPanel.setMarketButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -345,8 +387,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the timber costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.timberWoodCost <= Village.currentWood && Village.timberClayCost <= Village.currentClay && Village.timberIronCost <= Village.currentIron
-                && Village.timberHasCost == true) {
+                if(Village.getTimberWoodCost() <= Village.getCurrentWood() &&
+                Village.getTimberClayCost() <= Village.getCurrentClay() &&
+                Village.getTimberIronCost() <= Village.getCurrentIron() &&
+                Village.isTimberHasCost()) {
                     BuildPanel.setTimberButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -357,8 +401,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the clay costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.clayWoodCost <= Village.currentWood && Village.clayClayCost <= Village.currentClay && Village.clayIronCost <= Village.currentIron
-                && Village.clayHasCost == true) {
+                if(Village.getClayWoodCost() <= Village.getCurrentWood() &&
+                Village.getClayClayCost() <= Village.getCurrentClay() &&
+                Village.getClayIronCost() <= Village.getCurrentIron() &&
+                Village.isClayHasCost()) {
                     BuildPanel.setClayButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -369,8 +415,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the iron costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.ironWoodCost <= Village.currentWood && Village.ironClayCost <= Village.currentClay && Village.ironIronCost <= Village.currentIron
-                && Village.ironHasCost == true) {
+                if(Village.getIronWoodCost() <= Village.getCurrentWood() &&
+                Village.getIronClayCost() <= Village.getCurrentClay() &&
+                Village.getIronIronCost() <= Village.getCurrentIron() &&
+                Village.isIronHasCost()) {
                     BuildPanel.setIronButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -381,8 +429,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the farm costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.farmWoodCost <= Village.currentWood && Village.farmClayCost <= Village.currentClay && Village.farmIronCost <= Village.currentIron
-                && Village.farmHasCost == true) {
+                if(Village.getFarmWoodCost() <= Village.getCurrentWood() &&
+                Village.getFarmClayCost() <= Village.getCurrentClay() &&
+                Village.getFarmIronCost() <= Village.getCurrentIron() &&
+                Village.isFarmHasCost()) {
                     BuildPanel.setFarmButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -393,8 +443,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the warehouse costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.wareHouseWoodCost <= Village.currentWood && Village.wareHouseClayCost <= Village.currentClay && Village.wareHouseIronCost <= Village.currentIron
-                && Village.wareHouseHasCost == true) {
+                if(Village.getWareHouseWoodCost() <= Village.getCurrentWood() &&
+                Village.getWareHouseClayCost() <= Village.getCurrentClay() &&
+                Village.getWareHouseIronCost() <= Village.getCurrentIron() &&
+                Village.isWareHouseHasCost()) {
                     BuildPanel.setWareHouseButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -405,8 +457,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the wall costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.wallWoodCost <= Village.currentWood && Village.wallClayCost <= Village.currentClay && Village.wallIronCost <= Village.currentIron
-                && Village.wallHasCost == true) {
+                if(Village.getWallWoodCost() <= Village.getCurrentWood() &&
+                Village.getWallClayCost() <= Village.getCurrentClay() &&
+                Village.getWallIronCost() <= Village.getCurrentIron() &&
+                Village.isWallHasCost()) {
                     BuildPanel.setWallButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -417,8 +471,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the academy costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.academyWoodCost <= Village.currentWood && Village.academyClayCost <= Village.currentClay && Village.academyIronCost <= Village.currentIron
-                && Village.academyHasCost == true) {
+                if(Village.getAcademyWoodCost() <= Village.getCurrentWood() &&
+                Village.getAcademyClayCost() <= Village.getCurrentClay() &&
+                Village.getAcademyIronCost() <= Village.getCurrentIron() &&
+                Village.isAcademyHasCost()) {
                     BuildPanel.setAcademyButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
@@ -429,8 +485,10 @@ public class BuildingResourceCostThread implements Runnable {
 
                 //check if the hidingplace costs are lower than current village resource levels
                 //if they are then the button is lit up
-                if(Village.hidingPlaceWoodCost <= Village.currentWood && Village.hidingPlaceClayCost <= Village.currentClay && Village.hidingPlaceIronCost <= Village.currentIron
-                && Village.hidingPlaceHasCost == true) {
+                if(Village.getHidingPlaceWoodCost() <= Village.getCurrentWood() &&
+                Village.getHidingPlaceClayCost() <= Village.getCurrentClay() &&
+                Village.getHidingPlaceIronCost() <= Village.getCurrentIron() &&
+                Village.isHidingPlaceHasCost()) {
                     BuildPanel.setHidingPlaceButtonTrueOrFalse(true);
                 }
                 //sets the button grey otherwise
