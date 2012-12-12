@@ -269,7 +269,6 @@ public class WebAutomation  {
                 e.printStackTrace();
             }
         }
-
     }
 }
 

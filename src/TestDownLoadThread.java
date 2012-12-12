@@ -30,6 +30,5 @@ public class TestDownLoadThread implements Runnable {
 
     public void run() {
         WebAutomation.downloadVillageTxt();
-
     }
 }
